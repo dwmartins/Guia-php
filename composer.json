@@ -1,0 +1,26 @@
+{
+    "name": "douglas/structure-for-web-project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        },
+        "files": [
+            "App/Utils/Logger.php",
+            "App/Utils/ShowAlertConsole.php",
+            "App/Utils/flash.php",
+            "App/Utils/redirect.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Douglas Martins",
+            "email": "douglas5422@outlook.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "phpmailer/phpmailer": "^6.9",
+        "firebase/php-jwt": "^6.10",
+        "respect/validation": "^2.3"
+    }
+}

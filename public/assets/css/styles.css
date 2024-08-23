@@ -1,0 +1,258 @@
+p, a, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bs-primary: #409EFF;
+    --bs-primary-rgb: 64, 158, 255;
+    --bs-primary-text: #fff;
+
+    --custom-dark: #303F4E;
+
+    --brand-color: #EE9F9F;
+}
+
+::placeholder {
+    color: #b1b1b1 !important;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.link_outline_none {
+    text-decoration: none;
+}
+
+/* Spinner when loading the page */
+.spinner {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    z-index: 999;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid var(--brand-color);
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--brand-color) transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* end Spinner*/
+
+.text-brand {
+    color: var(--brand-color);
+}
+
+.logo_image_header {
+    width: 200px;
+}
+
+#navBar li:hover, #navBar a:hover{
+    color: var(--brand-color) !important;
+}
+
+.cover_image {
+    position: relative;
+    height: 600px;
+    background-image: url("/assets/img/cover.jpg");
+    background-size: cover;
+}
+
+.cover_image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 600px;
+    background-color: #00000085;
+}
+
+.cover_image > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.cover_image h1 {
+    font-size: clamp(40px, 8vw, 65px);
+    font-family: "Playfair Display", serif !important;
+    font-weight: 700;
+}
+
+.btn-outline-brand {
+    border: 2px solid var(--brand-color);
+    color: #fff;
+    border-radius: 25px;
+}
+
+.btn-outline-brand:hover {
+    color: #fff;
+    background-color: var(--brand-color);
+}
+
+.btn-brand {
+    background-color: var(--brand-color);
+    color: #fff;
+}
+
+.btn-brand:hover {
+    color: #000;
+    background-color: #fff;
+    border: 2px solid var(--brand-color);
+}
+
+.card_customers_choose .img_1, .img_2, .img_3 {
+    width: 350px;
+    position: absolute;
+    border: 8px solid #fff;
+}
+
+.card_customers_choose h3 {
+    font-family: "Playfair Display", serif !important;
+    letter-spacing: 0.06em;
+}
+
+.card_customers_choose .img_1 {
+    top: 50px;
+    left: 0;
+}
+
+.card_customers_choose .img_2 {
+    top: 200px;
+    right: 10px;
+}
+
+.card_customers_choose .img_3 {
+    top: 400px;
+    left: 0;
+}
+
+.card_customers_choose .images {
+    min-height: 650px;
+}
+
+@media (max-width: 576px) {
+    .btn_learn_more {
+        width: 100%;
+    }
+
+    .card_customers_choose .img_1, .img_2, .img_3 {
+        width: 260px;;
+    }
+
+    .card_customers_choose .img_2 {
+        top: 200px;
+        right: 0px;
+    }
+
+    .card_customers_choose .img_3 {
+        top: 350px;
+        left: 0;
+    }
+}
+
+#services h3 {
+    font-family: "Playfair Display", serif !important;
+    letter-spacing: 0.06em;
+    position: relative;
+}
+
+.divider-lg::after {
+    content: '';
+    display: inline-block;
+    width: 90px;
+    height: 3px;
+    background-color: var(--brand-color);
+}
+
+#services svg {
+    fill: var(--brand-color);
+}
+
+#contactView h1 {
+    font-family: "Playfair Display", serif !important;
+    letter-spacing: 0.06em;
+}
+
+.custom_placeholder::placeholder {
+    color: #b1b1b1 !important;
+}
+
+.form-control:focus {
+    border-color: var(--brand-color);
+    box-shadow: 0 0 0 0.2rem rgba(238, 159, 159, 0.25);
+}
+
+#contactView form button {
+    width: 280px;
+}
+
+@media (max-width: 576px) {
+    #contactView form button {
+        width: 100%;
+    } 
+}
+
+#contactView h5 {
+    font-family: "Playfair Display", serif !important;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+}
+
+footer .logo_footer {
+    width: 250px;
+}
+
+footer li:hover, footer a:hover{
+    color: var(--brand-color) !important;
+}
