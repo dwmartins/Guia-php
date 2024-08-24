@@ -9,6 +9,7 @@ class User {
     private string $name = "";
     private string $lastName = "";
     private string $email = "";
+    private string $rememberToken = "";
     private string $password = "";
     private string $active = "Y";
     private string $role = "visitor"; // ['support', 'admin', 'mod', 'sponsor', visitor, 'test']
@@ -50,6 +51,7 @@ class User {
             "name"                  => $this->name,
             "lastName"              => $this->lastName,
             "email"                 => $this->email,
+            "rememberToken"         => $this->rememberToken,
             "password"              => $this->password,
             "active"                => $this->active,
             "role"                  => $this->role,
@@ -98,6 +100,14 @@ class User {
 
     public function setEmail(string $email): void {
         $this->email = $email;
+    }
+
+    public function getRememberToken(): string {
+        return $this->rememberToken;
+    }
+
+    public function setRememberToken(string $token): void {
+        $this->rememberToken = $token;
     }
 
     public function getPassword(): string {
@@ -279,6 +289,24 @@ class User {
 
     public function fetchByEmail(string $email): array {
         $user = UserDAO::fetchByEmail($email);
+
+        if(!empty($user)) {
+            foreach ($user as $key => $value) {
+                if(empty($value)) {
+                    continue;
+                }
+
+                if (property_exists($this, $key)) {
+                    $this->$key = $value;
+                }
+            }
+        }
+
+        return $user;
+    }
+
+    public function fetchByRememberToken(string $token): array {
+        $user = UserDAO::fetchByRememberToken($token);
 
         if(!empty($user)) {
             foreach ($user as $key => $value) {

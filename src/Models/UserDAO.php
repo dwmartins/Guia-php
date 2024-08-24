@@ -300,4 +300,26 @@ class UserDAO extends Database {
             throw new Exception("Error when executing query to search for user by id");
         }
     }
+
+    public static function fetchByRememberToken(string $token): array {
+        try {
+            $pdo = self::getConnection();
+
+            $stmt = $pdo->prepare(
+                "SELECT *
+                    FROM users
+                    WHERE rememberToken = ?"
+            );
+
+            $stmt->execute([$token]);
+
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            return $result ?: [];
+
+        } catch (PDOException $e) {
+            logError($e->getMessage());
+            throw new Exception("Error when executing query to search for user by token");
+        }
+    }
 }

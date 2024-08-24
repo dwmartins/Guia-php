@@ -13,8 +13,8 @@
         </div>
 
         <div class="d-flex justify-content-between align-items-center gap-1 mb-3">
-            <label for="remember" class="form-check-label fs-7">
-                <input type="checkbox" class="form-check-input custom_focus" id="remember">
+            <label for="rememberMe" class="form-check-label fs-7">
+                <input type="checkbox" name="rememberMe" class="form-check-input custom_focus" id="rememberMe">
                 <?= showText('REMEMBER_ME') ?>
             </label>
             <a href="#" class="outline_none text-primary fs-7"><?= showText('FORGOT_PASSWORD') ?></a>

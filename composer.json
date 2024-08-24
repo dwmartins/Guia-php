@@ -11,7 +11,8 @@
             "src/Utils/redirect.php",
             "src/Utils/Settings.php",
             "src/Utils/GenerateRandomCode.php",
-            "src/Utils/Translations.php"
+            "src/Utils/Translations.php",
+            "src/Utils/UserSession.php"
         ]
     },
     "authors": [

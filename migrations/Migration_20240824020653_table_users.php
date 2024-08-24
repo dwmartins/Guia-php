@@ -22,6 +22,7 @@ class Migration_20240824020653_table_users extends Database{
                 name VARCHAR(50) NOT NULL,
                 lastName VARCHAR(50) NOT NULL,
                 email VARCHAR(255) NOT NULL UNIQUE,
+                rememberToken VARCHAR(255),
                 password VARCHAR(255) NOT NULL,
                 active ENUM('Y', 'N'),
                 role VARCHAR(50) NOT NULL,
