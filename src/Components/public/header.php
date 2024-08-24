@@ -76,9 +76,11 @@ $logoHeader = empty($siteInfo->getLogoImage()) ? "/assets/img/defaultLogo.png" :
                         <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?= getLoggedUser()->getName() ?>
                         </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="<?= showText('PATH_USER_PANEL') ?>" class="dropdown-item"><?= showText('PANEL_PAGE') ?></a></li>
-                            <li><a href="<?= showText('PATH_LOGOUT') ?>" class="dropdown-item"><?= showText('LOGOUT_PAGE') ?></a></li>
+                        <ul class="dropdown-menu shadow">
+                            <li><a href="<?= showText('PATH_USER_PANEL') ?>" class="dropdown-item text-secondary"><i class="fa-solid fa-chart-line me-2"></i><?= showText('PANEL_PAGE') ?></a></li>
+                            <li><a href="<?= showText('PATH_PROFILE') ?>" class="dropdown-item text-secondary"><i class="fa-regular fa-user me-2"></i><?= showText('PROFILE_PAGE') ?></a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="<?= showText('PATH_LOGOUT') ?>" class="dropdown-item text-secondary"><i class="fa-solid fa-right-from-bracket me-2"></i><?= showText('LOGOUT_PAGE') ?></a></li>
                         </ul>
                     </div>
                 </div>

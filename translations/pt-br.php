@@ -39,3 +39,4 @@ define("FORGOT_PASSWORD", "Esqueci minha senha");
 define("REMEMBER_ME", "Lembrar de mim");
 define("INVALID_CREDENTIALS", "Usuário ou senha inválidos.");
 define("MAINTENANCE_TEXT", "Estamos em manutenção, voltaremos em breve");
+define("LOGOUT_MESSAGE", "Você se desconectou com sucesso. Até a próxima!");
