@@ -3,11 +3,12 @@
 namespace App\Controllers;
 
 use App\Http\Request;
-class HomeController {
+
+class DashboardController {
     public function index(Request $request, $params) {
         return [
-            'view' => 'publicView/home.php',
-            'data' => ['title' => 'Dani Cílios & Sobrancelhas']
+            'view' => 'adminView/dashboard.php',
+            'data' => ['title' => 'Dashboard']
         ];
     }
 }

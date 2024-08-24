@@ -5,10 +5,13 @@
             "App\\": "src/"
         },
         "files": [
-            "App/Utils/Logger.php",
-            "App/Utils/ShowAlertConsole.php",
-            "App/Utils/flash.php",
-            "App/Utils/redirect.php"
+            "src/Utils/Logger.php",
+            "src/Utils/ShowAlertConsole.php",
+            "src/Utils/flash.php",
+            "src/Utils/redirect.php",
+            "src/Utils/Settings.php",
+            "src/Utils/GenerateRandomCode.php",
+            "src/Utils/Translations.php"
         ]
     },
     "authors": [

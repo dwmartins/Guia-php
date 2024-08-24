@@ -41,6 +41,7 @@ class Core {
 
                     require __DIR__ . "/../views/master.php";
                 }
+
                 return;
             }
         }
