@@ -12,7 +12,8 @@
             "src/Utils/Settings.php",
             "src/Utils/GenerateRandomCode.php",
             "src/Utils/Translations.php",
-            "src/Utils/UserSession.php"
+            "src/Utils/UserSession.php",
+            "src/Utils/SiteInfo.php"
         ]
     },
     "authors": [

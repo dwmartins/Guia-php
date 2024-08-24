@@ -25,6 +25,9 @@
 <body>
 
     <?php 
+
+        $siteInfo = getSiteInfo();
+
         if (strpos($view, 'adminView/') === 0) {
             require __DIR__ . "/adminView/layout.php";
 
