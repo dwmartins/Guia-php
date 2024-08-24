@@ -6,7 +6,7 @@
 
                 <div class="mb-3">
                     <label for="email" class="text-secondary"><span class="text-danger me-1">*</span><?= showText('LABEL_EMAIL') ?></label>
-                    <input type="email" name="email" id="email" class="form-control custom_focus">
+                    <input type="email" name="email" id="email" autocomplete="email" class="form-control custom_focus">
                 </div>
 
                 <div class="mb-3">
@@ -22,7 +22,9 @@
                     <a href="<?= showText('PATH_FORGOT_PASSWORD') ?>" class="outline_none text-primary fs-7"><?= showText('FORGOT_PASSWORD') ?></a>
                 </div>
 
-                <button id="btnLogin" class="btn btn-primary w-100"><?= showText('LABEL_ENTER') ?></button>
+                <button id="btnLogin" class="btn btn-primary w-100">
+                    <?= showText('LABEL_ENTER') ?>
+                </button>
 
                 <hr class="text-secondary">
 

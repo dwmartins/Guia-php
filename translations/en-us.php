@@ -1,7 +1,7 @@
 <?php
 
 // Pages titles
-define("TITLE_ENTER", "Enter");
+define("TITLE_ENTER", "Login");
 
 // Form labels 
 define("LABEL_EMAIL", "Email");

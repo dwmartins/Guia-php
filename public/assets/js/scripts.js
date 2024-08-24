@@ -24,17 +24,16 @@ if (formLoginAdmin) {
 
             if (!value) {
                 isValid = false;
-                console.log(field)
                 $(field).addClass('field_invalid');
             }
         });
 
         if (!isValid) {
             event.preventDefault();
-            showAlert('error', 'Preencha todos os campos obrigatórios');
+            showAlert('error', ALL_FIELDS_INVALID);
         } else {
             $('#btnLoginAdmin').empty();
-            $('#btnLoginAdmin').prepend('Aguarde...');
+            $('#btnLoginAdmin').prepend(WAIT);
         }
     });
 
@@ -63,17 +62,21 @@ if (formLogin) {
 
             if (!value) {
                 isValid = false;
-                console.log(field)
                 $(field).addClass('field_invalid');
             }
         });
 
         if (!isValid) {
             event.preventDefault();
-            showAlert('error', 'Preencha todos os campos obrigatórios');
+            showAlert('error', ALL_FIELDS_INVALID);
         } else {
-            $('#btnLoginAdmin').empty();
-            $('#btnLoginAdmin').prepend('Aguarde...');
+            $('#btnLogin').empty();
+            $('#btnLogin').html(`
+                <div id="spinnerLoading" class="item_center gap-2">
+                    <div class="spinner-border" role="status"></div>
+                    <p class="m-0">WAIT</p>
+                </div>
+            `).prop('disabled', true);
         }
     });
 
