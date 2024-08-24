@@ -2,6 +2,7 @@
 
 namespace App\Middleware;
 
+use App\Class\User;
 use App\Http\Request;
 
 class AdminMiddleware {
@@ -9,13 +10,19 @@ class AdminMiddleware {
     private static array $noPermissionNeeded = ["support", "admin"];
 
     public function isAdmin(Request $request) {
-        $user = getLoggedUser();
+        $userLogged = getLoggedUser();
 
-        if(!empty($user) && $user->getActive() === "Y") {
-            if(in_array($user->getRole(), self::$allowedRoles)) {
-                return true;
-            } else {
-                return redirectWithMessage('/', 'error', NOT_HAVE_PERMISSION_AREA);
+        if(!empty($userLogged)) {
+            $user = new User();
+            $user->fetchById($userLogged->getId());
+
+            if(!empty($user) && $user->getActive() === "Y") {
+                if(in_array($user->getRole(), self::$allowedRoles)) {
+                    $request->setAttribute("userRequest", $user);
+                    return true;
+                } else {
+                    return redirectWithMessage('/', 'error', NOT_HAVE_PERMISSION_AREA);
+                }
             }
         }
 
