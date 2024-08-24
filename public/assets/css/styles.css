@@ -314,3 +314,12 @@ input[type="checkbox"]:focus {
         max-height: 180px;
     }
 }
+
+#loginPublicView {
+    height: calc(100vh - 130px);
+}
+
+#loginPublicView form {
+    width: 100%;
+    max-width: 400px;
+}

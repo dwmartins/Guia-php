@@ -1,5 +1,5 @@
 <section id="loginAdmin" class="container vh-100 item_center">
-    <form action="/app/entrar" method="post" id="formLoginAdmin">
+    <form action="<?= showText('PATH_ADM_LOGIN') ?>" method="post" id="formLoginAdmin">
         <h1 class="text-center custom_dark mb-3"><?= showText('PANEL') ?></h1>
 
         <div class="mb-3">
