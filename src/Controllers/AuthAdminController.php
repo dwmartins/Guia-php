@@ -8,7 +8,7 @@ class AuthAdminController {
     public function index(Request $request, $params) {
         return [
             'view' => 'adminView/login.php',
-            'data' => ['title' => 'Entrar']
+            'data' => ['title' => PANEL .' | '. TITLE_ENTER]
         ];
     }
 
