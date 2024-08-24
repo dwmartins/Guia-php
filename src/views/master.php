@@ -26,16 +26,18 @@
 
     <?php 
         if (strpos($view, 'adminView/') === 0) {
-            require __DIR__ . "/../views/adminView/layout.php";
+            require __DIR__ . "/adminView/layout.php";
 
         } elseif (strpos($view, 'publicView/') === 0) {
-            require __DIR__ . "/../views/publicView/layout.php";
+            require __DIR__ . "/publicView/layout.php";
 
         } else if($view === "adminView/loginView.php"){
-            require __DIR__ . "/../views/adminView/loginAdmin.php";
+            require __DIR__ . "/adminView/loginAdmin.php";
             
+        } else if($view === "/publicView/maintenance.php") {
+            require __DIR__ . "/publicView/maintenance.php";
         } else {
-            echo "Layout não encontrado para a view especificada.";
+            echo "Layout not found for the specified view.";
         }
     ?>
 

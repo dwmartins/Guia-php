@@ -23,12 +23,24 @@ class Core {
                     continue;
                 }
 
+                $middlewares = $route['middlewares'] ?? [];
+                // Checks if there is middleware on the route;
+                if(count($middlewares)) {
+                    if (!self::applyMiddlewares($middlewares, new Request)) {
+                        return;
+                    }
+                }
+
                 [$controller, $action] = explode('@', $route['action']); 
 
                 $controller = $prefixController . $controller;
 
                 if (!class_exists($controller) || !method_exists($controller, $action)) {
                     self::handleRouteNotFound($controller, $action);
+                    return;
+                }
+
+                if(self::checkMaintenanceMode($url)) {
                     return;
                 }
 
@@ -53,6 +65,21 @@ class Core {
         }
     }
 
+    private static function applyMiddlewares(array $middlewares, Request $request): bool {
+        foreach ($middlewares as $middleware) {
+            if (is_array($middleware) && count($middleware) >= 2 && is_string($middleware[0]) && method_exists($middleware[0], $middleware[1])) {
+                $middlewareClass = new $middleware[0]();
+                $middlewareMethod = $middleware[1];
+
+                return $middlewareClass->$middlewareMethod($request);
+            } else {
+                logError("Invalid middleware format");
+                self::internalServerErrorResponse();
+                return false;
+            }
+        }
+    }
+
     private static function methodNotAllowedResponse($url) {
         logError('The "' . $_SERVER['REQUEST_METHOD'] . '" method is not allowed in "' . $url . '"');
         http_response_code(405);
@@ -63,5 +90,31 @@ class Core {
         logError("Class or method not found: $controller@$action");
         http_response_code(500);
         echo "Class or method not found for this route.";
+    }
+
+    private static function internalServerErrorResponse() {
+        http_response_code(500);
+        echo "Invalid middleware format";
+    }
+
+    private static function checkMaintenanceMode(string $url) {
+        // If an administrator is logged in, next
+        if(isAdmin()) {
+            return false;
+        }
+
+        // If you go to the app url, next
+        if(strpos($url, '/app') === 0) {
+            return false;
+        }
+
+        // if under maintenance, load the maintenance view.
+        if(getSetting('maintenance') == "on") {
+            $view = "/publicView/maintenance.php";
+            $title = "Manutenção";
+
+            require __DIR__ . "/../views/master.php";
+            return true;
+        }
     }
 }

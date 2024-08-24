@@ -254,3 +254,8 @@ input[type="checkbox"]:focus {
     width: 100%;
     max-width: 400px;
 }
+
+#maintenanceView img {
+    width: 90%;
+    max-width: 500px;
+}

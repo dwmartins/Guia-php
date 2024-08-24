@@ -3,7 +3,11 @@
 include "config.php";
 
 // Load the appropriate .env file
-loadEnv();
+try {
+    loadEnv();
+} catch (Exception $e) {
+    die("Failed to load environment: " . $e->getMessage());
+}
 
 if(!isCli()) {
     // Set the default language
@@ -11,25 +15,35 @@ if(!isCli()) {
 
     // Sets the default time zone
     loadTimeZone();
+
+    session_set_cookie_params([
+        'secure' => true,
+        'httponly' => true,
+        'samesite' => 'Strict'
+    ]);
+
+    session_start();
 }
 
+/**
+ * Loads environment variables from a .env file.
+ */
 function loadEnv() {
     $envPath = __DIR__ . "/";
-    $env = "";
+    $envFile = file_exists($envPath . '.env.development') ? '.env.development' : '.env';
 
-    if (file_exists($envPath . '.env.development')) {
-        define("DEV_MODE", true);
-        $env = '.env.development';
-    } else {
-        define("DEV_MODE", false);
-        $env = '.env';
+    if (!file_exists($envPath . $envFile)) {
+        throw new Exception("The .env file $envFile does not exist.");
     }
 
-
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__, $env);
+    define("DEV_MODE", $envFile === '.env.development');
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__, $envFile);
     $dotenv->load();
 }
 
+/**
+ * Loads translations based on the current language setting.
+ */
 function loadTranslations() {
     $rootPath = realpath(__DIR__);
 
@@ -45,11 +59,18 @@ function loadTranslations() {
     include_once  $translationFile;
 }
 
+/**
+ * Sets the default timezone based on settings.
+ */
 function loadTimeZone() {
     $timeZone = getSetting('timezone') ?? "America/Sao_Paulo";
     date_default_timezone_set($timeZone);
 }
 
+/**
+ * Checks if the current execution context is CLI.
+ * @return bool True if in CLI mode, false otherwise.
+ */
 function isCli() {
     return php_sapi_name() === 'cli' || defined('STDIN');
 }
