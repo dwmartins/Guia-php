@@ -14,3 +14,4 @@ define("PATH_ADM_LOGIN", "login");
 define("PANEL", "Panel");
 define("FORGOT_PASSWORD", "Forgot my password");
 define("REMEMBER_ME", "Remember me");
+define("INVALID_CREDENTIALS", "Invalid username or password.");
