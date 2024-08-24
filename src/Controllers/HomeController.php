@@ -7,7 +7,7 @@ class HomeController {
     public function index(Request $request, $params) {
         return [
             'view' => 'publicView/home.php',
-            'data' => ['title' => 'Dani Cílios & Sobrancelhas']
+            'data' => ['title' => getSiteInfo()->getWebSiteName()]
         ];
     }
 }

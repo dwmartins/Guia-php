@@ -236,6 +236,12 @@ a.text-primary:active {
     text-decoration: none;
 }
 
+.btn:focus,
+.btn:active {
+    outline: none;
+    box-shadow: none;
+}
+
 .custom_focus:focus {
     box-shadow: 0px 0px 3px 0px rgba(116, 166, 240, 0.788);
 }
@@ -258,4 +264,42 @@ input[type="checkbox"]:focus {
 #maintenanceView img {
     width: 90%;
     max-width: 500px;
+}
+
+#publicNavComponent nav {
+    box-shadow: 0 0 1rem rgba(0,0,0,.15) !important;
+}
+
+#publicNavComponent .logo_image {
+    max-width: 240px;
+    max-height: 240px;
+    object-fit: cover;
+}
+
+#publicNavComponent .navbar-toggler:focus, .navbar-toggler:active {
+    outline: none;
+    box-shadow: none;
+}
+
+#publicNavComponent .logged_small {
+    display: none;
+}
+
+#publicNavComponent .dropdown_logged {
+    display: flex;
+}
+
+@media screen and (max-width: 992px) {
+    #publicNavComponent  .logged_small {
+        display: flex;
+    }
+
+    #publicNavComponent  .logged_large {
+        display: none;
+    }
+
+    #publicNavComponent .logo_image {
+        max-width: 180px;
+        max-height: 180px;
+    }
 }

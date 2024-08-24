@@ -158,7 +158,6 @@ class User {
         $this->photo = $photo;
     }
 
-    // Getter e Setter para dateOfBirth
     public function getDateOfBirth(): string {
         return $this->dateOfBirth;
     }
@@ -229,6 +228,10 @@ class User {
 
     public function setUpdatedAt($updatedAt): void {
         $this->updatedAt = $updatedAt;
+    }
+
+    public function getFulName(): string {
+        return $this->name . ' ' . $this->lastName; 
     }
 
     private function isPasswordHashed($password) {
