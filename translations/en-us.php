@@ -40,3 +40,4 @@ define("REMEMBER_ME", "Remember me");
 define("INVALID_CREDENTIALS", "Invalid username or password.");
 define("MAINTENANCE_TEXT", "We are undergoing maintenance, we will be back soon");
 define("LOGOUT_MESSAGE", "You have successfully logged out. See you next time!");
+define("NOT_HAVE_PERMISSION_AREA", "You do not have permission to access this area.");

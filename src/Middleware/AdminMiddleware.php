@@ -14,9 +14,11 @@ class AdminMiddleware {
         if(!empty($user) && $user->getActive() === "Y") {
             if(in_array($user->getRole(), self::$allowedRoles)) {
                 return true;
+            } else {
+                return redirectWithMessage('/', 'error', NOT_HAVE_PERMISSION_AREA);
             }
         }
 
-        redirectWithMessage('/', 'error', 'Você não tem permissão para acessar está area.');
+        redirect(PATH_ADM_LOGIN);
     }
 }
