@@ -7,6 +7,8 @@ use App\Class\UserAccess;
 use App\Http\Request;
 
 class AuthAdminController {
+    private array $allowedRoles = ["support", "admin", "mod", "test"];
+
     public function index(Request $request, $params) {
         if($this->checkRememberMe() || isAdmin()) {
             return redirect("/app");
@@ -26,7 +28,7 @@ class AuthAdminController {
         $user = new User();
 
         if($user->fetchByEmail($data['email'])) {
-            if($user->getActive() === "Y") {
+            if($user->getActive() === "Y" && in_array($user->getRole(), $this->allowedRoles)) {
                 if(password_verify($data["password"], $user->getPassword())) {
 
                     if(isset($data['rememberMe']) && $data['rememberMe'] == 'on') {
@@ -54,7 +56,7 @@ class AuthAdminController {
             }
         }
 
-        redirectWithMessage('/app/' . PATH_ADM_LOGIN, 'error', INVALID_CREDENTIALS);
+        redirectWithMessage(PATH_ADM_LOGIN, 'error', INVALID_CREDENTIALS);
     }
 
     private function checkRememberMe() {
