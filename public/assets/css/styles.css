@@ -329,6 +329,16 @@ input[type="checkbox"]:focus {
     }
 }
 
+@media screen and (max-width: 576px) {
+    #publicNavComponent  .fa-bars {
+        font-size: 25px !important;
+    }
+
+    #publicNavComponent li {
+        font-size: 18px;
+    }
+}
+
 #loginPublicView {
     height: calc(100vh - 130px);
 }

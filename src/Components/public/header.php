@@ -5,7 +5,7 @@ $logoHeader = empty($siteInfo->getLogoImage()) ? "/assets/img/default/defaultLog
 
 ?>
 
-<nav id="publicNavComponent" class="navbar navbar-expand-lg bg-body-tertiary mx-0 p-0">
+<nav id="publicNavComponent" class="navbar navbar-expand-lg bg-body-tertiary mx-0 py-2 py-md-0">
     <div class="container">
         <a href="/">
             <img src="<?= $logoHeader ?>" alt="<?= showText('ALT_LOGO_IMAGE') ?>" class="logo_image">
