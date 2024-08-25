@@ -74,7 +74,7 @@ if (formLogin) {
             $('#btnLogin').html(`
                 <div id="spinnerLoading" class="item_center gap-2">
                     <div class="spinner-border" role="status"></div>
-                    <p class="m-0">WAIT</p>
+                    <p class="m-0">${WAIT}</p>
                 </div>
             `).prop('disabled', true);
         }
