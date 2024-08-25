@@ -60,3 +60,5 @@ define("SEARCH_HERE", "Start your search here");
 define("WHAT_LOOKING", "What are you looking for??");
 define("BTN_SEARCH", "Search");
 define("PLACEHOLDER_SEARCH_LOCATIONS", "Snack bars, pizzerias, hotels...");
+define("MAINTENANCE_ALERT", "Site under maintenance");
+define("PUBLISH", "Publish");

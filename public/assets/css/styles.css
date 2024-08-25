@@ -271,6 +271,10 @@ input[type="checkbox"]:focus {
     color: #b1b1b1 !important;
     font-size: 14px;
 }
+
+.hover_primary:hover {
+    color: var(--bs-primary) !important;
+}
 /* End Customs */
 
 #loginAdmin form {
@@ -375,3 +379,8 @@ input[type="checkbox"]:focus {
     font-size: clamp(40px, 8vw, 65px);
 }
 
+@media screen and (max-width: 360px) {
+    #adminBarComponent .publish p {
+        display: none;
+    }
+}

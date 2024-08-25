@@ -98,23 +98,27 @@ class Core {
     }
 
     private static function checkMaintenanceMode(string $url) {
-        // If an administrator is logged in, next
-        if(isAdmin()) {
-            return false;
-        }
-
-        // If you go to the app url, next
-        if(strpos($url, '/app') === 0) {
-            return false;
-        }
-
-        // if under maintenance, load the maintenance view.
         if(getSetting('maintenance') == "on") {
+            define("MAINTENANCE", true);
+
+            // If an administrator is logged in, next
+            if(isAdmin()) {
+                return false;
+            }
+
+            // If you go to the app url, next
+            if(strpos($url, '/app') === 0) {
+                return false;
+            }
+
             $view = "/publicView/maintenance.php";
             $title = "Manutenção";
 
             require __DIR__ . "/../views/master.php";
             return true;
         }
+
+        define("MAINTENANCE", false);
+        return false;
     }
 }

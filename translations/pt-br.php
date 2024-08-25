@@ -23,6 +23,7 @@ define("PATH_EVENTS", "/eventos");
 
 // Page Path ADM
 define("PATH_ADM_LOGIN", "/app/entrar");
+define("PATH_ADM_SETTINGS", "app/settings/general-settings");
 
 // Page label
 define("HOME_PAGE", "Incio");
@@ -60,3 +61,5 @@ define("SEARCH_HERE", "Inicie sua busca aqui");
 define("WHAT_LOOKING", "O que você está procurando?");
 define("BTN_SEARCH", "Buscar");
 define("PLACEHOLDER_SEARCH_LOCATIONS", "Lanchonetes, pizzarias, hotel...");
+define("MAINTENANCE_ALERT", "Site em manutenção");
+define("PUBLISH", "Publicar");

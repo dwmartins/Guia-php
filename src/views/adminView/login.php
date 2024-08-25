@@ -4,7 +4,7 @@
 
         <div class="mb-3">
             <label for="email"><span class="text-danger me-1">*</span><?= showText('LABEL_EMAIL') ?></label>
-            <input type="email" name="email" id="email" class="form-control custom_focus">
+            <input type="email" name="email" id="email" autocomplete="email" class="form-control custom_focus">
         </div>
 
         <div class="mb-3">
