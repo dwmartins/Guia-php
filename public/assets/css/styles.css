@@ -367,6 +367,16 @@ input[type="checkbox"]:focus {
     background-color: #00000085;
 }
 
+@media screen and (max-width: 576px) {
+    #hoveView .cover-image {
+        height: calc(100vh - 110px);
+    }
+
+    #hoveView .cover-image::before {
+        height: calc(100vh - 110px);
+    }
+}
+
 #hoveView .cover-image > div {
     position: absolute;
     top: 0;
