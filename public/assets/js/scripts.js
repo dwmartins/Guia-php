@@ -91,3 +91,17 @@ if (formLogin) {
         }
     });
 }
+
+// Validate the search form
+const formSearchHome = document.getElementById('formSearchHome');
+if(formSearchHome) {
+    const validFormSearch = (event) => {
+        const field = formSearchHome.querySelector('input');
+
+        if(!field.value.trim()) {
+            event.preventDefault();
+        }
+    }
+
+    formSearchHome.addEventListener('submit', validFormSearch);
+}

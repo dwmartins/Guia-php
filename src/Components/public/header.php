@@ -1,7 +1,7 @@
 <?php
 
 $siteInfo = SITE_INFO;
-$logoHeader = empty($siteInfo->getLogoImage()) ? "/assets/img/defaultLogo.png" : "/uploads/systemImages/" . $siteInfo->getLogoImage();
+$logoHeader = empty($siteInfo->getLogoImage()) ? "/assets/img/default/defaultLogo.png" : "/uploads/systemImages/" . $siteInfo->getLogoImage();
 
 ?>
 

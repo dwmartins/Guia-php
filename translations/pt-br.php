@@ -56,3 +56,7 @@ define("NAVIGATION", "Navegação");
 define("SOCIAL_MEDIA", "Redes sociais");
 define("DEVELOPER_BY", "Desenvolvido por:");
 define("ILLUSTRATIONS_BY", "Ilustrações de");
+define("SEARCH_HERE", "Inicie sua busca aqui");
+define("WHAT_LOOKING", "O que você está procurando?");
+define("BTN_SEARCH", "Buscar");
+define("PLACEHOLDER_SEARCH_LOCATIONS", "Lanchonetes, pizzarias, hotel...");

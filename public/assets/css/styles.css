@@ -266,6 +266,11 @@ input[type="checkbox"]:focus {
     height: 20px;
     width: 20px;
 }
+
+.custom_placeholder::placeholder {
+    color: #b1b1b1 !important;
+    font-size: 14px;
+}
 /* End Customs */
 
 #loginAdmin form {
@@ -340,3 +345,33 @@ input[type="checkbox"]:focus {
         width: 100%;
     }
 }
+
+#hoveView .cover-image {
+    position: relative;
+    height: calc(100vh - 50px);
+    background-size: cover;
+}
+
+#hoveView .cover-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(100vh - 50px);
+    background-color: #00000085;
+}
+
+#hoveView .cover-image > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#hoveView .cover-image h1 {
+    font-size: clamp(40px, 8vw, 65px);
+}
+

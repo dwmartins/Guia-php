@@ -1,7 +1,7 @@
 <?php
 
 $siteInfo = SITE_INFO;
-$logoFooter = empty($siteInfo->getLogoImage()) ? "/assets/img/defaultLogo.png" : "/uploads/systemImages/" . $siteInfo->getLogoImage();
+$logoFooter = empty($siteInfo->getLogoImage()) ? "/assets/img/default/defaultLogo.png" : "/uploads/systemImages/" . $siteInfo->getLogoImage();
 
 function showSocialMedia() {
     $siteInfo = SITE_INFO;
