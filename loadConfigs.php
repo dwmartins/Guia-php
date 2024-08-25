@@ -16,6 +16,9 @@ if(!isCli()) {
     // Sets the default time zone
     loadTimeZone();
 
+    // Get basic information from the website
+    define("SITE_INFO", getSiteInfo());
+
     session_set_cookie_params([
         'secure' => true,
         'httponly' => true,

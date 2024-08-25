@@ -328,3 +328,15 @@ input[type="checkbox"]:focus {
     width: 100%;
     max-width: 400px;
 }
+
+#publicFooterComponent .logoFooter {
+    width: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 390px) {
+    #publicFooterComponent .logoFooter {
+        min-width: 200px;
+        width: 100%;
+    }
+}

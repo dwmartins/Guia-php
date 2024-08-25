@@ -24,6 +24,7 @@
 
                 <button id="btnLogin" class="btn btn-primary w-100">
                     <?= showText('LABEL_ENTER') ?>
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
                 </button>
 
                 <hr class="text-secondary">

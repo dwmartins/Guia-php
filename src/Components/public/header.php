@@ -1,6 +1,6 @@
 <?php
 
-$siteInfo = getSiteInfo();
+$siteInfo = SITE_INFO;
 $logoHeader = empty($siteInfo->getLogoImage()) ? "/assets/img/defaultLogo.png" : "/uploads/systemImages/" . $siteInfo->getLogoImage();
 
 ?>
@@ -45,7 +45,11 @@ $logoHeader = empty($siteInfo->getLogoImage()) ? "/assets/img/defaultLogo.png" :
                 </li>
 
                 <li class="nav-item">
-                    <a href="<?= showText('PATH_PLANS') ?>" class="nav-link"><?= showText('ADVERTISERS_PAGE') ?></a>
+                    <a href="<?= showText('PATH_LISTAGENS') ?>" class="nav-link"><?= showText('LISTAGENS_PAGE') ?></a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="<?= showText('PATH_EVENTS') ?>" class="nav-link"><?= showText('EVENTS_PAGE') ?></a>
                 </li>
 
                 <li class="nav-item">

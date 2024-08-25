@@ -18,6 +18,8 @@ define("PATH_LOGIN", "/entrar");
 define("PATH_PROFILE", "/usuario/perfil");
 define("PATH_CREATE_ACCOUNT", "/registrar");
 define("PATH_FORGOT_PASSWORD", "/usuario/recuperar-senha");
+define("PATH_LISTAGENS", "/anuncios");
+define("PATH_EVENTS", "/eventos");
 
 // Page Path ADM
 define("PATH_ADM_LOGIN", "/app/entrar");
@@ -32,6 +34,8 @@ define("ADVERTISERS_PAGE", "Anuncie aqui");
 define("LOGIN_PAGE", "Entrar");
 define("PROFILE_PAGE", "Perfil");
 define("CREATE_ACCOUNT_PAGE", "Criar minha conta");
+define("LISTAGENS_PAGE", "Anúncios");
+define("EVENTS_PAGE", "Eventos");
 
 // ALT images
 define("ALT_MAINTENANCE", "Imagem de manutenção");
@@ -48,3 +52,7 @@ define("LOGOUT_MESSAGE", "Você se desconectou com sucesso. Até a próxima!");
 define("NOT_HAVE_PERMISSION_AREA", "Você não tem permissão para acessar está area.");
 define("FATAL_ERROR", "Ops, ocorreu um erro, tente novamente.");
 define("NOT_HAVE_ACCOUNT", "Não possui conta?");
+define("NAVIGATION", "Navegação");
+define("SOCIAL_MEDIA", "Redes sociais");
+define("DEVELOPER_BY", "Desenvolvido por:");
+define("ILLUSTRATIONS_BY", "Ilustrações de");
