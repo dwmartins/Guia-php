@@ -23,7 +23,7 @@ $logoHeader = empty($siteInfo->getLogoImage()) ? "/assets/img/default/defaultLog
                 <?php if (isLoggedIn()): ?>
                     <li class="nav-item logged_small mt-2">
                         <i class="bi bi-person-fill me-1"></i>
-                        <p class="m-0 text-secondary"><i class="fa-regular fa-user me-2"></i><?= getLoggedUser()->getFulName() ?></p>
+                        <p class="m-0 text-secondary"><i class="fa-regular fa-user me-2"></i><?= getLoggedUser()->getFullName() ?></p>
                     </li>
                     <hr>
                     <li class="nav-item logged_small">

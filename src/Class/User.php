@@ -230,7 +230,7 @@ class User {
         $this->updatedAt = $updatedAt;
     }
 
-    public function getFulName(): string {
+    public function getFullName(): string {
         return $this->name . ' ' . $this->lastName; 
     }
 

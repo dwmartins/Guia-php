@@ -394,3 +394,21 @@ input[type="checkbox"]:focus {
         display: none;
     }
 }
+
+#userPanelView .user_photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 8px solid #ffff;
+    object-fit: cover; 
+}
+
+#userPanelView .img_no_ads {
+    width: 60%;
+}
+
+@media screen and (max-width: 768px){
+    #userPanelView .img_no_ads {
+        width: 90%;
+    } 
+}

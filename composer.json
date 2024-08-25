@@ -14,7 +14,8 @@
             "src/Utils/Translations.php",
             "src/Utils/UserSession.php",
             "src/Utils/SiteInfo.php",
-            "src/Utils/head.php"
+            "src/Utils/head.php",
+            "src/Utils/Dates.php"
         ]
     },
     "authors": [
