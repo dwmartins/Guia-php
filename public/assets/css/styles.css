@@ -206,10 +206,6 @@ a.text-primary:active {
     color: var(--custom-dark);
 }
 
-.bg-ice-white {
-    background-color: #f8f9fa;
-}
-
 .bg-gray-200 {
     background-color: #f8f9fa;
 }
@@ -405,7 +401,7 @@ input[type="checkbox"]:focus {
     }
 }
 
-#userPanelView .user_photo {
+#userPanelView .user_photo, #profileView .user_photo {
     width: 160px;
     height: 160px;
     border-radius: 50%;
@@ -421,4 +417,49 @@ input[type="checkbox"]:focus {
     #userPanelView .img_no_ads {
         width: 90%;
     } 
+}
+
+#profileView .user_info_card {
+    top: 60px;
+}
+
+@media screen and (max-width: 992px){
+    #profileView .user_info_card {
+        top: 0;
+        position: relative;
+    }
+}
+
+#profileView .full_name {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    max-width: 280px;
+}
+
+@media screen and (max-width: 340px){
+    #profileView .full_name {
+        max-width: 200px;
+    }
+}
+
+#profileView .list-group-item {
+    border-left: 3px solid transparent;
+    padding-left: 10px;
+    transition: 0.2s ease;
+}
+
+#profileView .list-group-item:hover {
+    color: var(--bs-primary);
+}
+
+#profileView .list-group-item i {
+    width: 19px;
+    margin-right: 10px;
+}
+
+#profileView .list-group-item.active {
+    color: var(--bs-primary);
+    background-color: transparent;
+    border-left: 3px solid var(--bs-primary) !important;
 }

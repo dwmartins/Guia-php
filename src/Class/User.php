@@ -15,11 +15,13 @@ class User {
     private string $role = "visitor"; // ['support', 'admin', 'mod', 'sponsor', visitor, 'test']
     private string $description = "";
     private string $phone = "";
-    private ?string $dateOfBirth = null;
+    private ?string $dateOfBirth = "";
     private string $address = "";
+    private string $complement = "";
     private string $city = "";
     private string $zipCode = "";
     private string $state = "";
+    private string $country = "";
     private string $photo = "";
     private string $acceptsEmails = "Y";
     private string $publishContactInfo = "N";
@@ -60,9 +62,11 @@ class User {
             "photo"                 => $this->photo,
             "dateOfBirth"           => $this->dateOfBirth,
             "address"               => $this->address,
+            "complement"            => $this->complement,
             "city"                  => $this->city,
             "zipCode"               => $this->zipCode,
             "state"                 => $this->state,
+            "country"               => $this->country,
             "acceptsEmails"         => $this->acceptsEmails,
             "publishContactInfo"    => $this->publishContactInfo,
             "createdAt"             => $this->createdAt,
@@ -174,6 +178,14 @@ class User {
         $this->address = $address;
     }
 
+    public function getComplement(): string {
+        return $this->complement;
+    }
+
+    public function setComplement($complement): void {
+        $this->complement = $complement;
+    }
+
     public function getCity(): string {
         return $this->city;
     }
@@ -196,6 +208,14 @@ class User {
 
     public function setState(string $state): void {
         $this->state = $state;
+    }
+
+    public function getCountry(): string {
+        return $this->country;
+    } 
+    
+    public function setCountry($country): void {
+        $this->country = $country;
     }
 
     public function getAcceptsEmails(): string {

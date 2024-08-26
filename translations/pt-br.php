@@ -7,10 +7,22 @@ define("TITLE_ENTER", "Entrar");
 define("LABEL_EMAIL", "E-mail");
 define("LABEL_PASSWORD" , "Senha");
 define("LABEL_ENTER", "Entrar");
+define("LABEL_NAME", "Nome");
+define("LAST_NAME", "Sobrenome");
+define("DATE_BIRTH", "Data de nascimento");
+define("LABEL_PHONE", "Telefone");
+define("LABEL_DESCRIPTION", "Descrição");
+define("LABEL_ADDRESS", "Endereço");
+define("LABEL_COMPLEMENT", "Complemento");
+define("LABEL_CITY", "Cidade");
+define("LABEL_ZIP_CODE", "Cep");
+define("LABEL_STATE", "Estado");
+define("LABEL_COUNTRY", "País");
 
 // Page Path
 define("PATH_LOGOUT", "/usuario/logout");
 define("PATH_USER_PANEL", "/usuario/painel");
+define("PATH_USER_PROFILE", "/usuario/perfil");
 define("PATH_CONTACT", "/contato");
 define("PATH_PLANS", "/planos");
 define("PATH_BLOG", "/blog");
@@ -23,7 +35,7 @@ define("PATH_EVENTS", "/eventos");
 
 // Page Path ADM
 define("PATH_ADM_LOGIN", "/app/entrar");
-define("PATH_ADM_SETTINGS", "app/settings/general-settings");
+define("PATH_ADM_SETTINGS", "app/configurações/configurações-gerais");
 
 // Page label
 define("HOME_PAGE", "Incio");
@@ -66,6 +78,7 @@ define("PLACEHOLDER_SEARCH_LOCATIONS", "Lanchonetes, pizzarias, hotel...");
 define("MAINTENANCE_ALERT", "Site em manutenção");
 define("PUBLISH", "Publicar");
 define("USER_PANEL", "Painel do usuário");
+define("USER_PROFILE", "Minha conta");
 define("MEMBER_SINCE", "Membro desde");
 define("EDIT_PROFILE", "Editar perfil");
 define("WELCOME_TO_YOU_AREA", "Bem-vindo à sua área do usuário! Aqui, você pode gerenciar seus anúncios e visualizar informações pessoais. Tenha controle total sobre o conteúdo que você compartilha e mantenha seus dados atualizados.");
@@ -74,3 +87,10 @@ define("GOOD_AFTERNOON", "Boa tarde");
 define("GOOD_NIGHT", "Boa noite");
 define("DONT_HAVE_ADS", "Parece que você não possui nenhum anúncio em nosso site.");
 define("ADVERTISE_NOW", "Anunciar agora");
+define("MY_ACCOUNT", "Minha conta");
+define("BASIC_INFO", "Informações básicas");
+define("ADDRESS", "Endereço");
+define("PASSWORD", "Senha");
+define("SETTINGS", "Configurações");
+define("DELETE_ACCOUNT", "Excluir conta");
+define("SALVE_CHANGES", "Salvar Alterações");

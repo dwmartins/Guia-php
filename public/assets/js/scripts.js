@@ -110,3 +110,43 @@ if(formSearchHome) {
 
     formSearchHome.addEventListener('submit', validFormSearch);
 }
+
+// Fixes scrolling for mobile in user profile area
+$(document).ready(function () {
+    function isMobile() {
+        return window.innerWidth <= 992; 
+    }
+
+    function adjustScroll() {
+        const menuItems = document.querySelectorAll('#list_menu .list-group-item');
+        menuItems.forEach(item => {
+            item.addEventListener('click', function(event) {
+                if (isMobile()) {
+                    event.preventDefault();
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    }
+
+    adjustScroll();
+
+    window.addEventListener('resize', function() {
+        if (!isMobile()) {
+            document.querySelectorAll('#list_menu .list-group-item').forEach(item => {
+                item.removeEventListener('click', adjustScroll);
+            });
+        } else {
+            adjustScroll();
+        }
+    });
+});

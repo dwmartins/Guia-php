@@ -7,10 +7,22 @@ define("TITLE_ENTER", "Login");
 define("LABEL_EMAIL", "Email");
 define("LABEL_PASSWORD" , "Password");
 define("LABEL_ENTER", "Enter");
+define("LABEL_NAME", "name");
+define("LAST_NAME", "Last name");
+define("DATE_BIRTH", "Date of birth");
+define("LABEL_PHONE", "Phone");
+define("LABEL_DESCRIPTION", "Description");
+define("LABEL_ADDRESS", "Address");
+define("LABEL_COMPLEMENT", "Complemento");
+define("LABEL_CITY", "City");
+define("LABEL_ZIP_CODE", "Zip code");
+define("LABEL_STATE", "State");
+define("LABEL_COUNTRY", "País");
 
 // Page Path
 define("PATH_LOGOUT", "/user/logout");
 define("PATH_USER_PANEL", "/user/panel");
+define("PATH_USER_PROFILE", "/user/profile");
 define("PATH_CONTACT", "/contact");
 define("PATH_PLANS", "/plans");
 define("PATH_BLOG", "/blog");
@@ -23,6 +35,7 @@ define("PATH_EVENTS", "/events");
 
 // Page Path ADM
 define("PATH_ADM_LOGIN", "/app/login");
+define("PATH_ADM_SETTINGS", "app/settings/general-settings");
 
 // Page label
 define("HOME_PAGE", "Home");
@@ -65,6 +78,7 @@ define("PLACEHOLDER_SEARCH_LOCATIONS", "Snack bars, pizzerias, hotels...");
 define("MAINTENANCE_ALERT", "Site under maintenance");
 define("PUBLISH", "Publish");
 define("USER_PANEL", "User Panel");
+define("USER_PROFILE", "My account");
 define("MEMBER_SINCE", "Member since");
 define("EDIT_PROFILE", "Edit profile");
 define("WELCOME_TO_YOU_AREA", "Welcome to your user area! Here you can manage your ads and view personal information. Have full control over the content you share and keep your data up to date.");
@@ -73,3 +87,10 @@ define("GOOD_AFTERNOON", "Good afternoon");
 define("GOOD_NIGHT", "Good night");
 define("DONT_HAVE_ADS", "It looks like you don't have any ads on our site.");
 define("ADVERTISE_NOW", "Advertise Now");
+define("MY_ACCOUNT", "Minha conta");
+define("BASIC_INFO", "Basic Information");
+define("ADDRESS", "Endereço");
+define("PASSWORD", "Password");
+define("SETTINGS", "Settings");
+define("DELETE_ACCOUNT", "Delete account");
+define("SALVE_CHANGES", "Save Changes");
