@@ -35,8 +35,11 @@
                     <div id="list-item-1" class="container bg-gray-200 shadow rounded rounded-2 p-3 py-4 mb-4">
                         <?php require ROOT_COMPONENTS . "/public/forms/basicUserInfo.php" ?>
                     </div>
-                    <div id="list-item-2" class="container bg-gray-200 shadow rounded rounded-2 p-3 py-4">
+                    <div id="list-item-2" class="container bg-gray-200 shadow rounded rounded-2 p-3 py-4 mb-4">
                         <?php require ROOT_COMPONENTS . "/public/forms/userAddress.php" ?>
+                    </div>
+                    <div id="list-item-3" class="container bg-gray-200 shadow rounded rounded-2 p-3 py-4 mb-4">
+                        <?php require ROOT_COMPONENTS . "/public/forms/resetPassword.php" ?>
                     </div>
                 </div>
             </div>

@@ -18,6 +18,9 @@ define("LABEL_CITY", "City");
 define("LABEL_ZIP_CODE", "Zip code");
 define("LABEL_STATE", "State");
 define("LABEL_COUNTRY", "País");
+define("LABEL CURRENT PASSWORD", "Current password");
+define("LABEL_NEW_PASSWORD", "New Password");
+define("LABEL_CONFIRM_PASSWORD", "Confirm password");
 
 // Page Path
 define("PATH_LOGOUT", "/user/logout");
@@ -94,3 +97,6 @@ define("PASSWORD", "Password");
 define("SETTINGS", "Settings");
 define("DELETE_ACCOUNT", "Delete account");
 define("SALVE_CHANGES", "Save Changes");
+define("PASSWORDS_NOT_MATCH", "Passwords do not match.");
+define("PASSWORD_INCORRECT", "Current password is incorrect. Please make sure you have entered the correct password.");
+define("PASSWORD_UPDATE", "Your password has been changed successfully.");

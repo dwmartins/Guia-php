@@ -18,6 +18,9 @@ define("LABEL_CITY", "Cidade");
 define("LABEL_ZIP_CODE", "Cep");
 define("LABEL_STATE", "Estado");
 define("LABEL_COUNTRY", "País");
+define("LABEL_CURRENT_PASSWORD", "Senha atual");
+define("LABEL_NEW_PASSWORD", "Nova senha");
+define("LABEL_CONFIRM_PASSWORD", "Confirmar senha");
 
 // Page Path
 define("PATH_LOGOUT", "/usuario/logout");
@@ -94,3 +97,6 @@ define("PASSWORD", "Senha");
 define("SETTINGS", "Configurações");
 define("DELETE_ACCOUNT", "Excluir conta");
 define("SALVE_CHANGES", "Salvar Alterações");
+define("PASSWORDS_NOT_MATCH", "As senhas não coincidem.");
+define("PASSWORD_INCORRECT", "Senha atual incorreta. Certifique-se de que você inseriu a senha correta.");
+define("PASSWORD_UPDATE", "Sua senha foi alterada com sucesso.");

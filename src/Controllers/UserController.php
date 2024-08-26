@@ -32,4 +32,28 @@ class UserController {
             ]
         ];
     }
+
+    public function updatePassword(Request $request, $params) {
+        try {
+            $body = $request->body();
+            $user = $request->getAttribute('userRequest');
+
+            if($body['newPassword'] != $body['confirmPassword']) {
+                return redirectWithMessage(PATH_USER_PROFILE, "error", PASSWORDS_NOT_MATCH);
+            }
+
+            if(!password_verify($body['currentPassword'], $user->getPassword())) {
+                return redirectWithMessage(PATH_USER_PROFILE, "error", PASSWORD_INCORRECT);
+            }
+
+            $user->setPassword($body['newPassword']);
+            $user->save();
+
+            return redirectWithMessage(PATH_USER_PROFILE, "success", PASSWORD_UPDATE);
+
+        } catch (\Exception $e) {
+            logError($e->getMessage());
+            redirectWithMessage(PATH_USER_PROFILE, "error", FATAL_ERROR);
+        }
+    }
 }

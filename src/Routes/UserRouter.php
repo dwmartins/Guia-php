@@ -3,6 +3,8 @@
 use App\Http\Route;
 use App\Middleware\UserMiddleware;
 
+// *********** VIEWS *************//
+
 // User Panel view
 Route::get(PATH_USER_PANEL, "UserController@panelView", [
     [UserMiddleware::class, 'isAuth']
@@ -10,5 +12,12 @@ Route::get(PATH_USER_PANEL, "UserController@panelView", [
 
 // User Profile view
 Route::get(PATH_USER_PROFILE, "UserController@profileView", [
+    [UserMiddleware::class, 'isAuth']
+]);
+
+// ***********END VIEWS *************//
+
+// Change Password
+Route::post('/user/password', 'UserController@updatePassword', [
     [UserMiddleware::class, 'isAuth']
 ]);
