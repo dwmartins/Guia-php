@@ -5,12 +5,12 @@
                 <h1 class="text-center text-secondary mb-3"><?= showText('LOGIN') ?></h1>
 
                 <div class="mb-3">
-                    <label for="email" class="text-secondary"><span class="text-danger me-1">*</span><?= showText('LABEL_EMAIL') ?></label>
+                    <label for="email" class="text-secondary mb-2"><span class="text-danger me-1">*</span><?= showText('LABEL_EMAIL') ?></label>
                     <input type="email" name="email" id="email" autocomplete="email" class="form-control custom_focus">
                 </div>
 
                 <div class="mb-3">
-                    <label for="password" class="text-secondary"><span class="text-danger me-1">*</span><?= showText('LABEL_PASSWORD') ?></label>
+                    <label for="password" class="text-secondary mb-2"><span class="text-danger me-1">*</span><?= showText('LABEL_PASSWORD') ?></label>
                     <input type="password" name="password" id="password" class="form-control custom_focus">
                 </div>
 

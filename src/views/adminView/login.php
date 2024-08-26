@@ -3,12 +3,12 @@
         <h1 class="text-center custom_dark mb-3"><?= showText('PANEL') ?></h1>
 
         <div class="mb-3">
-            <label for="email"><span class="text-danger me-1">*</span><?= showText('LABEL_EMAIL') ?></label>
+            <label for="email" class="text-secondary mb-2"><span class="text-danger me-1">*</span><?= showText('LABEL_EMAIL') ?></label>
             <input type="email" name="email" id="email" autocomplete="email" class="form-control custom_focus">
         </div>
 
         <div class="mb-3">
-            <label for="password"><span class="text-danger me-1">*</span><?= showText('LABEL_PASSWORD') ?></label>
+            <label for="password" class="text-secondary mb-2"><span class="text-danger me-1">*</span><?= showText('LABEL_PASSWORD') ?></label>
             <input type="password" name="password" id="password" class="form-control custom_focus">
         </div>
 
