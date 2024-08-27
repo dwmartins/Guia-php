@@ -463,3 +463,11 @@ input[type="checkbox"]:focus {
     background-color: transparent;
     border-left: 3px solid var(--bs-primary) !important;
 }
+
+#formResetPassword .icon_show_password {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
