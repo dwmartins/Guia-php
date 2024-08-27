@@ -48,3 +48,8 @@ function showAlert(type, message) {
         toastEl.remove();
     });
 }
+
+function validString(string) {
+    const safeCharRegex = /^[A-Za-zÀ-ÖØ-Ýà-öø-ÿ0-9\s,.'\"!?()\-@#&*:+]+$/;
+    return safeCharRegex.test(string);
+}

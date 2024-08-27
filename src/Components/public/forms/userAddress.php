@@ -1,4 +1,4 @@
-<form action="#" method="post" class="row">
+<form id="formUserAddress" action="/user/address" method="post" class="row">
     <h5 class="text-secondary mb-3"><?= ADDRESS ?></h5>
 
     <hr class="text-secondary">
@@ -32,3 +32,36 @@
         <button class="btn btn-sm btn-outline-primary"><?= SALVE_CHANGES ?></button>
     </div>
 </form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const formUserAddress = $('#formUserAddress');
+
+        formUserAddress.on('submit', function(event) {
+            const fields = $('#formUserAddress input');
+
+            const formFields = {
+                address: LABEL_ADDRESS,
+                complement: LABEL_COMPLEMENT,
+                city: LABEL_CITY,
+                zipCode: LABEL_ZIP_CODE,
+                state: LABEL_STATE,
+                country: LABEL_COUNTRY
+            }
+
+            fields.each(function() {
+                const fieldName = $(this).attr('name');
+                const value = $(this).val();
+
+                if(!validString(value)) {
+                    const errorMessage = FIELD_INVALID.replace('{field}', formFields[fieldName]);
+                    showAlert('error', errorMessage);
+                    $(this).addClass('field_invalid');
+                } else {
+                    $(this).removeClass('field_invalid');
+                }
+            })
+            event.preventDefault();
+        });
+    })
+</script>
