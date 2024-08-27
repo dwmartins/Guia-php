@@ -102,3 +102,5 @@ define("PASSWORD_INCORRECT", "Senha atual incorreta. Certifique-se de que você 
 define("PASSWORD_UPDATE", "Sua senha foi alterada com sucesso.");
 define("MINIMUM_CHARACTERS_PASSWORD", "Mínimo de 6 caracteres - quanto mais, melhor");
 define("ADDRESS_UPDATE", "Informações de endereço atualizadas com sucesso.");
+define("EMAIL_IN_USE", "Este e-mail já está em uso.");
+define("USER_UPDATE", "Usuário atualizado com sucesso.");

@@ -22,6 +22,12 @@ Route::post('/user/password', 'UserController@updatePassword', [
     [UserMiddleware::class, 'isAuth']
 ]);
 
+// Update basic info
+Route::post('/user/basic-info', 'UserController@update', [
+    [UserMiddleware::class, 'isAuth']
+]);
+
+// Update Address
 Route::post('/user/address', 'UserController@updateAddress', [
     [UserMiddleware::class, 'isAuth']
 ]);

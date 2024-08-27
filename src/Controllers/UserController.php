@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Http\Request;
+use App\Models\UserDAO;
 
 class UserController {
     public function panelView(Request $request, $params) {
@@ -31,6 +32,30 @@ class UserController {
                 "userImg" => $userImg
             ]
         ];
+    }
+
+    public function update(Request $request, $params) {
+        try {
+            $body = $request->body();
+            $user = $request->getAttribute('userRequest');
+
+            $emailExists = UserDAO::fetchByEmail($body['email']);
+
+            if($emailExists && $emailExists['id'] != $user->getId()) {
+                return redirectWithMessage(PATH_USER_PROFILE, "error", EMAIL_IN_USE);
+            }
+
+            $user->update($body);
+            $user->save();
+            
+            setUserLogged($user);
+
+            return redirectWithMessage(PATH_USER_PROFILE, "success", USER_UPDATE);
+
+        } catch (\Exception $e) {
+            logError($e->getMessage());
+            redirectWithMessage(PATH_USER_PROFILE, "error", FATAL_ERROR);
+        }
     }
 
     public function updatePassword(Request $request, $params) {

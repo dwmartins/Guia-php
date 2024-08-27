@@ -102,3 +102,5 @@ define("PASSWORD_INCORRECT", "Current password is incorrect. Please make sure yo
 define("PASSWORD_UPDATE", "Your password has been changed successfully.");
 define("MINIMUM_CHARACTERS_PASSWORD", "Minimum 6 characters - the more the better");
 define("ADDRESS_UPDATE", "Address information updated successfully.");
+define("EMAIL_IN_USE", "This email is already in use.");
+define("USER_UPDATE", "User updated successfully.");
