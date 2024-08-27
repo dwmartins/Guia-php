@@ -56,4 +56,22 @@ class UserController {
             redirectWithMessage(PATH_USER_PROFILE, "error", FATAL_ERROR);
         }
     }
+
+    public function updateAddress(Request $request, $params) {
+        try {
+            $body = $request->body();
+            $user = $request->getAttribute('userRequest');
+
+            $user->update($body);
+            $user->save();
+
+            setUserLogged($user);
+
+            return redirectWithMessage(PATH_USER_PROFILE, "success", ADDRESS_UPDATE);
+
+        } catch (\Exception $e) {
+            logError($e->getMessage());
+            redirectWithMessage(PATH_USER_PROFILE, "error", FATAL_ERROR);
+        }
+    }
 }

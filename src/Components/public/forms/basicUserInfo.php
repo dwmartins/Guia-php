@@ -1,4 +1,4 @@
-<form id="formUserBasicInfo" action="user/basic-info" method="post" class="row">
+<form id="formUserBasicInfo" action="/user/basic-info" method="post" class="row">
     <h5 class="text-secondary mb-3"><?= BASIC_INFO ?></h5>
 
     <hr class="text-secondary">
@@ -41,6 +41,7 @@
 
         formUserBasicInfo.on('submit', function(event) {
             const fields = $('#formUserBasicInfo input, textarea');
+            let isValid = true;
 
             const fieldLabels = {
                 name: LABEL_NAME,
@@ -52,17 +53,27 @@
 
             for (let label in fieldLabels) {
                 const field = formUserBasicInfo.find(`[name="${label}"]`);
-                console.log(field)
                 const value = field.val().trim();
 
                 if(!validString(value)) {
                     const errorMessage = FIELD_INVALID.replace('{field}', fieldLabels[label]);
                     showAlert('error', errorMessage);
                     $(field).addClass('field_invalid');
+                    isValid = false;
                     event.preventDefault();
                 } else {
                     $(field).removeClass('field_invalid');
                 }
+            }
+            
+            if(isValid) {
+                $('#formUserBasicInfo button').empty();
+                $('#formUserBasicInfo button').html(`
+                    <div id="spinnerLoading" class="item_center gap-2">
+                        <div class="spinner-border" role="status"></div>
+                        <p class="m-0">${WAIT}</p>
+                    </div>
+                `).prop('disabled', true);
             }
         });
     })

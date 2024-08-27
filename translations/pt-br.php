@@ -101,3 +101,4 @@ define("PASSWORDS_NOT_MATCH", "As senhas não coincidem.");
 define("PASSWORD_INCORRECT", "Senha atual incorreta. Certifique-se de que você inseriu a senha correta.");
 define("PASSWORD_UPDATE", "Sua senha foi alterada com sucesso.");
 define("MINIMUM_CHARACTERS_PASSWORD", "Mínimo de 6 caracteres - quanto mais, melhor");
+define("ADDRESS_UPDATE", "Informações de endereço atualizadas com sucesso.");

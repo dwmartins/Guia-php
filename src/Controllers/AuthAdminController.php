@@ -48,7 +48,7 @@ class AuthAdminController {
                         $userAccess->save();
                     }
 
-                    $_SESSION['userLogged'] = $user->toArray();
+                    setUserLogged($user);
 
                     redirect("/app");
                     return;
@@ -71,7 +71,7 @@ class AuthAdminController {
                 $user->setRememberToken($newToken);
                 $user->save();
 
-                $_SESSION['userLogged'] = $user->toArray();
+                setUserLogged($user);
                 return true;
 
             } else {

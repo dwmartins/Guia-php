@@ -52,7 +52,7 @@ class AuthController {
                             $userAccess->save();
                         }
 
-                        $_SESSION['userLogged'] = $user->toArray();
+                        setUserLogged($user);
 
                         redirect("/");
                         return;

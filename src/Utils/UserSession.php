@@ -15,10 +15,20 @@ function getLoggedUser() {
     return null;
 }
 
+/**
+ * Checks if a user is currently logged in.
+ * 
+ * @return bool
+ */
 function isLoggedIn() {
     return isset($_SESSION['userLogged']);
 }
 
+/**
+ * Checks if the logged in user has administrative privileges.
+ * 
+ * @return bool
+ */
 function isAdmin() {
     $allowedRoles = ["support", "admin", "mod", "test"];
 
@@ -28,4 +38,8 @@ function isAdmin() {
     }
 
     return false;
+}
+
+function setUserLogged(User $user) {
+    $_SESSION['userLogged'] = $user->toArray();
 }

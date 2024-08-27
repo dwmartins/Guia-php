@@ -39,6 +39,7 @@
 
         formUserAddress.on('submit', function(event) {
             const fields = $('#formUserAddress input');
+            let isValid = true;
 
             const formFields = {
                 address: LABEL_ADDRESS,
@@ -57,11 +58,22 @@
                     const errorMessage = FIELD_INVALID.replace('{field}', formFields[fieldName]);
                     showAlert('error', errorMessage);
                     $(this).addClass('field_invalid');
+                    isValid = false;
                     event.preventDefault();
                 } else {
                     $(this).removeClass('field_invalid');
                 }
-            })
+            });
+
+            if(isValid) {
+                $('#formUserAddress button').empty();
+                $('#formUserAddress button').html(`
+                    <div id="spinnerLoading" class="item_center gap-2">
+                        <div class="spinner-border" role="status"></div>
+                        <p class="m-0">${WAIT}</p>
+                    </div>
+                `).prop('disabled', true);
+            }
         });
     })
 </script>

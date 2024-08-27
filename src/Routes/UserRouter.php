@@ -21,3 +21,7 @@ Route::get(PATH_USER_PROFILE, "UserController@profileView", [
 Route::post('/user/password', 'UserController@updatePassword', [
     [UserMiddleware::class, 'isAuth']
 ]);
+
+Route::post('/user/address', 'UserController@updateAddress', [
+    [UserMiddleware::class, 'isAuth']
+]);

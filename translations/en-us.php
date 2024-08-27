@@ -101,3 +101,4 @@ define("PASSWORDS_NOT_MATCH", "Passwords do not match.");
 define("PASSWORD_INCORRECT", "Current password is incorrect. Please make sure you have entered the correct password.");
 define("PASSWORD_UPDATE", "Your password has been changed successfully.");
 define("MINIMUM_CHARACTERS_PASSWORD", "Minimum 6 characters - the more the better");
+define("ADDRESS_UPDATE", "Address information updated successfully.");
