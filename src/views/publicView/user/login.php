@@ -11,7 +11,10 @@
 
                 <div class="mb-3">
                     <label for="password" class="text-secondary mb-2"><span class="text-danger me-1">*</span><?= showText('LABEL_PASSWORD') ?></label>
-                    <input type="password" name="password" id="password" class="form-control custom_focus">
+                    <div class="position-relative">
+                        <input type="password" name="password" id="password" class="form-control custom_focus">
+                        <i class="fa-regular icon_show_password fa-eye text-secondary"></i>
+                    </div>
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center gap-1 mb-3">
