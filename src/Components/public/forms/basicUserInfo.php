@@ -1,4 +1,4 @@
-<form action="#" method="post" class="row">
+<form id="formUserBasicInfo" action="user/basic-info" method="post" class="row">
     <h5 class="text-secondary mb-3"><?= BASIC_INFO ?></h5>
 
     <hr class="text-secondary">
@@ -34,3 +34,36 @@
         <button class="btn btn-sm btn-outline-primary"><?= SALVE_CHANGES ?></button>
     </div>
 </form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const formUserBasicInfo = $('#formUserBasicInfo');
+
+        formUserBasicInfo.on('submit', function(event) {
+            const fields = $('#formUserBasicInfo input, textarea');
+
+            const fieldLabels = {
+                name: LABEL_NAME,
+                lastName: LABEL_LAST_NAME,
+                email: LABEL_EMAIL,
+                phone: LABEL_PHONE,
+                description: LABEL_DESCRIPTION
+            }
+
+            for (let label in fieldLabels) {
+                const field = formUserBasicInfo.find(`[name="${label}"]`);
+                console.log(field)
+                const value = field.val().trim();
+
+                if(!validString(value)) {
+                    const errorMessage = FIELD_INVALID.replace('{field}', fieldLabels[label]);
+                    showAlert('error', errorMessage);
+                    $(field).addClass('field_invalid');
+                    event.preventDefault();
+                } else {
+                    $(field).removeClass('field_invalid');
+                }
+            }
+        });
+    })
+</script>

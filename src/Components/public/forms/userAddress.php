@@ -57,11 +57,11 @@
                     const errorMessage = FIELD_INVALID.replace('{field}', formFields[fieldName]);
                     showAlert('error', errorMessage);
                     $(this).addClass('field_invalid');
+                    event.preventDefault();
                 } else {
                     $(this).removeClass('field_invalid');
                 }
             })
-            event.preventDefault();
         });
     })
 </script>
