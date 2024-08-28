@@ -42,6 +42,7 @@
         formUserBasicInfo.on('submit', function(event) {
             const fields = $('#formUserBasicInfo input, textarea');
             let isValid = true;
+            event.preventDefault();
 
             const fieldLabels = {
                 name: LABEL_NAME,
@@ -60,7 +61,6 @@
                     showAlert('error', errorMessage);
                     $(field).addClass('field_invalid');
                     isValid = false;
-                    event.preventDefault();
                 } else {
                     $(field).removeClass('field_invalid');
                 }
