@@ -42,8 +42,7 @@
         formUserBasicInfo.on('submit', function(event) {
             const fields = $('#formUserBasicInfo input, textarea');
             let isValid = true;
-            event.preventDefault();
-
+            
             const fieldLabels = {
                 name: LABEL_NAME,
                 lastName: LABEL_LAST_NAME,
@@ -51,16 +50,17 @@
                 phone: LABEL_PHONE,
                 description: LABEL_DESCRIPTION
             }
-
+            
             for (let label in fieldLabels) {
                 const field = formUserBasicInfo.find(`[name="${label}"]`);
                 const value = field.val().trim();
-
+                
                 if(!validString(value)) {
                     const errorMessage = FIELD_INVALID.replace('{field}', fieldLabels[label]);
                     showAlert('error', errorMessage);
                     $(field).addClass('field_invalid');
                     isValid = false;
+                    event.preventDefault();
                 } else {
                     $(field).removeClass('field_invalid');
                 }
