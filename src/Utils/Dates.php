@@ -23,3 +23,18 @@ function getDateAsString($date) {
 
     return $formatter->format($dateTime);
 }
+
+function getSimpleDate($date) {
+    $format = getSetting('dateFormat') ?? 'DD-MM-YYYY';
+    $inputFormat = 'Y-m-d';
+    $dateTime = DateTime::createFromFormat($inputFormat, $date);
+
+    if($dateTime) {
+        $normalizedFormat = str_replace('-', '/', $format);
+        $phpFormat = str_replace(['DD', 'MM', 'YYYY'], ['d', 'm', 'Y'], $normalizedFormat);
+
+        return $dateTime->format($phpFormat);
+    }
+
+    return $date;
+}

@@ -1,8 +1,4 @@
 <form id="formUserAddress" action="/user/address" method="post" class="row">
-    <h5 class="text-secondary mb-3"><?= ADDRESS ?></h5>
-
-    <hr class="text-secondary">
-
     <div class="mb-3 col-12 col-md-6">
         <label for="address" class="text-secondary mb-2"><?= LABEL_ADDRESS ?></label>
         <input type="text" name="address" id="address" autocomplete="address" value="<?= $user->getAddress() ?>" class="form-control custom_focus text-secondary">

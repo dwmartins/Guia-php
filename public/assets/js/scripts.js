@@ -156,6 +156,12 @@ $(document).ready(function () {
             $icon.removeClass('fa-eye-slash').addClass('fa-eye');
         }
     });
+
+    // toggle user profile
+    $('[data-toggle]').on('click', function() {
+        let targetFormId  = $(this).data('toggle');
+        $(`#${targetFormId}`).slideToggle(300);
+    })
 });
 
 

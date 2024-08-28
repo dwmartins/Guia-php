@@ -1,8 +1,4 @@
 <form id="formResetPassword" action="/user/password" method="post" class="row">
-    <h5 class="text-secondary mb-3"><?= PASSWORD ?></h5>
-
-    <hr class="text-secondary">
-
     <div class="mb-3 col-12 col-md-4">
         <label for="currentPassword" class="text-secondary mb-2"><span class="text-danger me-1">*</span><?= LABEL_CURRENT_PASSWORD ?></label>
         <input type="password" name="currentPassword" id="currentPassword" class="form-control custom_focus text-secondary">
@@ -65,6 +61,16 @@
                 event.preventDefault();
                 showAlert('error', PASSWORD_MIN_LENGTH_REQUIREMENT);
                 return;
+            }
+
+            if(isValid) {
+                $('#formResetPassword button').empty();
+                $('#formResetPassword button').html(`
+                    <div id="spinnerLoading" class="item_center gap-2">
+                        <div class="spinner-border" role="status"></div>
+                        <p class="m-0">${WAIT}</p>
+                    </div>
+                `).prop('disabled', true);
             }
 
         });
