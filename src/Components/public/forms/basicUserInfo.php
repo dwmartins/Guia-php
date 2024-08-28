@@ -8,7 +8,7 @@
         <input type="text" name="name" id="name" autocomplete="name" value="<?= $user->getName() ?>" class="form-control custom_focus text-secondary">
     </div>
     <div class="mb-3 col-12 col-md-4">
-        <label for="lastName" class="text-secondary mb-2"><span class="text-danger me-1">*</span><?= LAST_NAME ?></label>
+        <label for="lastName" class="text-secondary mb-2"><span class="text-danger me-1">*</span><?= LABEL_LAST_NAME ?></label>
         <input type="text" name="lastName" id="lastName" autocomplete="lastName" value="<?= $user->getLastName() ?>" class="form-control custom_focus text-secondary">
     </div>
     <div class="mb-3 col-12 col-md-4">

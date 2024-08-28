@@ -8,7 +8,7 @@ define("LABEL_EMAIL", "Email");
 define("LABEL_PASSWORD" , "Password");
 define("LABEL_ENTER", "Enter");
 define("LABEL_NAME", "name");
-define("LAST_NAME", "Last name");
+define("LABEL_LAST_NAME", "Last name");
 define("DATE_BIRTH", "Date of birth");
 define("LABEL_PHONE", "Phone");
 define("LABEL_DESCRIPTION", "Description");
@@ -104,3 +104,5 @@ define("MINIMUM_CHARACTERS_PASSWORD", "Minimum 6 characters - the more the bette
 define("ADDRESS_UPDATE", "Address information updated successfully.");
 define("EMAIL_IN_USE", "This email is already in use.");
 define("USER_UPDATE", "User updated successfully.");
+define("FIELD_INVALID_CHARACTERS", "The field (%s) contains invalid characters.");
+define("REQUIRED_FIELD", "Field (%s) is required");

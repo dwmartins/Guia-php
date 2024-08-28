@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Http\Request;
 use App\Models\UserDAO;
+use App\Validators\UserValidator;
 
 class UserController {
     public function panelView(Request $request, $params) {
@@ -38,6 +39,12 @@ class UserController {
         try {
             $body = $request->body();
             $user = $request->getAttribute('userRequest');
+
+            $fieldsValid = UserValidator::update($body);
+
+            if(!$fieldsValid['isValid']) {
+                return redirectWithMessage(PATH_USER_PROFILE, "error", $fieldsValid['message']);
+            }
 
             $emailExists = UserDAO::fetchByEmail($body['email']);
 
@@ -86,6 +93,12 @@ class UserController {
         try {
             $body = $request->body();
             $user = $request->getAttribute('userRequest');
+
+            $fieldsValid = UserValidator::update($body);
+
+            if(!$fieldsValid['isValid']) {
+                return redirectWithMessage(PATH_USER_PROFILE, "error", $fieldsValid['message']);
+            }
 
             $user->update($body);
             $user->save();
