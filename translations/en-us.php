@@ -115,3 +115,4 @@ define("CONTACT_PUBLIC", "Make my contact details public.");
 define("DELETE_ACCOUNT_TEXT", "If you delete your account, you will lose all your data");
 define("ACTION_CANNOT_UNDONE", "This action cannot be undone");
 define("CONFIRM_DELETE_ACCOUNT", "I confirm that I would like to delete my account");
+define("ALERT_DELETE_ACCOUNT", "You need to confirm that you really want to delete your account");

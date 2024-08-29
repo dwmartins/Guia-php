@@ -1,4 +1,4 @@
-<form action="/user/delete" method="post" class="mt-5">
+<form id="formDeleteAccount" action="/user/delete" method="post" class="mt-5">
     <p class="fs-5 custom_dark mb-3"><?= DELETE_ACCOUNT ?></p>
 
     <div class="alert-danger alert border-0 d-flex flex-nowrap gap-4">
@@ -25,3 +25,17 @@
     </div>
 
 </form>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const formDeleteAccount = $('#formDeleteAccount');
+
+        formDeleteAccount.on('submit', function(event) {
+
+            if(!$("#confirmAccountDeletion").is(":checked")) {
+                showAlert('error', ALERT_DELETE_ACCOUNT);
+                event.preventDefault();
+            }
+        });
+    })
+
+</script>

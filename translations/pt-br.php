@@ -115,3 +115,4 @@ define("CONTACT_PUBLIC", "Tornar meus dados de contato públicos.");
 define("DELETE_ACCOUNT_TEXT", "Se você excluir sua conta, você perderá todos os seus dados");
 define("ACTION_CANNOT_UNDONE", "Esta ação não pode ser desfeita");
 define("CONFIRM_DELETE_ACCOUNT", "Confirmo que gostaria de excluir minha conta");
+define("ALERT_DELETE_ACCOUNT", "Você precisa confirmar se realmente deseja excluir sua conta.");

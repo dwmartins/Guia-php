@@ -14,3 +14,4 @@ const LABEL_LAST_NAME = "Last name";
 const LABEL_EMAIL = "Email";
 const LABEL_PHONE = "Phone";
 const LABEL_DESCRIPTION = "Description";
+const ALERT_DELETE_ACCOUNT = "You need to confirm that you really want to delete your account";

@@ -14,3 +14,4 @@ const LABEL_LAST_NAME = "Sobrenome";
 const LABEL_EMAIL = "E-mail";
 const LABEL_PHONE = "Telefone";
 const LABEL_DESCRIPTION = "Descrição";
+const ALERT_DELETE_ACCOUNT = "Você precisa confirmar se realmente deseja excluir sua conta";
