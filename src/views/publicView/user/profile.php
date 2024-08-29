@@ -19,13 +19,13 @@
 
                     <?php if ($user->getDateOfBirth()): ?>
                         <p class="text-secondary fs-7 mb-0">
-                            <i class="fa-regular fa-envelope me-2"></i>
+                            <i class="fa-solid fa-cake-candles me-2"></i>
                             <?= getSimpleDate($user->getDateOfBirth()) ?>
                         </p>
                     <?php endif ?>
 
                     <p class="text-secondary fs-7 mb-0">
-                        <i class="fa-solid fa-cake-candles me-2"></i>
+                        <i class="fa-regular fa-envelope me-2"></i>
                         <?= $user->getEmail() ?>
                     </p>
 
