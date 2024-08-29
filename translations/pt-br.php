@@ -112,3 +112,6 @@ define("MANAGE_PERSONAL_HERE", "Gerencie suas informações pessoais e configura
 define("UPDATE_TEXT", "Atualizar");
 define("AGREE_RECEIVE_MAIL", "Concordo em receber e-mails informativos e promocionais.");
 define("CONTACT_PUBLIC", "Tornar meus dados de contato públicos.");
+define("DELETE_ACCOUNT_TEXT", "Se você excluir sua conta, você perderá todos os seus dados");
+define("ACTION_CANNOT_UNDONE", "Esta ação não pode ser desfeita");
+define("CONFIRM_DELETE_ACCOUNT", "Confirmo que gostaria de excluir minha conta");

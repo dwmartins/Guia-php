@@ -112,3 +112,6 @@ define("MANAGE_PERSONAL_HERE", "Manage your Personal info and settings here.");
 define("UPDATE_TEXT", "Update");
 define("AGREE_RECEIVE_MAIL", "I agree to receive informational and promotional emails.");
 define("CONTACT_PUBLIC", "Make my contact details public.");
+define("DELETE_ACCOUNT_TEXT", "If you delete your account, you will lose all your data");
+define("ACTION_CANNOT_UNDONE", "This action cannot be undone");
+define("CONFIRM_DELETE_ACCOUNT", "I confirm that I would like to delete my account");
