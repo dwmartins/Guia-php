@@ -2,6 +2,7 @@
 
 // Pages titles
 define("TITLE_ENTER", "Login");
+define("TITLE_REGISTER", "Create account");
 
 // Form labels 
 define("LABEL_EMAIL", "Email");
@@ -30,11 +31,12 @@ define("PATH_CONTACT", "/contact");
 define("PATH_PLANS", "/plans");
 define("PATH_BLOG", "/blog");
 define("PATH_LOGIN", "/login");
+define("PATH_CREATE_ACCOUNT", "/create-account");
 define("PATH_PROFILE", "/user/profile");
-define("PATH_CREATE_ACCOUNT", "/register");
 define("PATH_FORGOT_PASSWORD", "/user/recover-password");
 define("PATH_LISTAGENS", "/listings");
 define("PATH_EVENTS", "/events");
+define("PATH_PRIVACY", "/privacy");
 
 // Page Path ADM
 define("PATH_ADM_LOGIN", "/app/login");
@@ -60,6 +62,7 @@ define("ALT_LOGIN", "Login Illustration");
 define("ALT_USER_IMG", "User image");
 define("ALT_NOT_LISTING", "No listing image");
 define("ALT_ACCOUNT", "User account image");
+define("ALT_REGISTER_IMG", "Register image");
 
 define("PANEL", "Panel");
 define("LOGIN", "Login");
@@ -71,6 +74,7 @@ define("LOGOUT_MESSAGE", "You have successfully logged out. See you next time!")
 define("NOT_HAVE_PERMISSION_AREA", "You do not have permission to access this area.");
 define("FATAL_ERROR", "Oops, an error occurred, please try again.");
 define("NOT_HAVE_ACCOUNT", "Don't have an account?");
+define("HAVE_ACCOUNT", "Already have an account?");
 define("NAVIGATION", "Navigation");
 define("SOCIAL_MEDIA", "Social media");
 define("DEVELOPER_BY", "Developed by:");
@@ -116,3 +120,6 @@ define("DELETE_ACCOUNT_TEXT", "If you delete your account, you will lose all you
 define("ACTION_CANNOT_UNDONE", "This action cannot be undone");
 define("CONFIRM_DELETE_ACCOUNT", "I confirm that I would like to delete my account");
 define("ALERT_DELETE_ACCOUNT", "You need to confirm that you really want to delete your account");
+define("NEW_ACCOUNT", "Create an account");
+define("PRIVACY", "By signing up, you agree to our");
+define("PRIVACY_PAGE", "Privacy Policy");

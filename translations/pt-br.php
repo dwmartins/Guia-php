@@ -2,6 +2,7 @@
 
 // Pages titles
 define("TITLE_ENTER", "Entrar");
+define("TITLE_REGISTER", "Criar conta");
 
 // Form labels
 define("LABEL_EMAIL", "E-mail");
@@ -30,11 +31,12 @@ define("PATH_CONTACT", "/contato");
 define("PATH_PLANS", "/planos");
 define("PATH_BLOG", "/blog");
 define("PATH_LOGIN", "/entrar");
+define("PATH_CREATE_ACCOUNT", "/criar-conta");
 define("PATH_PROFILE", "/usuario/perfil");
-define("PATH_CREATE_ACCOUNT", "/registrar");
 define("PATH_FORGOT_PASSWORD", "/usuario/recuperar-senha");
 define("PATH_LISTAGENS", "/anuncios");
 define("PATH_EVENTS", "/eventos");
+define("PATH_PRIVACY", "/privacidade");
 
 // Page Path ADM
 define("PATH_ADM_LOGIN", "/app/entrar");
@@ -60,6 +62,7 @@ define("ALT_LOGIN", "Ilustração de login");
 define("ALT_USER_IMG", "Imagem do usuário");
 define("ALT_NOT_LISTING", "Imagem de sem listagem");
 define("ALT_ACCOUNT", "Imagem da conta do usuário");
+define("ALT_REGISTER_IMG", "Imagem de registro");
 
 define("PANEL", "Painel");
 define("LOGIN", "Entrar");
@@ -71,6 +74,7 @@ define("LOGOUT_MESSAGE", "Você se desconectou com sucesso. Até a próxima!");
 define("NOT_HAVE_PERMISSION_AREA", "Você não tem permissão para acessar está area.");
 define("FATAL_ERROR", "Ops, ocorreu um erro, tente novamente.");
 define("NOT_HAVE_ACCOUNT", "Não possui conta?");
+define("HAVE_ACCOUNT", "Já possui conta?");
 define("NAVIGATION", "Navegação");
 define("SOCIAL_MEDIA", "Redes sociais");
 define("DEVELOPER_BY", "Desenvolvido por:");
@@ -116,3 +120,6 @@ define("DELETE_ACCOUNT_TEXT", "Se você excluir sua conta, você perderá todos 
 define("ACTION_CANNOT_UNDONE", "Esta ação não pode ser desfeita");
 define("CONFIRM_DELETE_ACCOUNT", "Confirmo que gostaria de excluir minha conta");
 define("ALERT_DELETE_ACCOUNT", "Você precisa confirmar se realmente deseja excluir sua conta.");
+define("NEW_ACCOUNT", "Criar conta");
+define("PRIVACY", "Ao se inscrever, você concorda com nossa");
+define("PRIVACY_PAGE", "Política de privacidade");

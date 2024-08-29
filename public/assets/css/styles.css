@@ -444,3 +444,11 @@ input[type="checkbox"]:focus {
 #basic_info_form, #address_form, #password_form, #settings_form {
     display: none;
 }
+
+#registerView {
+    min-height: calc(100vh - 130px);
+}
+
+#registerView form {
+    max-width: 400px;
+}

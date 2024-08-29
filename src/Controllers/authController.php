@@ -16,7 +16,7 @@ class AuthController {
             return [
                 'view' => 'publicView/user/login.php',
                 'data' => [
-                    'title' => getSiteInfo()->getWebSiteName() . ' | ' . TITLE_ENTER
+                    'title' => TITLE_ENTER . ' | ' . getSiteInfo()->getWebSiteName()
                 ]
             ];
 
@@ -24,6 +24,15 @@ class AuthController {
             logError($e->getMessage());
             redirectWithMessage(PATH_LOGIN, 'error', FATAL_ERROR);
         }
+    }
+
+    public function registerView(Request $request, $params) {
+        return [
+            "view" => "publicView/user/register.php",
+            "data" => [
+                "title" => TITLE_REGISTER . ' | ' . getSiteInfo()->getWebSiteName()
+            ]
+        ];
     }
 
     public function login(Request $request, $params) {
