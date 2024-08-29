@@ -49,6 +49,10 @@ class AuthController {
         try {
             $body = $request->body();
 
+            if(strlen($body['password']) < 4) {
+                return redirectWithMessage(PATH_CREATE_ACCOUNT, "error", PASSWORD_MIN_LENGTH_REQUIREMENT);
+            }
+
             $fieldsValid = UserValidator::update($body);
 
             if(!$fieldsValid['isValid']) {

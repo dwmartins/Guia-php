@@ -124,3 +124,4 @@ define("NEW_ACCOUNT", "Criar conta");
 define("PRIVACY", "Ao se inscrever, você concorda com nossa");
 define("PRIVACY_PAGE", "Política de privacidade");
 define("USER_CREATED", "Sua conta foi criada com sucesso.");
+define("PASSWORD_MIN_LENGTH_REQUIREMENT", "A senha deve conter pelo menos 4 caracteres.");

@@ -124,3 +124,4 @@ define("NEW_ACCOUNT", "Create an account");
 define("PRIVACY", "By signing up, you agree to our");
 define("PRIVACY_PAGE", "Privacy Policy");
 define("USER_CREATED", "Your account has been created successfully.");
+define("PASSWORD_MIN_LENGTH_REQUIREMENT", "Password must contain at least 4 characters.");
