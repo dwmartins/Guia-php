@@ -17,3 +17,6 @@ Route::post(PATH_LOGIN, 'AuthController@login');
 
 // Logout
 Route::get(PATH_LOGOUT, 'AuthController@logout');
+
+// Register
+Route::post("/register", 'AuthController@register');

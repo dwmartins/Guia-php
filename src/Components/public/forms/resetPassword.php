@@ -57,7 +57,7 @@
                 return;
             }
 
-            if(newPassword.val().length < 6) {
+            if(newPassword.val().length < 4) {
                 event.preventDefault();
                 showAlert('error', PASSWORD_MIN_LENGTH_REQUIREMENT);
                 return;

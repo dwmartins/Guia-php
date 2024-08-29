@@ -1,7 +1,7 @@
 const ALL_FIELDS_INVALID = "Preencha todos os campos obrigatórios"
 const WAIT = "Aguarde...";
 const PASSWORDS_NOT_MATCH = "As senhas não coincidem.";
-const PASSWORD_MIN_LENGTH_REQUIREMENT = "A nova senha deve conter pelo menos 6 caracteres.";
+const PASSWORD_MIN_LENGTH_REQUIREMENT = "A senha deve conter pelo menos 4 caracteres.";
 const FIELD_INVALID = "O campo ({field}) contém caracteres inválidos";
 const LABEL_ADDRESS = "Endereço";
 const LABEL_COMPLEMENT = "Complemento";

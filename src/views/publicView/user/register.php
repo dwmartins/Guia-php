@@ -52,10 +52,12 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const formRegister = $('#formRegister');
+        const password = $("#password");
 
         formRegister.on('submit', function(event) {
             const fields = $('#formRegister input');
             let isValid = true;
+            let fieldsValid = true;
 
             const fieldLabels = {
                 name: LABEL_NAME,
@@ -76,11 +78,22 @@
                     const errorMessage = FIELD_INVALID.replace('{field}', fieldLabels[label]);
                     showAlert('error', errorMessage);
                     $(field).addClass('field_invalid');
-                    isValid = false;
+                    fieldsValid = false;
     
                 } else {
                     $(field).removeClass('field_invalid');
                 }
+            }
+
+            if(password.val().length < 4) {
+                showAlert('error', PASSWORD_MIN_LENGTH_REQUIREMENT);
+                event.preventDefault();
+                return;
+            }
+
+            if(!fieldsValid) {
+                event.preventDefault();
+                return;
             }
 
             if(!isValid) {

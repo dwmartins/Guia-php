@@ -1,7 +1,7 @@
 const ALL_FIELDS_INVALID = "Please fill in all required fields"
 const WAIT = "Please wait...";
 const PASSWORDS_NOT_MATCH = "Passwords do not match.";
-const PASSWORD_MIN_LENGTH_REQUIREMENT = "The new password must contain at least 6 characters.";
+const PASSWORD_MIN_LENGTH_REQUIREMENT = "The password must contain at least 4 characters.";
 const FIELD_INVALID = "The field ({field}) contains invalid characters";
 const LABEL_ADDRESS = "Address";
 const LABEL_COMPLEMENT = "Complement";

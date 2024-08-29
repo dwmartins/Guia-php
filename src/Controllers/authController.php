@@ -5,18 +5,28 @@ namespace App\Controllers;
 use App\Class\User;
 use App\Class\UserAccess;
 use App\Http\Request;
+use App\Models\UserDAO;
+use App\Validators\UserValidator;
 
 class AuthController {
     public function index(Request $request, $params) {
         try {
+            $body = $request->body();
+            $userEmail = "";
+
             if($this->checkRememberMe() || isAdmin()) {
                 return redirect("/");
+            }
+
+            if(isset($body['new-account']) && !empty($body['new-account'])) {
+                $userEmail = $body['new-account'];
             }
 
             return [
                 'view' => 'publicView/user/login.php',
                 'data' => [
-                    'title' => TITLE_ENTER . ' | ' . getSiteInfo()->getWebSiteName()
+                    'title' => TITLE_ENTER . ' | ' . getSiteInfo()->getWebSiteName(),
+                    'userEmail' => $userEmail
                 ]
             ];
 
@@ -33,6 +43,37 @@ class AuthController {
                 "title" => TITLE_REGISTER . ' | ' . getSiteInfo()->getWebSiteName()
             ]
         ];
+    }
+
+    public function register(Request $request, $params) {
+        try {
+            $body = $request->body();
+
+            $fieldsValid = UserValidator::update($body);
+
+            if(!$fieldsValid['isValid']) {
+                return redirectWithMessage(PATH_CREATE_ACCOUNT, "error", $fieldsValid['message']);
+            }
+
+            if(!empty(UserDAO::fetchByEmail($body['email']))) {
+                return redirectWithMessage(PATH_CREATE_ACCOUNT, "error", EMAIL_IN_USE);
+            }
+
+            $user = new User($body);
+            $user->save();
+
+            $queryParams = [
+                "new-account" => $user->getEmail()
+            ];
+
+            $url = PATH_LOGIN . '?' . http_build_query($queryParams);
+
+            return redirectWithMessage($url, "success", USER_CREATED);
+
+        } catch (\Exception $e) {
+            logError($e->getMessage());
+            redirectWithMessage(PATH_CREATE_ACCOUNT, "error", FATAL_ERROR);
+        }
     }
 
     public function login(Request $request, $params) {

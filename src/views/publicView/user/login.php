@@ -6,7 +6,7 @@
 
                 <div class="mb-3">
                     <label for="email" class="text-secondary mb-2"><span class="text-danger me-1">*</span><?= showText('LABEL_EMAIL') ?></label>
-                    <input type="email" name="email" id="email" autocomplete="email" class="form-control custom_focus">
+                    <input type="email" name="email" id="email" autocomplete="email" class="form-control custom_focus" value="<?= $userEmail ?>">
                 </div>
 
                 <div class="mb-3">

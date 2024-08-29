@@ -123,3 +123,4 @@ define("ALERT_DELETE_ACCOUNT", "Você precisa confirmar se realmente deseja excl
 define("NEW_ACCOUNT", "Criar conta");
 define("PRIVACY", "Ao se inscrever, você concorda com nossa");
 define("PRIVACY_PAGE", "Política de privacidade");
+define("USER_CREATED", "Sua conta foi criada com sucesso.");
