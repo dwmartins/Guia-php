@@ -452,3 +452,189 @@ input[type="checkbox"]:focus {
 #registerView form {
     max-width: 400px;
 }
+
+#adminLayout {
+    height: 100vh;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#adminLayout .sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    color: #969696 !important;
+    transition: width 0.3s ease;
+    box-shadow: 4px 4px 10px rgba(69, 65, 78, .06);
+}
+
+#adminLayout .sidebar.collapsed {
+    width: 50px;
+}
+
+#adminLayout .btn-toggle {
+    background: none;
+    border: none;
+    color: #ffffffda;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: -50px;
+}
+
+#adminLayout .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#adminLayout .menu-item {
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+#adminLayout .menu-item .menu-link, #adminLayout .menu-text {
+    padding: 15px 0;
+}
+
+#adminLayout .menu-item:hover, #adminLayout .menu-item a:hover {
+    /* color: #929292 !important; */
+    color: var(--bs-primary) !important;
+    background-color: #f0f0f0;
+    transition: 0.2s ease-in !important;
+}
+
+#adminLayout .menu-item > i, .menu-item > div > i {
+    margin-right: 10px;
+    width: 22px;
+}
+
+#adminLayout .menu-item a {
+    color: #969696;
+    text-decoration: none;
+}
+
+#adminLayout .menu-text, .menu-link {
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+#adminLayout .sidebar.collapsed .menu-text,
+#adminLayout .sidebar.collapsed .menu-link {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+#adminLayout .content {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease;
+}
+
+#adminLayout .sidebar.collapsed + .content {
+    margin-left: 50px;
+}
+
+#adminLayout header {
+    height: 60px;
+    box-shadow: 4px 4px 10px rgba(69, 65, 78, .06);
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+
+#adminLayout .logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#adminLayout .logo img {
+    width: 170px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+#adminLayout .sidebar.collapsed .logo img {
+    display: none;
+}
+
+#adminLayout .logo i {
+    color: #bdbebe;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #adminLayout .sidebar.collapsed {
+        width: 0;
+        overflow: hidden;
+    }
+
+    #adminLayout .sidebar.collapsed .menu-item i {
+        display: none;
+    }
+
+    #adminLayout .sidebar.collapsed .menu-text,
+    #adminLayout .sidebar.collapsed .menu-link {
+        display: none;
+    }
+
+    #adminLayout .sidebar.collapsed + .content {
+        margin-left: 0;
+    }
+
+    #adminLayout .logo i {
+        display: block;
+    }
+}
+
+#adminLayout .submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    transition: max-height 2s ease, opacity 2s ease;
+}
+
+#adminLayout .submenu.open {
+    max-height: 500px;
+    opacity: 1;
+}
+
+#adminLayout .submenu:hover, .submenu a:hover {
+    color: #AEBFD4;
+}
+
+#adminLayout .submenu a {
+    color: #969696;
+    text-decoration: none;
+    margin-left: 28px;
+    font-size: 15px;
+}
+
+#adminLayout .active-link {
+    color: #AEBFD4;
+}
+
+#adminLayout .active-link, .active-link i {
+    color: #AEBFD4;
+}
+
+#adminLayout .sidebar.collapsed .submenu {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+#adminLayout .rotate {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}

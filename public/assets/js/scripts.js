@@ -233,10 +233,46 @@ $(document).ready(function () {
                     }
                 });
             }
-
-
         });
     }
+
+    // Navbar Admin
+    if(window.innerWidth <= 768) {
+        $('.sidebar').toggleClass('collapsed');
+        $('.submenu').hide();
+    }
+
+    $('.submenu').hide();
+
+    $('#toggleMenu').click(function() {
+        $('.sidebar').toggleClass('collapsed');
+        $('.submenu').hide();
+    });
+
+    $('#toggleSidebar').click(function() {
+        $('.sidebar').toggleClass('collapsed');
+        $('.submenu').hide(); 
+    });
+
+    $('#toggleContents').click(function() {
+        if($('.sidebar').hasClass('collapsed')) {
+            $('.sidebar').toggleClass('collapsed');
+        }
+
+        $('#submenuContents').toggleClass('open');
+        $('#submenuContents').slideToggle(200);
+        $('#chevronContents').toggleClass('rotate');
+    });
+
+    $('#toggleConfigs').click(function() {
+        if($('.sidebar').hasClass('collapsed')) {
+            $('.sidebar').toggleClass('collapsed');
+        }
+
+        $('#submenuContents').toggleClass('open');
+        $('#submenuConfigs').slideToggle(200);
+        $('#chevronConfigs').toggleClass('rotate');
+    });
 });
 
 
