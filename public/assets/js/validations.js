@@ -53,3 +53,16 @@ function validString(string) {
     const safeCharRegex = /^[A-Za-zÀ-ÖØ-Ýà-öø-ÿ0-9\s,.'\"!?()\-@#&*:+]+$/;
     return safeCharRegex.test(string);
 }
+
+function showError(error) {
+    console.log('ERROR', error);
+
+    const message = error.responseJSON.message;
+
+    if(message) {
+        showAlert('error', message);
+        return;
+    } 
+
+    showAlert('error', FATAL_ERROR);
+}

@@ -162,6 +162,81 @@ $(document).ready(function () {
         let targetFormId  = $(this).data('toggle');
         $(`#${targetFormId}`).slideToggle(300);
     })
+
+    // Form contact
+    const formContact = $('#formContact');
+    if(formContact) {
+        const btnSubmit = formContact.find(`button[type="submit"]`);
+        const btnSubmitContent = btnSubmit.html();
+
+        formContact.on('submit', function(event) {
+            event.preventDefault();
+
+            let isValid = true;
+
+            const fieldLabels = {
+                name: LABEL_NAME,
+                lastName: LABEL_LAST_NAME,
+                email: LABEL_EMAIL,
+                company: LABEL_COMPANY,
+                description: LABEL_DESCRIPTION
+            }
+
+            for (let label in fieldLabels) {
+                const field = formContact.find(`[name="${label}"]`);
+                const value = field.val().trim();
+
+                if(value && !validString(value)) {
+                    const errorMessage = FIELD_INVALID.replace('{field}', fieldLabels[label]);
+                    showAlert('error', errorMessage);
+                    $(field).addClass('field_invalid');
+                    return;
+                } else {
+                    $(field).removeClass('field_invalid');
+                }
+
+                if(!value) {
+                    if (label === "company") {
+                        continue;
+                    }
+
+                    $(field).addClass('field_invalid');
+                    isValid = false;
+                }
+            }
+
+            if(!isValid) {
+                showAlert('error', ALL_FIELDS_INVALID);
+            } else {
+                btnSubmit.prop('disabled', true).html(`
+                    <div id="spinnerLoading" class="item_center gap-2">
+                        <div class="spinner-border" role="status"></div>
+                        <p class="m-0">${WAIT}</p>
+                    </div>
+                `);
+
+                $.ajax({
+                    url: '/contact',
+                    method: 'POST',
+                    data: formContact.serialize(),
+                    success: function(response) {
+                        showAlert('success', 'Mensagem enviada com sucesso!');
+                        $('#formContact button').prop('disabled', false).text('Enviar');
+                        formContact.get(0).reset();
+                    },
+                    error: function(error) {
+                        showError(error);
+                        $('#formContact button').prop('disabled', false).text('Enviar');
+                    },
+                    complete: function() {
+                        btnSubmit.prop('disabled', false).html(btnSubmitContent);
+                    }
+                });
+            }
+
+
+        });
+    }
 });
 
 

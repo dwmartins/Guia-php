@@ -22,6 +22,7 @@ define("LABEL_COUNTRY", "País");
 define("LABEL_CURRENT_PASSWORD", "Senha atual");
 define("LABEL_NEW_PASSWORD", "Nova senha");
 define("LABEL_CONFIRM_PASSWORD", "Confirmar senha");
+define("LABEL_COMPANY", "Empresa");
 
 // Page Path
 define("PATH_LOGOUT", "/usuario/logout");
@@ -64,6 +65,7 @@ define("ALT_NOT_LISTING", "Imagem de sem listagem");
 define("ALT_ACCOUNT", "Imagem da conta do usuário");
 define("ALT_REGISTER_IMG", "Imagem de registro");
 
+define("CONTACT" , "Contato");
 define("PANEL", "Painel");
 define("LOGIN", "Entrar");
 define("FORGOT_PASSWORD", "Esqueci minha senha");
@@ -125,3 +127,8 @@ define("PRIVACY", "Ao se inscrever, você concorda com nossa");
 define("PRIVACY_PAGE", "Política de privacidade");
 define("USER_CREATED", "Sua conta foi criada com sucesso.");
 define("PASSWORD_MIN_LENGTH_REQUIREMENT", "A senha deve conter pelo menos 4 caracteres.");
+define("SEND_MESSAGE", "Enviar Mensagem");
+define("MESSAGE_SEND_SUCCESSFULLY", "Sua mensagem foi encaminhada com sucesso!");
+define("EMAIL_INVALID", "O e-mail é invalido.");
+define("SIGNATURE", "Atenciosamente, <br> Equipe do");
+define("CONTACT_INFORMATION", "Informações de Contato:");

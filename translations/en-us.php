@@ -22,6 +22,7 @@ define("LABEL_COUNTRY", "País");
 define("LABEL CURRENT PASSWORD", "Current password");
 define("LABEL_NEW_PASSWORD", "New Password");
 define("LABEL_CONFIRM_PASSWORD", "Confirm password");
+define("LABEL_COMPANY", "Company");
 
 // Page Path
 define("PATH_LOGOUT", "/user/logout");
@@ -64,6 +65,7 @@ define("ALT_NOT_LISTING", "No listing image");
 define("ALT_ACCOUNT", "User account image");
 define("ALT_REGISTER_IMG", "Register image");
 
+define("CONTACT" , "Contact");
 define("PANEL", "Panel");
 define("LOGIN", "Login");
 define("FORGOT_PASSWORD", "Forgot my password");
@@ -125,3 +127,8 @@ define("PRIVACY", "By signing up, you agree to our");
 define("PRIVACY_PAGE", "Privacy Policy");
 define("USER_CREATED", "Your account has been created successfully.");
 define("PASSWORD_MIN_LENGTH_REQUIREMENT", "Password must contain at least 4 characters.");
+define("SEND_MESSAGE", "Send Message");
+define("MESSAGE_SEND_SUCCESSFULLY", "Your message has been forwarded successfully!");
+define("EMAIL_INVALID", "The email is invalid.");
+define("SIGNATURE", "Sincerely, <br> Team of");
+define("CONTACT_INFORMATION", "Contact Information:");
