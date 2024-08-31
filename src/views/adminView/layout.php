@@ -8,7 +8,7 @@
             <!-- Dashboard -->
             <li class="menu-item">
                 <i class="fa-solid fa-chart-line"></i>
-                <a href="/app" class="menu-link w-100">Dashboard</a>
+                <a href="/app" class="menu-link w-100"><?= DASHBOARD_PAGE ?></a>
             </li>
 
             <!-- Contents with submenu -->
@@ -16,14 +16,14 @@
                 <div class="d-flex align-items-center w-100" id="toggleContents">
                     <i class="fa-solid fa-list"></i>
                     <a href="javascript:void(0);" class="menu-text cursor_pointer d-flex justify-content-between align-items-center w-100">
-                        Contents
+                        <?= CONTENTS_PAGE ?>
                         <i class="fa-solid fa-chevron-right fs-7" id="chevronContents"></i>
                     </a>
                 </div>
                 <div class="submenu my-3" id="submenuContents">
-                    <a href="/app/advertisements" class="submenu-link">Advertisements</a>
-                    <a href="/app/events" class="submenu-link">Events</a>
-                    <a href="/app/blog" class="submenu-link">Blog</a>
+                    <a href="/app/advertisements" class="submenu-link"><?= LISTAGENS_PAGE ?></a>
+                    <a href="/app/events" class="submenu-link"><?= EVENTS_PAGE ?></a>
+                    <a href="/app/blog" class="submenu-link"><?= BLOG_PAGE ?></a>
                 </div>
             </li>
 
@@ -32,22 +32,22 @@
                 <div class="d-flex align-items-center w-100" id="toggleConfigs">
                     <i class="fa-solid fa-gears"></i>
                     <a href="javascript:void(0);" class="menu-text cursor_pointer d-flex justify-content-between align-items-center w-100">
-                        Settings
+                        <?= SETTINGS_PAGE ?>
                         <i class="fa-solid fa-chevron-right fs-7" id="chevronConfigs"></i>
                     </a>
                 </div>
                 <div class="submenu my-3" id="submenuConfigs">
-                    <a href="/app/basic-information" class="submenu-link">Basic Information</a>
-                    <a href="/app/settings" class="submenu-link">General Settings</a>
-                    <a href="/app/language" class="submenu-link">Language</a>
-                    <a href="/app/email" class="submenu-link">Email</a>
+                    <a href="/app/basic-information" class="submenu-link"><?= BASIC_INFORMATION_PAGE ?></a>
+                    <a href="/app/settings" class="submenu-link"><?= GENERAL_SETTINGS_PAGE ?></a>
+                    <a href="/app/language" class="submenu-link"><?= LANGUAGE_PAGE ?></a>
+                    <a href="/app/email" class="submenu-link"><?= EMAIL_PAGE ?></a>
                 </div>
             </li>
 
             <!-- Users -->
             <li class="menu-item">
                 <i class="fa-regular fa-user"></i>
-                <a href="/app/users" class="menu-link w-100">Users</a>
+                <a href="/app/users" class="menu-link w-100"><?= USERS_PAGE ?></a>
             </li>
         </ul>
     </nav>
@@ -57,8 +57,9 @@
                 <i class="fa-solid fa-bars fs-4"></i>
             </button>
             <a href="/">
-                <button class="btn btn-sm btn-outline-primary">
-                    Site
+                <button class="btn btn-sm btn-outline-primary text-uppercase">
+                    <?= VISITE_SITE ?>
+                    <i class="fa-solid fa-globe ms-1"></i>
                 </button>
             </a>
         </header>

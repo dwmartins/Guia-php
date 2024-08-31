@@ -55,6 +55,16 @@ define("PROFILE_PAGE", "Perfil");
 define("CREATE_ACCOUNT_PAGE", "Criar minha conta");
 define("LISTAGENS_PAGE", "Anúncios");
 define("EVENTS_PAGE", "Eventos");
+define("DASHBOARD_PAGE", "Dashboard");
+define("CONTENTS_PAGE", "Conteúdos");
+define("SETTINGS_PAGE" , "Configurações");
+define("BASIC_INFORMATION_PAGE", "Informações Básicas");
+define("GENERAL_SETTINGS_PAGE", "Configurações gerais");
+define("LANGUAGE_PAGE", "Linguagem");
+define("EMAIL_PAGE", "E-mail");
+define("USERS_PAGE", "Usuários");
+
+define("VISITE_SITE", "Site");
 
 // ALT images
 define("ALT_MAINTENANCE", "Imagem de manutenção");
