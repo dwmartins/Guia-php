@@ -169,6 +169,18 @@ $(document).ready(function () {
         const btnSubmit = formContact.find(`button[type="submit"]`);
         const btnSubmitContent = btnSubmit.html();
 
+        $('#formContact textarea').on('input', function () {
+            const textarea = $(this);
+            const count_msg = $('#formContact .count_msg');
+
+            if(textarea.val().length > 600) {
+                textarea.val(textarea.val().substring(0, 600));
+            }
+
+            count_msg.text(textarea.val().length);
+        });
+
+
         formContact.on('submit', function(event) {
             event.preventDefault();
 

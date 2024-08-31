@@ -24,6 +24,9 @@
                     <div class="mb-3 col-12 mb-3">
                         <label for="description" class="text-secondary mb-2"><span class="text-danger me-1">*</span><?= LABEL_DESCRIPTION ?></label>
                         <textarea name="description" id="description" rows="4" class="form-control custom_focus text-secondary"></textarea>
+                        <div class="d-flex justify-content-end mt-1">
+                            <p class="fs-8 text-secondary"><span class="count_msg">0</span> / 600</p>
+                        </div>
                     </div>
                     <div class="d-flex justify-content-end mt-2">
                         <button type="submit" class="btn btn-outline-primary"><?= SEND_MESSAGE ?><i class="fa-regular fa-paper-plane ms-2"></i></button>
