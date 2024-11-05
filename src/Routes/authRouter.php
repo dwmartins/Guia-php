@@ -16,7 +16,7 @@ Route::get("/registrar", 'AuthController@registerView');
 Route::post("/entrar", 'AuthController@login');
 
 // Logout
-Route::get("/user/logout", 'AuthController@logout');
+Route::get("/logout", 'AuthController@logout');
 
 // Register
 Route::post("/registrar", 'AuthController@register');

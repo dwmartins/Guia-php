@@ -1,4 +1,12 @@
 $(document).ready(function() {
+    //Check if there is an email in the url
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get('email');
+
+    if(email) {
+        $('#email').val(email);
+    }
+
     const formLogin = document.getElementById('formLogin');
 
     if(formLogin) {
@@ -18,7 +26,7 @@ $(document).ready(function() {
 
             if(!isValid) {
                 event.preventDefault();
-                showAlert('error', ALL_FIELDS_INVALID);
+                showAlert('error', "Preencha todos os campos obrigatórios");
             } else {
                 $('#btnLogin').empty();
                 $('#btnLogin').html(`

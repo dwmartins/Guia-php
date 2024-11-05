@@ -9,13 +9,13 @@ if (isAdmin()): ?>
 
             <?php if (MAINTENANCE): ?>
                 <div class="item_center gap-2 publish">
-                    <p class="m-0 text-white-50 fs-7"><?= showText('MAINTENANCE_ALERT') ?></p>
-                    <a href="<?= showText('PATH_ADM_SETTINGS') ?>" class="btn btn-sm btn-outline-primary"><?= showText('PUBLISH') ?></a>
+                    <p class="m-0 text-white-50 fs-7">Site em manutenção"</p>
+                    <a href="/app/configurações/configurações-gerais" class="btn btn-sm btn-outline-primary">Publicar</a>
                 </div>
             <?php endif ?>
 
-            <a href="<?= showText('PATH_LOGOUT') ?>" class="text-white-50 outline_none hover_primary">
-                <span class="d-none d-sm-inline-block"><?= showText('LOGOUT_PAGE') ?></span>
+            <a href="/logout" class="text-white-50 outline_none hover_primary">
+                <span class="d-none d-sm-inline-block">Sair</span>
                 <i class="fa-solid fa-right-from-bracket ms-1"></i>
             </a>
         </div>

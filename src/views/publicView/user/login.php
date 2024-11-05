@@ -6,13 +6,13 @@
 
                 <div class="mb-3">
                     <label for="email" class="text-secondary mb-2"><span class="text-danger me-1">*</span>E-mail</label>
-                    <input type="email" name="email" id="email" autocomplete="email" class="form-control custom_focus" value="<?= $userEmail ?>">
+                    <input type="email" name="email" id="email" autocomplete="email" class="form-control custom_focus text-secondary" value="<?= $userEmail ?>">
                 </div>
 
                 <div class="mb-3">
                     <label for="password" class="text-secondary mb-2"><span class="text-danger me-1">*</span>Senha</label>
                     <div class="position-relative">
-                        <input type="password" name="password" id="password" class="form-control custom_focus">
+                        <input type="password" name="password" id="password" class="form-control custom_focus text-secondary">
                         <i class="fa-regular icon_show_password fa-eye text-secondary"></i>
                     </div>
                 </div>

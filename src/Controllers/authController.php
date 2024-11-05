@@ -14,12 +14,16 @@ class AuthController {
             $body = $request->body();
             $userEmail = "";
 
-            if($this->checkRememberMe() || isAdmin()) {
+            if($this->checkRememberMe() || isLoggedIn()) {
                 return redirect("/");
             }
 
             if(isset($body['new-account']) && !empty($body['new-account'])) {
                 $userEmail = $body['new-account'];
+            }
+
+            if(isset($_COOKIE['lastLogin'])) {
+                $userEmail = $_COOKIE['lastLogin'];
             }
 
             return [
@@ -107,6 +111,7 @@ class AuthController {
                         }
 
                         setUserLogged($user);
+                        setcookie('lastLogin', $user->getEmail(), time() + (30 * 24 * 60 * 60), "/");
 
                         redirect("/");
                         return;
@@ -114,11 +119,11 @@ class AuthController {
                 }
             }
 
-            redirectWithMessage(PATH_LOGIN, 'error', INVALID_CREDENTIALS);
+            redirectWithMessage("/entrar", 'error', "Usuário ou senha inválidos.", ["email" => $user->getEmail()]);
 
         } catch (\Exception $e) {
             logError($e->getMessage());
-            redirectWithMessage(PATH_LOGIN, 'error', FATAL_ERROR);
+            redirectWithMessage("/entrar", 'error', "Ops, ocorreu um erro, tente novamente.");
         }
     }
 
