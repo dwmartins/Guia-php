@@ -59,7 +59,10 @@ class Core {
         }
 
         if (!$routesFound) {
-            redirect("/");
+            $view = "/publicView/pageNotFound.php";
+            $title = "Página não encontrada";
+
+            require __DIR__ . "/../views/master.php";
         } else {
             self::methodNotAllowedResponse($url);
         }

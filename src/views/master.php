@@ -42,6 +42,10 @@
             
         } else if($view === "/publicView/maintenance.php") {
             require __DIR__ . "/publicView/maintenance.php";
+
+        } else if($view === "/publicView/pageNotFound.php") {
+            require __DIR__ . "/publicView/pageNotFound.php";
+            
         } else {
             echo "Layout not found for the specified view.";
         }
