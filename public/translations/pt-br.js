@@ -20,3 +20,4 @@ const ALERT_DELETE_ACCOUNT = "Você precisa confirmar se realmente deseja exclui
 const MESSAGE_SEND_SUCCESSFULLY = "Sua mensagem foi encaminhada com sucesso!";
 const FATAL_ERROR = "Ops, ocorreu um erro, tente novamente.";
 const BTN_SEN_MESSAGE = "Enviar mensagem";
+const IMG_5MB = "A imagem deve ter no máximo 5MB.";

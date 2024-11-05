@@ -4,6 +4,7 @@
 
 :root {
     --bs-primary: #409EFF;
+    --bs-primary-hover: #3687d8;
     --bs-primary-rgb: 64, 158, 255;
     --bs-primary-text: #fff;
 
@@ -434,6 +435,26 @@ input[type="checkbox"]:focus {
     border-radius: 50%;
     border: 8px solid #ffff;
     object-fit: cover; 
+}
+
+#userPanelView .btn_change_img {
+    position: absolute;
+    background-color: var(--bs-primary);
+    color: #fff;
+    border-radius: 50%;
+    bottom: 20px;
+    right: 0px;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+#userPanelView .btn_change_img:hover {
+    background-color: var(--bs-primary-hover); 
 }
 
 #profileView i {

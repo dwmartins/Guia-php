@@ -53,49 +53,6 @@ $(document).ready(function () {
         });
     }
 
-    // Validate the login form
-    const formLogin = document.getElementById('formLogin');
-    if (formLogin) {
-        formLogin.addEventListener('submit', function (event) {
-            let isValid = true;
-
-            const fields = document.querySelectorAll('#formLogin input');
-
-            fields.forEach(function (field) {
-                const value = field.value.trim();
-
-                if (!value) {
-                    isValid = false;
-                    $(field).addClass('field_invalid');
-                }
-            });
-
-            if (!isValid) {
-                event.preventDefault();
-                showAlert('error', ALL_FIELDS_INVALID);
-            } else {
-                $('#btnLogin').empty();
-                $('#btnLogin').html(`
-                <div id="spinnerLoading" class="item_center gap-2">
-                    <div class="spinner-border" role="status"></div>
-                    <p class="m-0">${WAIT}</p>
-                </div>
-            `).prop('disabled', true);
-            }
-        });
-
-        $('#formLogin input').on('input', function () {
-            $(this).removeClass('field_invalid');
-        });
-
-        $('#formLogin input').on('blur', function () {
-            const value = $(this).val().trim();
-            if (!value) {
-                $(this).addClass('field_invalid');
-            }
-        });
-    }
-
     // Validate the search form
     const formSearchHome = document.getElementById('formSearchHome');
     if (formSearchHome) {
@@ -285,6 +242,60 @@ $(document).ready(function () {
         $('#submenuConfigs').slideToggle(200);
         $('#chevronConfigs').toggleClass('rotate');
     });
+
+    //Update Image user
+    const currentUserImg = $('#current_user_photo').attr('src');
+    const btnSaveImg = $('#userPanelView #btn_cancel_img');
+    const btnCancelImg = $('#userPanelView #btn_cancel_img');
+
+    $('#userPanelView .options').addClass('d-none');
+
+    $('#new_img').on('change', async function() {
+        let file = this.files[0];
+
+        if(!file) return;
+
+        let compressImage = false;
+
+        const response = await $.ajax({
+            url: '/settings?name=compressImage',
+            method: 'GET',
+            dataType: 'json'
+        });
+
+        compressImage = response.value === "on";
+
+        if(compressImage) {
+            file = await handleImageUpload(file);
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            $('#current_user_photo').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(file);
+        $('#userPanelView .options').removeClass('d-none');
+    });
+
+    btnCancelImg.on('click', function() {
+        $('#userPanelView .options').addClass('d-none');
+        $('#current_user_photo').attr('src', currentUserImg);
+    });
+
+    btnSaveImg.on('click', async function() {
+        const newImg = $('#new_img')[0];
+
+        let formData = new FormData();
+        formData.append('userPhoto', newImg.files[0]);
+
+        const response = await $.ajax({
+            url: '/user/update-image',
+            method: 'POST',
+            data: formData 
+        });
+    })
 });
 
 

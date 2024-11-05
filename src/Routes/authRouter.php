@@ -4,19 +4,19 @@ use App\Http\Route;
 
 // *********** VIEWS *************//
 
-// User login viewS
-Route::get(PATH_LOGIN, 'AuthController@index');
+// User login view
+Route::get("/entrar", 'AuthController@index');
 
 // User register view
-Route::get(PATH_CREATE_ACCOUNT, 'AuthController@registerView');
+Route::get("/registrar", 'AuthController@registerView');
 
 // ***********END VIEWS *************//
 
 // Login
-Route::post(PATH_LOGIN, 'AuthController@login');
+Route::post("/entrar", 'AuthController@login');
 
 // Logout
-Route::get(PATH_LOGOUT, 'AuthController@logout');
+Route::get("/user/logout", 'AuthController@logout');
 
 // Register
-Route::post("/register", 'AuthController@register');
+Route::post("/registrar", 'AuthController@register');
