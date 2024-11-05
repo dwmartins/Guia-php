@@ -7,19 +7,19 @@
                 <form id="formContact" action="/contact" method="post" class="row py-3">
                     <div class="col-12 col-lg-6 mb-3">
                         <label for="name" class="text-secondary mb-2"><span class="text-danger me-1">*</span>Nome</label>
-                        <input type="text" name="name" id="name" autocomplete="name" class="form-control custom_focus">
+                        <input type="text" name="name" id="name" autocomplete="name" class="form-control custom_focus text-secondary">
                     </div>
                     <div class="col-12 col-lg-6 mb-3">
                         <label for="lastName" class="text-secondary mb-2"><span class="text-danger me-1">*</span>Sobrenome</label>
-                        <input type="text" name="lastName" id="lastName" autocomplete="lastName" class="form-control custom_focus">
+                        <input type="text" name="lastName" id="lastName" autocomplete="lastName" class="form-control custom_focus text-secondary">
                     </div>
                     <div class="col-12 col-lg-6 mb-3">
                         <label for="email" class="text-secondary mb-2"><span class="text-danger me-1">*</span>E-mail</label>
-                        <input type="email" name="email" id="email" autocomplete="email" class="form-control custom_focus">
+                        <input type="email" name="email" id="email" autocomplete="email" class="form-control custom_focus text-secondary">
                     </div>
                     <div class="col-12 col-lg-6 mb-3">
                         <label for="company" class="text-secondary mb-2">Empresa</label>
-                        <input type="text" name="company" id="company" autocomplete="company" class="form-control custom_focus">
+                        <input type="text" name="company" id="company" autocomplete="company" class="form-control custom_focus text-secondary">
                     </div>
                     <div class="mb-3 col-12 mb-3">
                         <label for="description" class="text-secondary mb-2"><span class="text-danger me-1">*</span>Descrição</label>

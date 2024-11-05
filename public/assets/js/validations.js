@@ -8,20 +8,17 @@ function showAlert(type, message) {
     toastEl.setAttribute('aria-atomic', 'true');
 
     let iconClass = '';
-    let toastClass = '';
+    let toastClass = 'bg-white';
 
     switch (type) {
         case 'success':
-            iconClass = 'fa-regular fa-circle-check';
-            toastClass = 'text-bg-success';
+            iconClass = 'fa-regular fa-circle-check text-success';
             break;
         case 'error':
-            iconClass = 'fa-solid fa-circle-exclamation';
-            toastClass = 'text-bg-danger';
+            iconClass = 'fa-solid fa-circle-exclamation text-danger';
             break;
         case 'info':
-            iconClass = 'fa-solid fa-triangle-exclamation';
-            toastClass = 'text-bg-info';
+            iconClass = 'fa-solid fa-triangle-exclamation text-warning';
             break;
         default:
             break;
@@ -33,9 +30,9 @@ function showAlert(type, message) {
         <div class="d-flex">
             <div class="toast-body d-flex align-items-center gap-2">
                 <i class="${iconClass} fs-5"></i>
-                <span>${message}</span>
+                <span class="text-secondary-emphasis">${message}</span>
             </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
     `;
 
