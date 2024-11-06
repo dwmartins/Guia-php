@@ -30,24 +30,28 @@
 <body>
 
     <?php 
-
-        if (strpos($view, 'adminView/') === 0) {
-            require __DIR__ . "/adminView/layout.php";
-
-        } elseif (strpos($view, 'publicView/') === 0) {
-            require __DIR__ . "/publicView/layout.php";
-
-        } else if($view === "adminView/loginView.php"){
-            require __DIR__ . "/adminView/loginAdmin.php";
-            
-        } else if($view === "/publicView/maintenance.php") {
-            require __DIR__ . "/publicView/maintenance.php";
-
-        } else if($view === "/publicView/pageNotFound.php") {
-            require __DIR__ . "/publicView/pageNotFound.php";
-            
-        } else {
-            echo "Layout not found for the specified view.";
+        switch (true) {
+            case strpos($view, 'adminView/') === 0:
+                if ($view === "adminView/login.php") {
+                    require __DIR__ . "/adminView/login.php";
+                } else {
+                    require __DIR__ . "/adminView/layout.php";
+                }
+                break;
+        
+            case strpos($view, 'publicView/') === 0:
+                if ($view === "publicView/maintenance.php") {
+                    require __DIR__ . "/publicView/maintenance.php";
+                } elseif ($view === "publicView/pageNotFound.php") {
+                    require __DIR__ . "/publicView/pageNotFound.php";
+                } else {
+                    require __DIR__ . "/publicView/layout.php";
+                }
+                break;
+        
+            default:
+                echo "Layout not found for the specified view.";
+                break;
         }
     ?>
 

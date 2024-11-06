@@ -6,8 +6,7 @@ use App\Class\User;
 use App\Http\Request;
 
 class AdminMiddleware {
-    private static array $allowedRoles = ["support", "admin", "mod", "test"];
-    private static array $noPermissionNeeded = ["support", "admin"];
+    private static array $allowedRoles = ["support", "admin"];
 
     public function isAdmin(Request $request) {
         $userLogged = getLoggedUser();
@@ -21,11 +20,11 @@ class AdminMiddleware {
                     $request->setAttribute("userRequest", $user);
                     return true;
                 } else {
-                    return redirectWithMessage('/', 'error', NOT_HAVE_PERMISSION_AREA);
+                    return redirectWithMessage('/', 'error', "Você não tem permissão para acessar está area.");
                 }
             }
         }
 
-        redirect(PATH_ADM_LOGIN);
+        redirect("/app/entrar");
     }
 }

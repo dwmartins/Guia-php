@@ -29,14 +29,14 @@ class AuthController {
             return [
                 'view' => 'publicView/user/login.php',
                 'data' => [
-                    'title' => TITLE_ENTER . ' | ' . getSiteInfo()->getWebSiteName(),
+                    'title' => 'Entrar | ' . getSiteInfo()->getWebSiteName(),
                     'userEmail' => $userEmail
                 ]
             ];
 
         } catch (\Exception $e) {
             logError($e->getMessage());
-            redirectWithMessage(PATH_LOGIN, 'error', FATAL_ERROR);
+            redirectWithMessage("/entrar", 'error', FATAL_ERROR);
         }
     }
 
@@ -44,7 +44,7 @@ class AuthController {
         return [
             "view" => "publicView/user/register.php",
             "data" => [
-                "title" => TITLE_REGISTER . ' | ' . getSiteInfo()->getWebSiteName()
+                "title" => 'Criar conta | ' . getSiteInfo()->getWebSiteName()
             ]
         ];
     }
@@ -54,17 +54,17 @@ class AuthController {
             $body = $request->body();
 
             if(strlen($body['password']) < 4) {
-                return redirectWithMessage(PATH_CREATE_ACCOUNT, "error", PASSWORD_MIN_LENGTH_REQUIREMENT);
+                return redirectWithMessage("/criar-conta", "error", "A senha deve conter pelo menos 4 caracteres.");
             }
 
             $fieldsValid = UserValidator::update($body);
 
             if(!$fieldsValid['isValid']) {
-                return redirectWithMessage(PATH_CREATE_ACCOUNT, "error", $fieldsValid['message']);
+                return redirectWithMessage("/criar-conta", "error", $fieldsValid['message']);
             }
 
             if(!empty(UserDAO::fetchByEmail($body['email']))) {
-                return redirectWithMessage(PATH_CREATE_ACCOUNT, "error", EMAIL_IN_USE);
+                return redirectWithMessage("/criar-conta", "error", "Este e-mail já está em uso.");
             }
 
             $user = new User($body);
@@ -74,13 +74,13 @@ class AuthController {
                 "new-account" => $user->getEmail()
             ];
 
-            $url = PATH_LOGIN . '?' . http_build_query($queryParams);
+            $url = '/entrar?' . http_build_query($queryParams);
 
-            return redirectWithMessage($url, "success", USER_CREATED);
+            return redirectWithMessage($url, "success", "Sua conta foi criada com sucesso.");
 
         } catch (\Exception $e) {
             logError($e->getMessage());
-            redirectWithMessage(PATH_CREATE_ACCOUNT, "error", FATAL_ERROR);
+            redirectWithMessage("/criar-conta", "error", FATAL_ERROR);
         }
     }
 
@@ -123,7 +123,7 @@ class AuthController {
 
         } catch (\Exception $e) {
             logError($e->getMessage());
-            redirectWithMessage("/entrar", 'error', "Ops, ocorreu um erro, tente novamente.");
+            redirectWithMessage("/entrar", 'error', FATAL_ERROR);
         }
     }
 
@@ -142,7 +142,7 @@ class AuthController {
             $user->save();
         }
 
-        redirectWithMessage('/', 'success', LOGOUT_MESSAGE);
+        redirectWithMessage('/', 'success', "Você se desconectou com sucesso. Até a próxima!");
     }
 
     private function checkRememberMe() {

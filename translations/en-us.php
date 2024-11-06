@@ -84,7 +84,6 @@ define("INVALID_CREDENTIALS", "Invalid username or password.");
 define("MAINTENANCE_TEXT", "We are undergoing maintenance, we will be back soon");
 define("LOGOUT_MESSAGE", "You have successfully logged out. See you next time!");
 define("NOT_HAVE_PERMISSION_AREA", "You do not have permission to access this area.");
-define("FATAL_ERROR", "Oops, an error occurred, please try again.");
 define("NOT_HAVE_ACCOUNT", "Don't have an account?");
 define("HAVE_ACCOUNT", "Already have an account?");
 define("NAVIGATION", "Navigation");

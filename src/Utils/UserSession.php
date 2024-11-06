@@ -30,7 +30,7 @@ function isLoggedIn() {
  * @return bool
  */
 function isAdmin() {
-    $allowedRoles = ["support", "admin", "mod", "test"];
+    $allowedRoles = ["support", "admin"];
 
     if(isLoggedIn()) {
         $user = getLoggedUser();

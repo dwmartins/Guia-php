@@ -37,6 +37,6 @@ class UserMiddleware {
             $user->save();
         }
 
-        return redirect(PATH_LOGIN);
+        return redirect("/entrar");
     }
 }
