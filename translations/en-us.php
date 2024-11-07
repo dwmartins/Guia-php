@@ -75,6 +75,7 @@ define("ALT_NOT_LISTING", "No listing image");
 define("ALT_ACCOUNT", "User account image");
 define("ALT_REGISTER_IMG", "Register image");
 
+define("FATAL_ERROR", "Oops, an error occurred, please try again.");
 define("CONTACT" , "Contact");
 define("PANEL", "Panel");
 define("LOGIN", "Login");

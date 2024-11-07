@@ -1,7 +1,7 @@
 <section id="loginPublicView" class="container d-flex align-items-center justify-content-center">
     <div class="row w-100">
         <div class="col-sm-12 col-md-6 col-xl-7 d-flex justify-content-center align-items-center">
-            <form action="/entrar" method="post" id="formLogin">
+            <form action="/login" method="post" id="formLogin">
                 <h1 class="text-center text-secondary mb-3">Entrar</h1>
 
                 <div class="mb-3">
@@ -34,7 +34,7 @@
 
                 <p class="text-secondary fs-7 text-center">
                     Não possui conta?
-                    <a href="/registrar" class="text-primary outline_none">Criar minha conta</a>
+                    <a href="<?= PATH_CREATE_ACCOUNT ?>" class="text-primary outline_none">Criar minha conta</a>
                 </p>
             </form>
         </div>

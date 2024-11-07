@@ -1,7 +1,7 @@
 <section id="registerView" class="container d-flex align-items-center show">
     <div class="row w-100 m-0">
         <div class="col-sm-12 col-md-5 col-xl-5 d-flex flex-column justify-content-center align-items-center">
-            <h4 class="text-secondary"><?= NEW_ACCOUNT ?></h4>
+            <h4 class="text-secondary-emphasis"><?= NEW_ACCOUNT ?></h4>
 
             <form id="formRegister" action="/register" method="post" class="w-100 p-0 p-sm-3">
                 <div class="mb-3">
@@ -49,77 +49,5 @@
         </div>
     </div>
 </section>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const formRegister = $('#formRegister');
-        const password = $("#password");
 
-        formRegister.on('submit', function(event) {
-            const fields = $('#formRegister input');
-            let isValid = true;
-            let fieldsValid = true;
-
-            const fieldLabels = {
-                name: LABEL_NAME,
-                lastName: LABEL_LAST_NAME,
-                email: LABEL_EMAIL,
-                password: LABEL_PASSWORD
-            }
-
-            for (let label in fieldLabels) {
-                const field = formRegister.find(`[name="${label}"]`);
-                const value = field.val().trim();
-
-                if(!value) {
-                    isValid = false;
-                    $(field).addClass('field_invalid');
-
-                } else if(!validString(value)) {
-                    const errorMessage = FIELD_INVALID.replace('{field}', fieldLabels[label]);
-                    showAlert('error', errorMessage);
-                    $(field).addClass('field_invalid');
-                    fieldsValid = false;
-    
-                } else {
-                    $(field).removeClass('field_invalid');
-                }
-            }
-
-            if(password.val().length < 4) {
-                showAlert('error', PASSWORD_MIN_LENGTH_REQUIREMENT);
-                event.preventDefault();
-                return;
-            }
-
-            if(!fieldsValid) {
-                event.preventDefault();
-                return;
-            }
-
-            if(!isValid) {
-                showAlert('error', ALL_FIELDS_INVALID);
-                event.preventDefault();
-                return;
-            }
-
-            $('#formRegister button').empty();
-            $('#formRegister button').html(`
-                <div id="spinnerLoading" class="item_center gap-2">
-                    <div class="spinner-border" role="status"></div>
-                    <p class="m-0">${WAIT}</p>
-                </div>
-            `).prop('disabled', true);
-        });
-
-        $('#formRegister input').on('input', function () {
-            $(this).removeClass('field_invalid');
-        });
-
-        $('#formRegister input').on('blur', function () {
-            const value = $(this).val().trim();
-            if (!value) {
-                $(this).addClass('field_invalid');
-            }
-        });
-    })
-</script>
+<script src="/assets/js/register.js" defer></script>
