@@ -320,6 +320,17 @@ input[type="checkbox"]:focus {
     color: var(--bs-primary) !important;
 }
 
+#publicNavComponent .dropdown-menu {
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+    border: 0 !important;
+}
+
+#publicNavComponent .dropdown-item:hover {
+    background-color: #d8ebfd;
+    color: #409EFF !important;
+}
+
 @media screen and (max-width: 992px) {
     #publicNavComponent  .logged_small {
         display: flex;
