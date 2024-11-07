@@ -1,7 +1,7 @@
 <section id="loginPublicView" class="container d-flex align-items-center justify-content-center">
     <div class="row w-100">
         <div class="col-sm-12 col-md-6 col-xl-7 d-flex justify-content-center align-items-center">
-            <form action="<?= PATH_LOGIN ?>" method="post" id="formLogin">
+            <form action="/login" method="post" id="formLogin">
                 <h1 class="text-center text-secondary-emphasis mb-3"><?= LOGIN ?></h1>
 
                 <div class="mb-3">

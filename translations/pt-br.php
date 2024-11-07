@@ -25,7 +25,7 @@ define("LABEL_CONFIRM_PASSWORD", "Confirmar senha");
 define("LABEL_COMPANY", "Empresa");
 
 // Page Path
-define("PATH_LOGOUT", "/usuario/logout");
+define("PATH_LOGOUT", "/logout");
 define("PATH_USER_PANEL", "/usuario/painel");
 define("PATH_USER_PROFILE", "/usuario/perfil");
 define("PATH_CONTACT", "/contato");
