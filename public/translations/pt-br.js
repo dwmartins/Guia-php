@@ -19,5 +19,5 @@ const LABEL_DESCRIPTION = "Descrição";
 const ALERT_DELETE_ACCOUNT = "Você precisa confirmar se realmente deseja excluir sua conta";
 const MESSAGE_SEND_SUCCESSFULLY = "Sua mensagem foi encaminhada com sucesso!";
 const FATAL_ERROR = "Ops, ocorreu um erro, tente novamente.";
-const BTN_SEN_MESSAGE = "Enviar mensagem";
+const BTN_SEND_MESSAGE = "Enviar mensagem";
 const IMG_5MB = "A imagem deve ter no máximo 5MB.";

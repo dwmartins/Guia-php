@@ -68,12 +68,12 @@ $(document).ready(function() {
                     data: formContact.serialize(),
                     success: function(response) {
                         showAlert('success', MESSAGE_SEND_SUCCESSFULLY);
-                        $('#formContact button').prop('disabled', false).text(BTN_SEN_MESSAGE);
+                        $('#formContact button').prop('disabled', false).text(BTN_SEND_MESSAGE);
                         formContact.get(0).reset();
                     },
                     error: function(error) {
                         showError(error);
-                        $('#formContact button').prop('disabled', false).text(BTN_SEN_MESSAGE);
+                        $('#formContact button').prop('disabled', false).text(BTN_SEND_MESSAGE);
                     },
                     complete: function() {
                         btnSubmit.prop('disabled', false).html(btnSubmitContent);

@@ -19,5 +19,5 @@ const LABEL_DESCRIPTION = "Description";
 const ALERT_DELETE_ACCOUNT = "You need to confirm that you really want to delete your account";
 const MESSAGE_SEND_SUCCESSFULLY = "Your message has been forwarded successfully!";
 const FATAL_ERROR = "Oops, an error occurred, please try again.";
-const BTN_SEN_MESSAGE = "Sen Message";
+const BTN_SEND_MESSAGE = "Send Message";
 const IMG_5MB = "The image must be a maximum of 5MB.";
