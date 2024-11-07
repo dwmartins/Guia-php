@@ -22,11 +22,11 @@ $(document).ready(function() {
             let isValid = true;
     
             const fieldLabels = {
-                name: "Nome",
-                lastName: "Sobrenome",
-                email: "E-mail",
-                company: "Empresa",
-                description: "Descrição"
+                name: LABEL_NAME,
+                lastName: LABEL_LAST_NAME,
+                email: LABEL_EMAIL,
+                company: LABEL_COMPANY,
+                description: LABEL_DESCRIPTION
             }
     
             for (let label in fieldLabels) {
@@ -53,7 +53,7 @@ $(document).ready(function() {
             }
     
             if(!isValid) {
-                showAlert('error', "Preencha todos os campos obrigatórios");
+                showAlert('error', ALL_FIELDS_INVALID);
             } else {
                 btnSubmit.prop('disabled', true).html(`
                     <div id="spinnerLoading" class="item_center gap-2">
@@ -67,13 +67,13 @@ $(document).ready(function() {
                     method: 'POST',
                     data: formContact.serialize(),
                     success: function(response) {
-                        showAlert('success', 'Mensagem enviada com sucesso!');
-                        $('#formContact button').prop('disabled', false).text('Enviar');
+                        showAlert('success', MESSAGE_SEND_SUCCESSFULLY);
+                        $('#formContact button').prop('disabled', false).text(BTN_SEN_MESSAGE);
                         formContact.get(0).reset();
                     },
                     error: function(error) {
                         showError(error);
-                        $('#formContact button').prop('disabled', false).text('Enviar');
+                        $('#formContact button').prop('disabled', false).text(BTN_SEN_MESSAGE);
                     },
                     complete: function() {
                         btnSubmit.prop('disabled', false).html(btnSubmitContent);

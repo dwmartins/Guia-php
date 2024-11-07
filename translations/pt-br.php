@@ -3,6 +3,8 @@
 // Pages titles
 define("TITLE_ENTER", "Entrar");
 define("TITLE_REGISTER", "Criar conta");
+define("TITLE_MAINTENANCE", "Manutenção");
+define("TITLE_PAGE_NOT_FOUNT", "Página não encontrada");
 
 // Form labels
 define("LABEL_EMAIL", "E-mail");

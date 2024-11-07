@@ -60,7 +60,7 @@ class Core {
 
         if (!$routesFound) {
             $view = "publicView/pageNotFound.php";
-            $title = "Página não encontrada";
+            $title = TITLE_PAGE_NOT_FOUNT;
 
             require __DIR__ . "/../views/master.php";
         } else {
@@ -115,7 +115,7 @@ class Core {
             }
 
             $view = "publicView/maintenance.php";
-            $title = "Manutenção";
+            $title = TITLE_MAINTENANCE;
 
             require __DIR__ . "/../views/master.php";
             return true;

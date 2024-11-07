@@ -20,11 +20,11 @@ class AdminMiddleware {
                     $request->setAttribute("userRequest", $user);
                     return true;
                 } else {
-                    return redirectWithMessage('/', 'error', "Você não tem permissão para acessar está area.");
+                    return redirectWithMessage('/', 'error', NOT_HAVE_PERMISSION_AREA);
                 }
             }
         }
 
-        redirect("/app/entrar");
+        redirect(PATH_ADM_LOGIN);
     }
 }

@@ -26,7 +26,7 @@ $(document).ready(function() {
 
             if(!isValid) {
                 event.preventDefault();
-                showAlert('error', "Preencha todos os campos obrigatórios");
+                showAlert('error', ALL_FIELDS_INVALID);
             } else {
                 $('#btnLogin').empty();
                 $('#btnLogin').html(`
