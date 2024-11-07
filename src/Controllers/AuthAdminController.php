@@ -10,14 +10,22 @@ class AuthAdminController {
     private array $allowedRoles = ["support", "admin", "mod", "test"];
 
     public function index(Request $request, $params) {
+        $body = $request->body();
+        $userEmail = "";
+
         if($this->checkRememberMe() || isAdmin()) {
             return redirect("/app");
+        }
+
+        if(isset($_COOKIE['lastLogin'])) {
+            $userEmail = $_COOKIE['lastLogin'];
         }
 
         return [
             'view' => 'adminView/login.php',
             'data' => [
-                'title' => PANEL .' | '. TITLE_ENTER
+                'title' => PANEL .' | '. TITLE_ENTER,
+                'userEmail' => $userEmail
             ]
         ];
     }
