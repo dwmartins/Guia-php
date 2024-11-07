@@ -22,7 +22,7 @@ class AuthController {
                 $userEmail = $body['new-account'];
             }
 
-            if(isset($_COOKIE['lastLogin'])) {
+            if(isset($_COOKIE['lastLogin']) && empty($body['new-account'])) {
                 $userEmail = $_COOKIE['lastLogin'];
             }
 
