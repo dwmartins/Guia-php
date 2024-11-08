@@ -88,6 +88,7 @@
     <script src="/assets/js/scripts.js"></script>
     <script src="/assets/js/validations.js"></script>
     <script src="/assets/js/compressImage.js"></script>
+    <script src="/assets/js/fileValidator.js"></script>
 </body>
 
 </html>

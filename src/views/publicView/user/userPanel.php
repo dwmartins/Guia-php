@@ -6,13 +6,6 @@
                 <div class="bg-gray-200 item_center flex-column p-3 shadow rounded rounded-2">
                     <div class="position-relative">
                         <img src="<?= $userImg ?>" alt="<?= ALT_USER_IMG ?>" id="current_user_photo" class="user_photo">
-                        <label for="new_img" class="btn_change_img"><i class="fa-solid fa-pencil"></i></label>
-                        <input type="file" id="new_img" class="d-none" accept="image/jpeg, image/jpg, image/png">
-                    </div>
-
-                    <div class="d-flex justify-content-between gap-2 my-2 options">
-                        <button id="btn_save_img" class="btn btn-sm btn-outline-primary">Salvar</button>
-                        <button id="btn_cancel_img" class="btn btn-sm btn-outline-danger">Cancelar</button>
                     </div>
 
                     <div class="d-flex flex-column align-items-center">

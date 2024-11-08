@@ -1,8 +1,4 @@
 <form id="formUserBasicInfo" action="/user/basic-info" method="post" class="row">
-    <h5 class="text-secondary mb-3"><?= BASIC_INFO ?></h5>
-
-    <hr class="text-secondary">
-
     <div class="mb-3 col-12 col-md-4">
         <label for="name" class="text-secondary mb-2"><span class="text-danger me-1">*</span><?= LABEL_NAME ?></label>
         <input type="text" name="name" id="name" autocomplete="name" value="<?= $user->getName() ?>" class="form-control custom_focus text-secondary">

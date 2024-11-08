@@ -116,6 +116,8 @@ define("PASSWORD", "Password");
 define("SETTINGS", "Settings");
 define("DELETE_ACCOUNT", "Delete account");
 define("SALVE_CHANGES", "Save Changes");
+define("SAVE", "Salvar");
+define("CANCEL", "Cancel");
 define("PASSWORDS_NOT_MATCH", "Passwords do not match.");
 define("PASSWORD_INCORRECT", "Current password is incorrect. Please make sure you have entered the correct password.");
 define("PASSWORD_UPDATE", "Your password has been changed successfully.");
@@ -144,3 +146,9 @@ define("MESSAGE_SEND_SUCCESSFULLY", "Your message has been forwarded successfull
 define("EMAIL_INVALID", "The email is invalid.");
 define("SIGNATURE", "Sincerely, <br> Team of");
 define("CONTACT_INFORMATION", "Contact Information:");
+define("NOT_IMAGES_SENT", "No images sent.");
+define("UNSUPPORTED_IMG", "The file must be a JPG, JPEG, or PNG image.");
+define("IMG_MAX_SIZE_5MB", "The file cannot exceed 5MB.");
+define("UPLOAD_ERROR", "Error while uploading file.");
+define("UNSUPPORTED_ICO", "The file must be an ICO icon or JPG, JPEG or PNG.");
+define("UPDATED_IMAGE_USER", "Image updated successfully.");

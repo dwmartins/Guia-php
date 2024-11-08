@@ -116,6 +116,8 @@ define("PASSWORD", "Senha");
 define("SETTINGS", "Configurações");
 define("DELETE_ACCOUNT", "Excluir conta");
 define("SALVE_CHANGES", "Salvar Alterações");
+define("SAVE", "Salvar");
+define("CANCEL", "Cancelar");
 define("PASSWORDS_NOT_MATCH", "As senhas não coincidem.");
 define("PASSWORD_INCORRECT", "Senha atual incorreta. Certifique-se de que você inseriu a senha correta.");
 define("PASSWORD_UPDATE", "Sua senha foi alterada com sucesso.");
@@ -144,3 +146,9 @@ define("MESSAGE_SEND_SUCCESSFULLY", "Sua mensagem foi encaminhada com sucesso!")
 define("EMAIL_INVALID", "O e-mail é invalido.");
 define("SIGNATURE", "Atenciosamente, <br> Equipe do");
 define("CONTACT_INFORMATION", "Informações de Contato:");
+define("NOT_IMAGES_SENT", "Nenhuma imagem enviada.");
+define("UNSUPPORTED_IMG", "O arquivo deve ser uma imagem JPG, JPEG ou PNG.");
+define("IMG_MAX_SIZE_5MB", "O arquivo não pode exceder 5MB.");
+define("UPLOAD_ERROR", "Erro durante o upload do arquivo.");
+define("UNSUPPORTED_ICO", "O arquivo deve ser um ícone ICO ou JPG, JPEG ou PNG.");
+define("UPDATED_IMAGE_USER", "Imagem atualizada com sucesso.");

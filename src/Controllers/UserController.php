@@ -3,10 +3,15 @@
 namespace App\Controllers;
 
 use App\Http\Request;
+use App\Http\Response;
 use App\Models\UserDAO;
+use App\Utils\UploadFile;
+use App\Validators\FileValidators;
 use App\Validators\UserValidator;
 
 class UserController {
+    private string $userImagesFolder = "users";
+
     public function panelView(Request $request, $params) {
         $user = getLoggedUser();
         $userImg = empty($user->getPhoto()) ? "/assets/img/default/user.jpg" : "/uploads/users/" . $user->getPhoto();
@@ -110,6 +115,57 @@ class UserController {
         } catch (\Exception $e) {
             logError($e->getMessage());
             redirectWithMessage(PATH_USER_PROFILE, "error", FATAL_ERROR);
+        }
+    }
+
+    /**
+     * Change user image
+     *
+     * @param File photo
+     * @return Json
+     */
+    public function updateImage(Request $request, $params) {
+        try {
+            $files = $request->files();
+
+            if(!isset($files['photo']) || empty($files['photo'])) {
+                return Response::json([
+                    'message' => NOT_IMAGES_SENT
+                ], 400);
+            }
+
+            $user = $request->getAttribute('userRequest');
+
+            $fileData = FileValidators::validImage($files['photo']);
+
+            if(isset($fileData['invalid'])) {
+                return Response::json([
+                    'message' => $fileData['invalid']
+                ], 400);
+            }
+
+            if(!empty($user->getPhoto())) {
+                UploadFile::removeFile($user->getPhoto(), $this->userImagesFolder);
+            }
+
+            $fileName = $user->getId() . "_user." . $fileData['mimeType'];
+            UploadFile::uploadFile($files['photo'], $this->userImagesFolder, $fileName);
+
+            $user->setPhoto($fileName);
+            $user->save();
+
+            // Updates user data in session
+            setUserLogged($user);
+
+            return Response::json([
+                "message" => UPDATED_IMAGE_USER,
+            ], 201);
+
+        } catch (\Exception $e) {
+            logError($e->getMessage());
+            return Response::json([
+                "message" => FATAL_ERROR
+            ], 500);
         }
     }
 }

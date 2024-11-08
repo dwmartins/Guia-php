@@ -114,60 +114,18 @@ $(document).ready(function () {
         $('#submenuConfigs').slideToggle(200);
         $('#chevronConfigs').toggleClass('rotate');
     });
-
-    //Update Image user
-    const currentUserImg = $('#current_user_photo').attr('src');
-    const btnSaveImg = $('#userPanelView #btn_cancel_img');
-    const btnCancelImg = $('#userPanelView #btn_cancel_img');
-
-    $('#userPanelView .options').addClass('d-none');
-
-    $('#new_img').on('change', async function() {
-        let file = this.files[0];
-
-        if(!file) return;
-
-        let compressImage = false;
-
-        const response = await $.ajax({
-            url: '/settings?name=compressImage',
-            method: 'GET',
-            dataType: 'json'
-        });
-
-        compressImage = response.value === "on";
-
-        if(compressImage) {
-            file = await handleImageUpload(file);
-        }
-
-        const reader = new FileReader();
-
-        reader.onload = function(e) {
-            $('#current_user_photo').attr('src', e.target.result);
-        }
-
-        reader.readAsDataURL(file);
-        $('#userPanelView .options').removeClass('d-none');
-    });
-
-    btnCancelImg.on('click', function() {
-        $('#userPanelView .options').addClass('d-none');
-        $('#current_user_photo').attr('src', currentUserImg);
-    });
-
-    btnSaveImg.on('click', async function() {
-        const newImg = $('#new_img')[0];
-
-        let formData = new FormData();
-        formData.append('userPhoto', newImg.files[0]);
-
-        const response = await $.ajax({
-            url: '/user/update-image',
-            method: 'POST',
-            data: formData 
-        });
-    })
 });
+
+// Function to show or hide the button loading state
+function showLoadingState(button, isLoading, label = SAVE, labelWait = WAIT) {
+    const spinnerHTML = `
+        <div id="spinnerLoading" class="item_center gap-2">
+            <div class="spinner-border" role="status"></div>
+            <p class="m-0">${WAIT}</p>
+        </div>
+    `;
+
+    $(button).prop('disabled', isLoading).html(isLoading ? spinnerHTML : label);
+}
 
 

@@ -1,5 +1,6 @@
 const ALL_FIELDS_INVALID = "Please fill in all required fields"
 const WAIT = "Please wait...";
+const SAVE = "Save";
 const PASSWORDS_NOT_MATCH = "Passwords do not match.";
 const PASSWORD_MIN_LENGTH_REQUIREMENT = "The password must contain at least 4 characters.";
 const FIELD_INVALID = "The field ({field}) contains invalid characters";
@@ -21,3 +22,7 @@ const MESSAGE_SEND_SUCCESSFULLY = "Your message has been forwarded successfully!
 const FATAL_ERROR = "Oops, an error occurred, please try again.";
 const BTN_SEND_MESSAGE = "Send Message";
 const IMG_5MB = "The image must be a maximum of 5MB.";
+const IMG_MAX_SIZE = "The image must be a maximum of {size}MB.";
+const IMG_FORMAT = "The image format must be (png, jpg or jpeg).";
+const ICON_MAX_SIZE = "The icon must be a maximum of {size}MB.";
+const ICON_FORMAT = "The ico format must be an ICO icon or JPG, JPEG or PNG.";

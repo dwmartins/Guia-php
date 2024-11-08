@@ -1,5 +1,6 @@
 const ALL_FIELDS_INVALID = "Preencha todos os campos obrigatórios"
 const WAIT = "Aguarde...";
+const SAVE = "Salvar";
 const PASSWORDS_NOT_MATCH = "As senhas não coincidem.";
 const PASSWORD_MIN_LENGTH_REQUIREMENT = "A senha deve conter pelo menos 4 caracteres.";
 const FIELD_INVALID = "O campo ({field}) contém caracteres inválidos";
@@ -21,3 +22,7 @@ const MESSAGE_SEND_SUCCESSFULLY = "Sua mensagem foi encaminhada com sucesso!";
 const FATAL_ERROR = "Ops, ocorreu um erro, tente novamente.";
 const BTN_SEND_MESSAGE = "Enviar mensagem";
 const IMG_5MB = "A imagem deve ter no máximo 5MB.";
+const IMG_MAX_SIZE = "A imagem deve ter no máximo {size}MB.";
+const IMG_FORMAT = "O formato da imagem deve ser (png, jpg ou jpeg).";
+const ICON_MAX_SIZE = "O ico deve ter no máximo {size}MB.";
+const ICON_FORMAT = "O formato do ico deve ser um ícone ICO ou JPG, JPEG ou PNG.";

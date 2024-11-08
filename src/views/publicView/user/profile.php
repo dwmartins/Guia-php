@@ -1,10 +1,34 @@
 <section id="profileView" class="container-fluid">
     <div class="container my-2 my-sm-5">
         <h2 class="custom_dark fw-bolder"><?= PERSONAL_INFO ?></h2>
-        <p class="text-secondary"><?= MANAGE_PERSONAL_HERE ?></p>
+        <p class="text-secondary m-0"><?= MANAGE_PERSONAL_HERE ?></p>
 
-        <div class="row mt-5">
+        <div class="row mt-sm-3">
             <div class="col-12 col-lg-7 col-xxl-6">
+                <div class="item_center d-flex flex-wrap gap-3 p-3 rounded rounded-2 my-sm-2 mb-sm-5">
+                    <div>
+                        <div class="position-relative">
+                            <img src="<?= $userImg ?>" alt="<?= ALT_USER_IMG ?>" id="current_user_photo" class="user_photo">
+                            <label for="new_img" class="btn_change_img"><i class="fa-solid fa-pencil"></i></label>
+                            <input type="file" id="new_img" class="d-none" accept="image/jpeg, image/jpg, image/png">
+                            <div class="loadingImg d-none">
+                                <?php include ROOT_COMPONENTS . "shared/loader.php" ?>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center gap-2 my-2 options d-none">
+                            <button id="btn_save_img" class="btn btn-sm btn-outline-primary"><?= SAVE ?></button>
+                            <button id="btn_cancel_img" class="btn btn-sm btn-outline-danger"><?= CANCEL ?></button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column align-items-center">
+                        <p class="custom_dark fw-semibold mt-2 mb-0"><?= $user->getFullName() ?></p>
+                        <p class="text-secondary fs-8 text-break"><?= $user->getEmail() ?></p>
+                        <p class="custom_dark fw-semibold fs-8 text-break mb-0"><?= MEMBER_SINCE ?>:</p>
+                        <p class="text-secondary fs-8 text-break"><?= getDateAsString($user->getCreatedAt()) ?></p>
+                    </div>
+                </div>
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <p class="fs-5 custom_dark mb-0"><?= BASIC_INFO ?></p>
                     <button class="btn link-primary fs-7 fw-semibold letter-spacing text-uppercase p-0" data-toggle="basic_info_form"><?= UPDATE_TEXT ?></button>
@@ -119,3 +143,5 @@
         </div>
     </div>
 </section>
+
+<script src="/assets/js/profile.js" defer></script>

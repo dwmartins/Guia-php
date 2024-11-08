@@ -31,3 +31,8 @@ Route::post('/user/basic-info', 'UserController@update', [
 Route::post('/user/address', 'UserController@updateAddress', [
     [UserMiddleware::class, 'isAuth']
 ]);
+
+//Update photo
+Route::post('/user/update-image', 'UserController@updateImage', [
+    [UserMiddleware::class, 'isAuth']
+]);

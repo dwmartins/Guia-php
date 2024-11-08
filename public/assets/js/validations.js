@@ -63,20 +63,3 @@ function showError(error) {
 
     showAlert('error', FATAL_ERROR);
 }
-
-function validImg(image) {
-    const imgExtensions = ['image/jpeg', 'image/jpg', 'image/png'];
-    const fileSize = 5 * 1024 * 1024; // 5MB
-
-    if (image.size > this.fileSize) {
-        showAlert('error', IMG_5MB );
-        return false;
-    }
-
-    if (!this.imgExtensions.includes(image.type)) {
-        showAlert('warning', '', showText('IMG_FORMAT'));
-        return false;
-    }
-
-    return true;
-}
