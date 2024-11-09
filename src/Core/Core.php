@@ -12,7 +12,7 @@ class Core {
         $routesFound = false;
 
         foreach($routes as $route) {
-            $pattern = '#^'. preg_replace('/{id}/', '([\w-]+)', $route['path'] . '$#'); 
+            $pattern = '#^' . preg_replace('/{id}/', '([\w-]+)', $route['path']) . '/?$#';
 
             if(preg_match($pattern, $url, $matches)) {
                 array_shift($matches);
