@@ -4,24 +4,27 @@ namespace App\Controllers;
 
 use App\Http\Request;
 use App\Http\Response;
+use App\Utils\SEOManager;
 use App\Validators\ContactValidator;
 
 class ContactController {
+
+    private $seo;
+
+    public function __construct() {
+        $this->seo = new SEOManager;
+    }
+
     /**
      * @return View "publicView/contact.php"
      */
     public function index(Request $request, $params) {
-        $pageTitle = CONTACT;
-        $siteInfo = getSiteInfo();
-
-        if(!empty($siteInfo->getWebSiteName())) {
-            $pageTitle .= " | " . $siteInfo->getWebSiteName();
-        }
+        $this->seo->setTitle(CONTACT . ' | ' . getSiteInfo()->getWebSiteName());
         
         return [
             "view" => "publicView/contact.php",
             "data" => [
-                "title" => $pageTitle
+                "seo" => $this->seo
             ]
         ];
     }

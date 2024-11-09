@@ -6,45 +6,50 @@ use App\Class\User;
 use App\Class\UserAccess;
 use App\Http\Request;
 use App\Models\UserDAO;
+use App\Utils\SEOManager;
 use App\Validators\UserValidator;
 
 class AuthController {
+
+    private $seo;
+
+    public function __construct() {
+        $this->seo = new SEOManager;
+    }
+
     public function index(Request $request, $params) {
-        try {
-            $body = $request->body();
-            $userEmail = "";
+        $body = $request->body();
+        $userEmail = "";
+        $this->seo->setTitle(TITLE_ENTER . ' | ' . getSiteInfo()->getWebSiteName());
 
-            if($this->checkRememberMe() || isLoggedIn()) {
-                return redirect("/");
-            }
-
-            if(isset($body['new-account']) && !empty($body['new-account'])) {
-                $userEmail = $body['new-account'];
-            }
-
-            if(isset($_COOKIE['lastLogin']) && empty($body['new-account'])) {
-                $userEmail = $_COOKIE['lastLogin'];
-            }
-
-            return [
-                'view' => 'publicView/user/login.php',
-                'data' => [
-                    'title' => TITLE_ENTER . ' | ' . getSiteInfo()->getWebSiteName(),
-                    'userEmail' => $userEmail
-                ]
-            ];
-
-        } catch (\Exception $e) {
-            logError($e->getMessage());
-            redirectWithMessage(PATH_LOGIN, 'error', FATAL_ERROR);
+        if($this->checkRememberMe() || isLoggedIn()) {
+            return redirect("/");
         }
+
+        if(isset($body['new-account']) && !empty($body['new-account'])) {
+            $userEmail = $body['new-account'];
+        }
+
+        if(isset($_COOKIE['lastLogin']) && empty($body['new-account'])) {
+            $userEmail = $_COOKIE['lastLogin'];
+        }
+
+        return [
+            'view' => 'publicView/user/login.php',
+            'data' => [
+                'userEmail' => $userEmail,
+                'seo' => $this->seo
+            ]
+        ];
     }
 
     public function registerView(Request $request, $params) {
+        $this->seo->setTitle(TITLE_REGISTER . ' | ' . getSiteInfo()->getWebSiteName());
+
         return [
             "view" => "publicView/user/register.php",
             "data" => [
-                "title" => TITLE_REGISTER . ' | ' . getSiteInfo()->getWebSiteName()
+                "seo" => $this->seo
             ]
         ];
     }

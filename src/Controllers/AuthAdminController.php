@@ -5,11 +5,21 @@ namespace App\Controllers;
 use App\Class\User;
 use App\Class\UserAccess;
 use App\Http\Request;
+use App\Utils\SEOManager;
 
 class AuthAdminController {
     private array $allowedRoles = ["support", "admin", "mod", "test"];
+    private $seo;
 
+    public function __construct() {
+        $this->seo = new SEOManager;
+    }
+
+    /**
+     * @return View "adminView/login.php"
+     */
     public function index(Request $request, $params) {
+        $this->seo->setTitle(PANEL .' | '. TITLE_ENTER);
         $body = $request->body();
         $userEmail = "";
 
@@ -24,7 +34,7 @@ class AuthAdminController {
         return [
             'view' => 'adminView/login.php',
             'data' => [
-                'title' => PANEL .' | '. TITLE_ENTER,
+                'seo' => $this->seo,
                 'userEmail' => $userEmail
             ]
         ];

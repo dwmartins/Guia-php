@@ -5,37 +5,53 @@ namespace App\Controllers;
 use App\Http\Request;
 use App\Http\Response;
 use App\Models\UserDAO;
+use App\Utils\SEOManager;
 use App\Utils\UploadFile;
 use App\Validators\FileValidators;
 use App\Validators\UserValidator;
 
 class UserController {
     private string $userImagesFolder = "users";
+    private $seo;
 
+    public function __construct() {
+        $this->seo = new SEOManager;
+    }
+
+    /**
+     * @return View "publicView/user/userPanel.php"
+     */
     public function panelView(Request $request, $params) {
+        $this->seo->setTitle(USER_PANEL);
+
         $user = getLoggedUser();
         $userImg = empty($user->getPhoto()) ? "/assets/img/default/user.jpg" : "/uploads/users/" . $user->getPhoto();
 
         return [
             "view" => "publicView/user/userPanel.php",
             "data" => [
-                "title" => USER_PANEL,
                 "user" => $user,
-                "userImg" => $userImg 
+                "userImg" => $userImg,
+                "seo" => $this->seo
             ]
         ];
     }
 
+    /**
+     * @return View "publicView/user/profile.php"
+     */
     public function profileView(Request $request, $params) {
+        $this->seo->setTitle(USER_PROFILE);
+
         $user = getLoggedUser();
         $userImg = empty($user->getPhoto()) ? "/assets/img/default/user.jpg" : "/uploads/users/" . $user->getPhoto();
 
         return [
             "view" => "publicView/user/profile.php",
             "data" => [
-                "title" => USER_PROFILE,
                 "user" => $user,
-                "userImg" => $userImg
+                "userImg" => $userImg,
+                "seo" => $this->seo
             ]
         ];
     }
