@@ -1,6 +1,6 @@
 <?php
 
-include "constants.php";
+require_once "constants.php";
 
 // Load the appropriate .env file
 try {

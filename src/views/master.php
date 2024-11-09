@@ -4,9 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title ?></title>
-
-    <link rel="icon" href="<?= showIco() ?>" type="image/x-icon">
+    <?php
+        if(isset($seo)) {
+            echo $seo->getTitleTag();
+            echo $seo->getDescriptionTag();
+            echo $seo->getKeywordsTag();
+            echo $seo->getIconTag();
+        }
+    ?>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
