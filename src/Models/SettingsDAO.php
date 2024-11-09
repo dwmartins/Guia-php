@@ -33,8 +33,7 @@ class SettingsDAO extends Database{
 
             $stmt->execute($values);
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error when executing query to create setting");
+            throw new Exception("Error when executing query to create setting: " . $e);
         }
     }
 
@@ -64,8 +63,7 @@ class SettingsDAO extends Database{
             return $stmt->rowCount();
 
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error when executing query to update setting");
+            throw new Exception("Error when executing query to update setting: " . $e );
         }
     }
 
@@ -83,8 +81,7 @@ class SettingsDAO extends Database{
             return $result ?: [];
 
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error when executing query to search for settings.");
+            throw new Exception("Error when executing query to search for settings: " . $e);
         }
     }
 
@@ -101,8 +98,7 @@ class SettingsDAO extends Database{
 
             return $result ?: [];
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error when executing query to search for settings by name.");
+            throw new Exception("Error when executing query to search for settings by name: " . $e);
         }
     }
 

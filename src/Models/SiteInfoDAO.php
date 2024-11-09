@@ -39,8 +39,7 @@ class SiteInfoDAO extends Database {
             return $pdo->lastInsertId();
 
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error executing query to save site information.");
+            throw new Exception("Error executing query to save site information: " . $e);
         }
     }
 
@@ -76,8 +75,7 @@ class SiteInfoDAO extends Database {
             return $stmt->rowCount();
             
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error when executing query to update site information.");
+            throw new Exception("Error when executing query to update site information: " . $e);
         }
     }
 
@@ -95,8 +93,7 @@ class SiteInfoDAO extends Database {
             return $result ?: [];
 
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error when executing query to search for site information.");
+            throw new Exception("Error when executing query to search for site information: " . $e);
         }
     }
 }

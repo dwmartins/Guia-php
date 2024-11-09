@@ -41,8 +41,7 @@ class UserDAO extends Database {
 
             return $pdo->lastInsertId();
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error when executing query to create user");
+            throw new Exception("Error when executing query to create user: " . $e);
         }
     }
 
@@ -79,8 +78,7 @@ class UserDAO extends Database {
             return $stmt->rowCount();
 
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error when executing query to update user");
+            throw new Exception("Error when executing query to update user: " . $e);
         }
     }
 
@@ -106,8 +104,7 @@ class UserDAO extends Database {
             return $stmt->rowCount();
 
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error when executing query to update password");
+            throw new Exception("Error when executing query to update password: " . $e);
         }
     }
 
@@ -133,8 +130,7 @@ class UserDAO extends Database {
             return $stmt->rowCount();
 
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error when executing query to update user role");
+            throw new Exception("Error when executing query to update user role: " . $e);
         }
     }
 
@@ -160,8 +156,7 @@ class UserDAO extends Database {
             return $stmt->rowCount();
             
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error when executing query to update photo");
+            throw new Exception("Error when executing query to update photo: " . $e);
         }
     }
  
@@ -179,8 +174,7 @@ class UserDAO extends Database {
             return $stmt->rowCount();
 
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error when executing query to delete user");
+            throw new Exception("Error when executing query to delete user: " . $e);
         }
     }
 
@@ -198,8 +192,7 @@ class UserDAO extends Database {
             return $stmt->rowCount();
 
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error when executing query to exclude multiple users");
+            throw new Exception("Error when executing query to exclude multiple users: " . $e);
         }
     }
 
@@ -252,8 +245,7 @@ class UserDAO extends Database {
             return $result ?: [];
     
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error when running query to search for users");
+            throw new Exception("Error when running query to search for users: " . $e);
         }
     }
     
@@ -274,8 +266,7 @@ class UserDAO extends Database {
             return $result ?: [];
 
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception($e->getMessage());
+            throw new Exception($e);
         }
     }
 
@@ -296,8 +287,7 @@ class UserDAO extends Database {
             return $result ?: [];
 
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error when executing query to search for user by id");
+            throw new Exception("Error when executing query to search for user by id: " . $e);
         }
     }
 
@@ -318,8 +308,7 @@ class UserDAO extends Database {
             return $result ?: [];
 
         } catch (PDOException $e) {
-            logError($e->getMessage());
-            throw new Exception("Error when executing query to search for user by token");
+            throw new Exception("Error when executing query to search for user by token: " . $e);
         }
     }
 }

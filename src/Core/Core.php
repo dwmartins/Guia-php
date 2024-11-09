@@ -40,21 +40,26 @@ class Core {
                     return;
                 }
 
-                if(self::checkMaintenanceMode($url)) {
+                try {
+                    if(self::checkMaintenanceMode($url)) {
+                        return;
+                    }
+
+                    $extendController = new $controller();
+                    $result = $extendController->$action(new Request, $matches);
+
+                    if (is_array($result) && isset($result['view']) && isset($result['data'])) {
+                        extract($result['data']);
+                        $view = $result['view'];
+
+                        require __DIR__ . "/../views/master.php";
+                    }
+
                     return;
+                } catch (\Exception $e) {
+                    logError($e);
+                    showErrorPage();
                 }
-
-                $extendController = new $controller();
-                $result = $extendController->$action(new Request, $matches);
-
-                if (is_array($result) && isset($result['view']) && isset($result['data'])) {
-                    extract($result['data']);
-                    $view = $result['view'];
-
-                    require __DIR__ . "/../views/master.php";
-                }
-
-                return;
             }
         }
 

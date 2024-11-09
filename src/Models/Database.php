@@ -17,7 +17,6 @@ class Database {
             $pdo = new PDO("$dbType:host=$host;dbname=$dbname", $username, $password);
             return $pdo;
         } catch (PDOException $e) {
-            logError($e->getMessage());
             return throw $e;
         }
     }

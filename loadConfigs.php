@@ -10,22 +10,26 @@ try {
 }
 
 if(!isCli()) {
-    // Set the default language
-    loadTranslations();
+    try {
+        // Set the default language
+        loadTranslations();
 
-    // Sets the default time zone
-    loadTimeZone();
+        // Sets the default time zone
+        loadTimeZone();
 
-    // Get basic information from the website
-    define("SITE_INFO", getSiteInfo());
+        // Get basic information from the website
+        define("SITE_INFO", getSiteInfo());
 
-    session_set_cookie_params([
-        'secure' => true,
-        'httponly' => true,
-        'samesite' => 'Strict'
-    ]);
+        session_set_cookie_params([
+            'secure' => true,
+            'httponly' => true,
+            'samesite' => 'Strict'
+        ]);
 
-    session_start();
+        session_start();
+    } catch (\Exception $e) {
+        showErrorPage();
+    }
 }
 
 /**

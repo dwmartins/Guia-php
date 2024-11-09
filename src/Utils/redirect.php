@@ -33,3 +33,8 @@ function redirectWithMessage(string $to, string $type, string $message, array $d
 
     exit();
 }
+
+function showErrorPage() {
+    include ROOT_VIEWS . "publicView/error.php";
+    exit();
+}
