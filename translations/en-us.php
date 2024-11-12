@@ -5,6 +5,7 @@ define("TITLE_ENTER", "Login");
 define("TITLE_REGISTER", "Create account");
 define("TITLE MAINTENANCE", "Maintenance");
 define("TITLE_PAGE_NOT_FOUNT", "Page not found");
+define("SEO_TITLE_EMAIL_SETTINGS", "Email Settings");
 
 // Form labels 
 define("LABEL_EMAIL", "Email");
@@ -25,6 +26,14 @@ define("LABEL CURRENT PASSWORD", "Current password");
 define("LABEL_NEW_PASSWORD", "New Password");
 define("LABEL_CONFIRM_PASSWORD", "Confirm password");
 define("LABEL_COMPANY", "Company");
+define("EMAIL_SETTINGS_TITLE", "SMTP Server Properties");
+define("STATUS_EMAIL_ACTIVE", "Active");
+define("STATUS_EMAIL_INACTIVE", "Inactive");
+define("SERVER_LABEL", "Server");
+define("PORT_LABEL", "Port");
+define("AUTHENTICATION_LABEL", "Authentication");
+define("EMAIL_ADDRESS_LABEL", "Email address");
+define("USERNAME_EMAIL_LABEL", "Username/Email");
 
 // Page Path
 define("PATH_LOGOUT", "/logout");
@@ -43,7 +52,8 @@ define("PATH_PRIVACY", "/privacy");
 
 // Page Path ADM
 define("PATH_ADM_LOGIN", "/app/login");
-define("PATH_ADM_SETTINGS", "app/settings/general-settings");
+define("PATH_EMAIL_SETTINGS", "/app/settings/email-settings");
+define("PATH_ADM_SETTINGS", "/app/settings/general-settings");
 
 // Page label
 define("HOME_PAGE", "Home");
@@ -152,3 +162,4 @@ define("IMG_MAX_SIZE_5MB", "The file cannot exceed 5MB.");
 define("UPLOAD_ERROR", "Error while uploading file.");
 define("UNSUPPORTED_ICO", "The file must be an ICO icon or JPG, JPEG or PNG.");
 define("UPDATED_IMAGE_USER", "Image updated successfully.");
+define("SETTINGS_SAVED_SUCCESSFULLY", "Settings saved successfully.");

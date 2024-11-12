@@ -5,6 +5,7 @@ define("TITLE_ENTER", "Entrar");
 define("TITLE_REGISTER", "Criar conta");
 define("TITLE_MAINTENANCE", "Manutenção");
 define("TITLE_PAGE_NOT_FOUNT", "Página não encontrada");
+define("SEO_TITLE_EMAIL_SETTINGS", "Configurações de e-mail");
 
 // Form labels
 define("LABEL_EMAIL", "E-mail");
@@ -25,6 +26,14 @@ define("LABEL_CURRENT_PASSWORD", "Senha atual");
 define("LABEL_NEW_PASSWORD", "Nova senha");
 define("LABEL_CONFIRM_PASSWORD", "Confirmar senha");
 define("LABEL_COMPANY", "Empresa");
+define("EMAIL_SETTINGS_TITLE", "Propriedades do servidor SMTP");
+define("STATUS_EMAIL_ACTIVE", "Ativa");
+define("STATUS_EMAIL_INACTIVE", "Inativa");
+define("SERVER_LABEL", "Servidor");
+define("PORT_LABEL", "Porta");
+define("AUTHENTICATION_LABEL", "Autenticação");
+define("EMAIL_ADDRESS_LABEL", "Endereço de e-mail");
+define("USERNAME_EMAIL_LABEL", "Usuário/E-mail");
 
 // Page Path
 define("PATH_LOGOUT", "/logout");
@@ -43,7 +52,8 @@ define("PATH_PRIVACY", "/privacidade");
 
 // Page Path ADM
 define("PATH_ADM_LOGIN", "/app/entrar");
-define("PATH_ADM_SETTINGS", "app/configurações/configurações-gerais");
+define("PATH_EMAIL_SETTINGS", "/app/configuracoes/configuracoes-email");
+define("PATH_ADM_SETTINGS", "/app/configuracoes/configurações-gerais");
 
 // Page label
 define("HOME_PAGE", "Incio");
@@ -152,3 +162,4 @@ define("IMG_MAX_SIZE_5MB", "O arquivo não pode exceder 5MB.");
 define("UPLOAD_ERROR", "Erro durante o upload do arquivo.");
 define("UNSUPPORTED_ICO", "O arquivo deve ser um ícone ICO ou JPG, JPEG ou PNG.");
 define("UPDATED_IMAGE_USER", "Imagem atualizada com sucesso.");
+define("SETTINGS_SAVED_SUCCESSFULLY", "Configurações salvas com sucesso.");

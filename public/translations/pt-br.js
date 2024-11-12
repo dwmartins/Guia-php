@@ -26,3 +26,5 @@ const IMG_MAX_SIZE = "A imagem deve ter no máximo {size}MB.";
 const IMG_FORMAT = "O formato da imagem deve ser (png, jpg ou jpeg).";
 const ICON_MAX_SIZE = "O ico deve ter no máximo {size}MB.";
 const ICON_FORMAT = "O formato do ico deve ser um ícone ICO ou JPG, JPEG ou PNG.";
+const STATUS_EMAIL_ACTIVE = "Ativa";
+const STATUS_EMAIL_INACTIVE = "Inativa";

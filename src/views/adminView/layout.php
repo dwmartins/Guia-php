@@ -40,7 +40,7 @@
                     <a href="/app/basic-information" class="submenu-link"><?= BASIC_INFORMATION_PAGE ?></a>
                     <a href="/app/settings" class="submenu-link"><?= GENERAL_SETTINGS_PAGE ?></a>
                     <a href="/app/language" class="submenu-link"><?= LANGUAGE_PAGE ?></a>
-                    <a href="/app/email" class="submenu-link"><?= EMAIL_PAGE ?></a>
+                    <a href="<?= PATH_EMAIL_SETTINGS ?>" class="submenu-link"><?= EMAIL_PAGE ?></a>
                 </div>
             </li>
 
