@@ -1,6 +1,6 @@
 <section id="pageNotFoundView" class="container d-flex flex-column justify-content-center align-items-center vh-100 show">
-    <img src="/assets/svg/pageNotFound.svg" alt="Página não encontrada">
-    <p class="text-secondary fs-4 text-center">Página não encontrada</p>
+    <img src="/assets/svg/pageNotFound.svg" alt="<?= TITLE_PAGE_NOT_FOUNT ?>">
+    <p class="text-secondary fs-4 text-center"><?= TITLE_PAGE_NOT_FOUNT ?></p>
     
-    <a href="/" class="btn btn-outline-primary">Voltar para página inicial</a>
+    <a href="/" class="btn btn-outline-primary"><?= BACK_TO_HOME_PAGE ?></a>
 </section>

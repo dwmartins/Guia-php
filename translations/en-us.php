@@ -163,3 +163,4 @@ define("UPLOAD_ERROR", "Error while uploading file.");
 define("UNSUPPORTED_ICO", "The file must be an ICO icon or JPG, JPEG or PNG.");
 define("UPDATED_IMAGE_USER", "Image updated successfully.");
 define("SETTINGS_SAVED_SUCCESSFULLY", "Settings saved successfully.");
+define("BACK_TO_HOME_PAGE", "Back to home page");
