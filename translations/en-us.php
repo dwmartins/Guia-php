@@ -22,7 +22,7 @@ define("LABEL_CITY", "City");
 define("LABEL_ZIP_CODE", "Zip code");
 define("LABEL_STATE", "State");
 define("LABEL_COUNTRY", "País");
-define("LABEL CURRENT PASSWORD", "Current password");
+define("LABEL_CURRENT_PASSWORD", "Current password");
 define("LABEL_NEW_PASSWORD", "New Password");
 define("LABEL_CONFIRM_PASSWORD", "Confirm password");
 define("LABEL_COMPANY", "Company");
@@ -57,8 +57,8 @@ define("PATH_ADM_SETTINGS", "/app/settings/general-settings");
 
 // Page label
 define("HOME_PAGE", "Home");
-define("PANEL_PAGE", "Painel");
-define("LOGOUT_PAGE", "Sair");
+define("PANEL_PAGE", "Panel");
+define("LOGOUT_PAGE", "Logout");
 define("BLOG_PAGE", "Blog");
 define("CONTACT_PAGE", "Contact");
 define("ADVERTISERS_PAGE", "Advertise here");
@@ -121,7 +121,7 @@ define("DONT_HAVE_ADS", "It looks like you don't have any ads on our site.");
 define("ADVERTISE_NOW", "Advertise Now");
 define("MY_ACCOUNT", "Minha conta");
 define("BASIC_INFO", "Basic Information");
-define("ADDRESS", "Endereço");
+define("ADDRESS", "Address");
 define("PASSWORD", "Password");
 define("SETTINGS", "Settings");
 define("DELETE_ACCOUNT", "Delete account");
