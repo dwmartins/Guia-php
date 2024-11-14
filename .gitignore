@@ -4,6 +4,7 @@ vendor
 .env
 .env.development
 error.log
+cache
 
 node_modules
 
