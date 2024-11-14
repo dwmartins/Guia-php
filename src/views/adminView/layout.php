@@ -63,7 +63,7 @@
                 </button>
             </a>
         </header>
-        <main class="px-3 bg-body-tertiary h-100 w-100">
+        <main class="px-3 bg-body-tertiary w-100">
             <!-- Router view or main content goes here -->
             <?php require ROOT_VIEWS . "$view"; ?>
         </main>

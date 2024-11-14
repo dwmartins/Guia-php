@@ -702,6 +702,7 @@ input[type="checkbox"]:focus {
     position: sticky;
     top: 0;
     background-color: #fff;
+    z-index: 99;
 }
 
 #adminLayout .logo {
@@ -789,6 +790,10 @@ input[type="checkbox"]:focus {
 #adminLayout .rotate {
     transform: rotate(90deg);
     transition: transform 0.3s ease;
+}
+
+#adminLayout main {
+    height: calc(100vh - 60px);
 }
 
 #pageNotFoundView img, p {
