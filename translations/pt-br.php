@@ -164,3 +164,4 @@ define("UNSUPPORTED_ICO", "O arquivo deve ser um ícone ICO ou JPG, JPEG ou PNG.
 define("UPDATED_IMAGE_USER", "Imagem atualizada com sucesso.");
 define("SETTINGS_SAVED_SUCCESSFULLY", "Configurações salvas com sucesso.");
 define("BACK_TO_HOME_PAGE", "Voltar para página inicial");
+define("ARE_YOU_AN_ADMINISTRATOR", "É um administrador?");
