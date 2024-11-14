@@ -416,6 +416,12 @@ input[type="checkbox"]:focus {
     }
 }
 
+@media screen and (max-width: 768px) {
+    .nav-link {
+        font-size: 18px !important;
+    }
+}
+
 #loginPublicView {
     height: calc(100vh - 130px);
 }
