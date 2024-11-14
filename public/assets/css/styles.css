@@ -387,7 +387,7 @@ input[type="checkbox"]:focus {
 }
 
 #publicNavComponent .dropdown-item:hover {
-    background-color: #d8ebfd;
+    background-color: #d8ebfd9c;
     color: #409EFF !important;
 }
 
