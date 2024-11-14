@@ -25,7 +25,7 @@ class UserController {
         $this->seo->setTitle(USER_PANEL);
 
         $user = getLoggedUser();
-        $userImg = empty($user->getPhoto()) ? ROOT_DEFAULT_USER_IMAGE : ROOT_UPLOADS_USERS . $user->getPhoto();
+        $userImg = empty($user->getPhoto()) ? ROOT_DEFAULT_USER_IMAGE : ROOT_UPLOADS_USERS . $user->getPhoto() . "?v=" . time();
 
         return [
             "view" => "publicView/user/userPanel.php",
@@ -44,7 +44,7 @@ class UserController {
         $this->seo->setTitle(USER_PROFILE);
 
         $user = getLoggedUser();
-        $userImg = empty($user->getPhoto()) ? ROOT_DEFAULT_USER_IMAGE : ROOT_UPLOADS_USERS . $user->getPhoto();
+        $userImg = empty($user->getPhoto()) ? ROOT_DEFAULT_USER_IMAGE : ROOT_UPLOADS_USERS . $user->getPhoto() . "?v=" . time();
 
         return [
             "view" => "publicView/user/profile.php",
