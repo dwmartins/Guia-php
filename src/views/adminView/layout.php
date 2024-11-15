@@ -1,71 +1,254 @@
-<section id="adminLayout" class="d-flex m-0 p-0">
-    <nav class="sidebar">
-        <div class="logo px-2 mb-2">
-            <img src="/assets/img/default/defaultLogo.png" alt="WEBSITE_LOGO">
-            <i class="fa-solid fa-xmark me-2 fs-5" id="toggleMenu"></i>
-        </div>
-        <ul class="menu fw-semibold">
-            <!-- Dashboard -->
-            <li class="menu-item">
-                <i class="fa-solid fa-chart-line"></i>
-                <a href="/app" class="menu-link w-100"><?= DASHBOARD_PAGE ?></a>
-            </li>
+<?php
 
-            <!-- Contents with submenu -->
-            <li class="menu-item d-flex flex-column align-items-start">
-                <div class="d-flex align-items-center w-100" id="toggleContents">
-                    <i class="fa-solid fa-list"></i>
-                    <a href="javascript:void(0);" class="menu-text cursor_pointer d-flex justify-content-between align-items-center w-100">
-                        <?= CONTENTS_PAGE ?>
-                        <i class="fa-solid fa-chevron-right fs-7" id="chevronContents"></i>
-                    </a>
-                </div>
-                <div class="submenu my-3" id="submenuContents">
-                    <a href="/app/advertisements" class="submenu-link"><?= LISTAGENS_PAGE ?></a>
-                    <a href="/app/events" class="submenu-link"><?= EVENTS_PAGE ?></a>
-                    <a href="/app/blog" class="submenu-link"><?= BLOG_PAGE ?></a>
-                </div>
-            </li>
+$userLogged = getLoggedUser();
 
-            <!-- Configs with submenu -->
-            <li class="menu-item d-flex flex-column align-items-start">
-                <div class="d-flex align-items-center w-100" id="toggleConfigs">
-                    <i class="fa-solid fa-gears"></i>
-                    <a href="javascript:void(0);" class="menu-text cursor_pointer d-flex justify-content-between align-items-center w-100">
-                        <?= SETTINGS_PAGE ?>
-                        <i class="fa-solid fa-chevron-right fs-7" id="chevronConfigs"></i>
-                    </a>
-                </div>
-                <div class="submenu my-3" id="submenuConfigs">
-                    <a href="/app/basic-information" class="submenu-link"><?= BASIC_INFORMATION_PAGE ?></a>
-                    <a href="/app/settings" class="submenu-link"><?= GENERAL_SETTINGS_PAGE ?></a>
-                    <a href="/app/language" class="submenu-link"><?= LANGUAGE_PAGE ?></a>
-                    <a href="<?= PATH_EMAIL_SETTINGS ?>" class="submenu-link"><?= EMAIL_PAGE ?></a>
-                </div>
-            </li>
+?>
 
-            <!-- Users -->
-            <li class="menu-item">
-                <i class="fa-regular fa-user"></i>
-                <a href="/app/users" class="menu-link w-100"><?= USERS_PAGE ?></a>
-            </li>
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-center">
+        <a href="/" class="logo d-flex align-items-center">
+            <img src="/assets/img/default/defaultLogo.png" class="img-fluid" alt="Logo">
+        </a>
+        <a href="javascript:void(0);" class="text-black ms-2 ms-sm-4">
+            <i class="fa-solid fa-bars toggle-sidebar-btn mt-1"></i>
+        </a>
+    </div><!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+            <li class="nav-item dropdown">
+
+                <a class="nav-link nav-icon" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="badge bg-primary badge-number">4</span>
+                </a><!-- End Notification Icon -->
+
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                    <li class="dropdown-header">
+                        You have 4 new notifications
+                        <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="notification-item">
+                        <i class="bi bi-exclamation-circle text-warning"></i>
+                        <div>
+                            <h4>Lorem Ipsum</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>30 min. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="notification-item">
+                        <i class="bi bi-x-circle text-danger"></i>
+                        <div>
+                            <h4>Atque rerum nesciunt</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>1 hr. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="notification-item">
+                        <i class="bi bi-check-circle text-success"></i>
+                        <div>
+                            <h4>Sit rerum fuga</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>2 hrs. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="notification-item">
+                        <i class="bi bi-info-circle text-primary"></i>
+                        <div>
+                            <h4>Dicta reprehenderit</h4>
+                            <p>Quae dolorem earum veritatis oditseno</p>
+                            <p>4 hrs. ago</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li class="dropdown-footer">
+                        <a href="#">Show all notifications</a>
+                    </li>
+
+                </ul><!-- End Notification Dropdown Items -->
+
+            </li><!-- End Notification Nav -->
+
+            <li class="nav-item dropdown">
+
+                <a class="nav-link nav-icon" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <i class="fa-regular fa-message"></i>
+                    <span class="badge bg-success badge-number">3</span>
+                </a><!-- End Messages Icon -->
+
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+                    <li class="dropdown-header">
+                        You have 3 new messages
+                        <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="message-item">
+                        <a href="#">
+                            <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                            <div>
+                                <h4>Maria Hudson</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>4 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="message-item">
+                        <a href="#">
+                            <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                            <div>
+                                <h4>Anna Nelson</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>6 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="message-item">
+                        <a href="#">
+                            <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                            <div>
+                                <h4>David Muldon</h4>
+                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                <p>8 hrs. ago</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li class="dropdown-footer">
+                        <a href="#">Show all messages</a>
+                    </li>
+
+                </ul><!-- End Messages Dropdown Items -->
+
+            </li><!-- End Messages Nav -->
+
+            <li class="nav-item dropdown pe-3">
+
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                    <img src="<?= empty($userLogged->getPhoto()) ? ROOT_DEFAULT_USER_IMAGE : ROOT_UPLOADS_USERS . $userLogged->getPhoto() . "?v=" . time(); ?>" alt="Profile" class="rounded-circle">
+                    <span class="d-none d-md-block dropdown-toggle ps-2 text-black fs-6"><?= $userLogged->getName() ?></span>
+                </a><!-- End Profile Iamge Icon -->
+
+                <ul class="dropdown-menu dropdown-profile shadow">
+                    <li><a href="<?= PATH_USER_PANEL ?>" class="dropdown-item text-secondary"><i class="fa-solid fa-chart-line me-2"></i><?= PANEL_PAGE ?></a></li>
+                    <li><a href="<?= PATH_PROFILE ?>" class="dropdown-item text-secondary"><i class="fa-regular fa-user me-2"></i><?= PROFILE_PAGE ?></a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a href="<?= PATH_LOGOUT ?>" class="dropdown-item text-secondary"><i class="fa-solid fa-right-from-bracket me-2"></i><?= LOGOUT_PAGE ?></a></li>
+                </ul><!-- End Profile Dropdown Items -->
+            </li><!-- End Profile Nav -->
+
         </ul>
-    </nav>
-    <div class="content w-100">
-        <header class="px-0 mx-0 shadow-sm d-flex align-items-center">
-            <button class="btn border-0 mx-2" id="toggleSidebar">
-                <i class="fa-solid fa-bars fs-4"></i>
-            </button>
-            <a href="/">
-                <button class="btn btn-sm btn-outline-primary text-uppercase">
-                    <?= VISITE_SITE ?>
-                    <i class="fa-solid fa-globe ms-1"></i>
-                </button>
+    </nav><!-- End Icons Navigation -->
+
+</header><!-- End Header -->
+
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/app">
+                <i class="fa-solid fa-chart-line"></i>
+                <span><?= DASHBOARD_PAGE ?></span>
             </a>
-        </header>
-        <main class="px-3 bg-body-tertiary w-100">
-            <!-- Router view or main content goes here -->
-            <?php require ROOT_VIEWS . "$view"; ?>
-        </main>
-    </div>
-</section>
+        </li><!-- End Dashboard Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#contents-nav" data-bs-toggle="collapse" href="#">
+                <i class="fa-solid fa-list"></i><span><?= CONTENTS_PAGE ?></span><i class="fa-solid fa-chevron-down ms-auto"></i>
+            </a>
+            <ul id="contents-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="#" class="outline_none">
+                        <i class="fa-regular fa-circle"></i></i><span>Anúncios</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="outline_none">
+                        <i class="fa-regular fa-circle"></i></i><span>Eventos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="outline_none">
+                        <i class="fa-regular fa-circle"></i></i><span>Blog</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Contents Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#settings-nav" data-bs-toggle="collapse" href="#">
+                <i class="fa-solid fa-gears"></i><span><?= SETTINGS_PAGE ?></span><i class="fa-solid fa-chevron-down ms-auto"></i>
+            </a>
+            <ul id="settings-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="#" class="outline_none">
+                        <i class="fa-regular fa-circle"></i><span><?= BASIC_INFORMATION_PAGE ?></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="outline_none">
+                        <i class="fa-regular fa-circle"></i><span><?= GENERAL_SETTINGS_PAGE ?></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?= PATH_EMAIL_SETTINGS ?>" class="outline_none">
+                        <i class="fa-regular fa-circle"></i><span><?= EMAIL_PAGE ?></span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Settings Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/app">
+                <i class="fa-regular fa-user"></i>
+                <span><?= USERS_PAGE ?></span>
+            </a>
+        </li><!-- End Users Nav -->
+    </ul>
+
+</aside><!-- End Sidebar-->
+
+<main id="main" class="main">
+    <?php require ROOT_VIEWS . "$view"; ?>
+</main><!-- End #main -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center outline_none"><i class="fa-solid fa-arrow-up"></i></a>

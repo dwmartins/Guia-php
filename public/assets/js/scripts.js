@@ -10,6 +10,47 @@ $(document).ready(function () {
     // Remove the spinner from the page when it finishes loading
     $('#spinnerLoadPage').css('display', 'none');
 
+    /**
+     * Sidebar toggle
+     */
+    if ($('.toggle-sidebar-btn').length) {
+        $('.toggle-sidebar-btn').on('click', function() {
+        $('body').toggleClass('toggle-sidebar');
+        });
+    }
+    
+    /**
+     * Toggle .header-scrolled class to #header when page is scrolled
+     */
+    let selectHeader = $('#header');
+    if (selectHeader.length) {
+        const headerScrolled = () => {
+        if ($(window).scrollTop() > 100) {
+            selectHeader.addClass('header-scrolled');
+        } else {
+            selectHeader.removeClass('header-scrolled');
+        }
+        };
+        $(window).on('load scroll', headerScrolled);
+    }
+
+    /**
+     * Back to top button
+     */
+    var $backtotop = $('.back-to-top');
+    if ($backtotop.length) {
+        var toggleBacktotop = function () {
+            if ($(window).scrollTop() > 100) {
+                $backtotop.addClass('active');
+            } else {
+                $backtotop.removeClass('active');
+            }
+        };
+
+        // Call the function on page load and on scroll
+        $(window).on('load scroll', toggleBacktotop);
+    }
+
     // Validate the search form
     const formSearchHome = document.getElementById('formSearchHome');
     if (formSearchHome) {
@@ -23,39 +64,6 @@ $(document).ready(function () {
 
         formSearchHome.addEventListener('submit', validFormSearch);
     }
-
-    function adjustScroll() {
-        const menuItems = document.querySelectorAll('#list_menu .list-group-item');
-        menuItems.forEach(item => {
-            item.addEventListener('click', function (event) {
-                if (window.innerWidth <= 992) {
-                    event.preventDefault();
-
-                    const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
-
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-    }
-
-    adjustScroll();
-
-    window.addEventListener('resize', function () {
-        if (window.innerWidth <= 992) {
-            document.querySelectorAll('#list_menu .list-group-item').forEach(item => {
-                item.removeEventListener('click', adjustScroll);
-            });
-        } else {
-            adjustScroll();
-        }
-    });
 
     // Click event to toggle password visibility and icon
     $('.icon_show_password').on('click', function () {
