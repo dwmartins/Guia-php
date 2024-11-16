@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="mb-2 d-flex justify-content-end">
-                    <button id="btnSave" class="btn btn-sm btn-primary"><?= SALVE_CHANGES ?></button>
+                    <button id="btnSave" class="btn btn-sm btn-primary"><?= SAVE_CHANGES ?></button>
                 </div>
             </div>
         </div>

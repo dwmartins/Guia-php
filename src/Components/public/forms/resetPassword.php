@@ -21,7 +21,7 @@
     <p class="text-secondary fs-7 my-0"><?= MINIMUM_CHARACTERS_PASSWORD ?></p>
 
     <div class="d-flex justify-content-end mt-3">
-        <button class="btn btn-sm btn-outline-primary"><?= SALVE_CHANGES ?></button>
+        <button class="btn btn-sm btn-outline-primary"><?= SAVE_CHANGES ?></button>
     </div>
 </form>
 

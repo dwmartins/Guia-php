@@ -6,6 +6,7 @@ define("TITLE_REGISTER", "Create account");
 define("TITLE MAINTENANCE", "Maintenance");
 define("TITLE_PAGE_NOT_FOUNT", "Page not found");
 define("SEO_TITLE_EMAIL_SETTINGS", "Email Settings");
+define("SEO_TITLE_BASIC_INFORMATION", "Basic information");
 
 // Form labels 
 define("LABEL_EMAIL", "Email");
@@ -54,6 +55,7 @@ define("PATH_PRIVACY", "/privacy");
 define("PATH_ADM_LOGIN", "/app/login");
 define("PATH_EMAIL_SETTINGS", "/app/settings/email-settings");
 define("PATH_ADM_SETTINGS", "/app/settings/general-settings");
+define("PATH_ADM_BASIC_INFORMATION", "/app/settings/basic-information");
 
 // Page label
 define("HOME_PAGE", "Home");
@@ -125,7 +127,7 @@ define("ADDRESS", "Address");
 define("PASSWORD", "Password");
 define("SETTINGS", "Settings");
 define("DELETE_ACCOUNT", "Delete account");
-define("SALVE_CHANGES", "Save Changes");
+define("SAVE_CHANGES", "Save Changes");
 define("SAVE", "Salvar");
 define("CANCEL", "Cancel");
 define("PASSWORDS_NOT_MATCH", "Passwords do not match.");
@@ -165,3 +167,13 @@ define("UPDATED_IMAGE_USER", "Image updated successfully.");
 define("SETTINGS_SAVED_SUCCESSFULLY", "Settings saved successfully.");
 define("BACK_TO_HOME_PAGE", "Back to home page");
 define("ARE_YOU_AN_ADMINISTRATOR", "Are you an administrator?");
+define("VISUAL_IDENTITY", "Visual identity");
+define("CHOOSE_YOUR_LOGO_IMAGE", "Choose your logo image");
+define("FORMAT_LOGO_IMAGE" , "Recommended size of 250px by 125px, maximum size 5 MB, (JPG, JPEG or PNG.)");
+define("CHOOSE_FILE", "Choose file");
+define("CHOOSE_YOUR_COVER_IMAGE", "Choose cover image");
+define("FORMAT_IMAGE", "Maximum size 5 MB, (JPG, JPEG or PNG)");
+define("CHOOSE_YOUR_ICON", "Choose a favicon for your website");
+define("FORMAT_ICON", "Favicons are small 16 x 16 pixel images associated with a website, usually displayed in the browser's address bar and bookmarks list.");
+define("CHOSE_YOUR_DEFAULT_IMAGE", "Choose a default image");
+define("DEFAULT_IMAGE_MESSAGE", "This image will be used for content that does not have images.");

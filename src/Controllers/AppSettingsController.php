@@ -62,4 +62,18 @@ class AppSettingsController {
             redirectWithMessage(PATH_EMAIL_SETTINGS, "error", FATAL_ERROR);
         }
     }
+
+    /**
+     * @return View "adminView/basicInformation.php"
+     */
+    public function basicInfoView(Request $request, $params) {
+        $data = [];
+        $this->seo->setTitle(SEO_TITLE_BASIC_INFORMATION);
+        $data["seo"] = $this->seo;
+
+        return [
+            "view" => "adminView/basicInformation.php",
+            "data" => $data
+        ];
+    }
 }

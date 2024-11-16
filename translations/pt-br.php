@@ -6,6 +6,7 @@ define("TITLE_REGISTER", "Criar conta");
 define("TITLE_MAINTENANCE", "Manutenção");
 define("TITLE_PAGE_NOT_FOUNT", "Página não encontrada");
 define("SEO_TITLE_EMAIL_SETTINGS", "Configurações de e-mail");
+define("SEO_TITLE_BASIC_INFORMATION", "Informações básicas");
 
 // Form labels
 define("LABEL_EMAIL", "E-mail");
@@ -54,6 +55,7 @@ define("PATH_PRIVACY", "/privacidade");
 define("PATH_ADM_LOGIN", "/app/entrar");
 define("PATH_EMAIL_SETTINGS", "/app/configuracoes/configuracoes-email");
 define("PATH_ADM_SETTINGS", "/app/configuracoes/configurações-gerais");
+define("PATH_ADM_BASIC_INFORMATION", "/app/configuracoes/informacoes-basicas");
 
 // Page label
 define("HOME_PAGE", "Incio");
@@ -125,7 +127,7 @@ define("ADDRESS", "Endereço");
 define("PASSWORD", "Senha");
 define("SETTINGS", "Configurações");
 define("DELETE_ACCOUNT", "Excluir conta");
-define("SALVE_CHANGES", "Salvar Alterações");
+define("SAVE_CHANGES", "Salvar Alterações");
 define("SAVE", "Salvar");
 define("CANCEL", "Cancelar");
 define("PASSWORDS_NOT_MATCH", "As senhas não coincidem.");
@@ -165,3 +167,13 @@ define("UPDATED_IMAGE_USER", "Imagem atualizada com sucesso.");
 define("SETTINGS_SAVED_SUCCESSFULLY", "Configurações salvas com sucesso.");
 define("BACK_TO_HOME_PAGE", "Voltar para página inicial");
 define("ARE_YOU_AN_ADMINISTRATOR", "É um administrador?");
+define("VISUAL_IDENTITY", "Identidade visual");
+define("CHOOSE_YOUR_LOGO_IMAGE", "Escolha a imagem do seu logotipo");
+define("FORMAT_LOGO_IMAGE" , "Recomenda-se dimensão de 250px por 125px, tamanho máximo 5 MB, (JPG, JPEG ou PNG.)");
+define("CHOOSE_FILE", "Escolher arquivo");
+define("CHOOSE_YOUR_COVER_IMAGE", "Escolha a imagem de capa");
+define("FORMAT_IMAGE", "Tamanho máximo 5 MB, (JPG, JPEG ou PNG)");
+define("CHOOSE_YOUR_ICON", "Escolha um favicon para o seu site");
+define("FORMAT_ICON", "Favicon são pequenas imagens de 16 x 16 pixels associadas a um site, geralmente mostradas na barra de endereços do navegador e na lista de favoritos.");
+define("CHOSE_YOUR_DEFAULT_IMAGE", "Escolha uma imagem padrão");
+define("DEFAULT_IMAGE_MESSAGE", "Esta imagem será usada para conteúdo que não tenha imagens.");

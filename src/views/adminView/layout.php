@@ -220,7 +220,7 @@ $userLogged = getLoggedUser();
             </a>
             <ul id="settings-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="#" class="outline_none">
+                    <a href="<?= PATH_ADM_BASIC_INFORMATION ?>" class="outline_none">
                         <i class="fa-regular fa-circle"></i><span><?= BASIC_INFORMATION_PAGE ?></span>
                     </a>
                 </li>

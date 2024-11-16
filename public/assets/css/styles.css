@@ -1258,11 +1258,37 @@ input[type="checkbox"]:focus {
     height: calc(100vh - 60px);
 }
 
-#pageNotFoundView img, p {
+#pageNotFoundView img, #pageNotFoundView  p {
     max-width: 500px;
 }
 
 #emailSettingsView .email_settings {
     border-radius: 5px;
     box-shadow: var(--box-shadow-cards);
+}
+
+/*--------------------------------------------------------------
+# Basic information view
+--------------------------------------------------------------*/
+.basicInfoView > div {
+    border-radius: 5px;
+    box-shadow: var(--box-shadow-cards);
+}
+
+.basicInfoView .previewImg {
+    max-width: 180px;
+    max-height: 180px;
+    object-fit: cover;
+}
+
+.basicInfoView .previewIcon {
+    max-width: 80px;
+    max-height: 80px;
+    object-fit: cover;
+}
+
+.basicInfoView  .fileName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

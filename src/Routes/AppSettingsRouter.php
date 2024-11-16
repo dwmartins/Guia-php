@@ -10,3 +10,7 @@ Route::get(PATH_EMAIL_SETTINGS, "AppSettingsController@emailConfigView", [
 Route::post(PATH_EMAIL_SETTINGS, "AppSettingsController@saveEmailConfig", [
     [AdminMiddleware::class, 'isAdmin']
 ]);
+
+Route::get(PATH_ADM_BASIC_INFORMATION, "AppSettingsController@basicInfoView", [
+    [AdminMiddleware::class, 'isAdmin']
+]);
