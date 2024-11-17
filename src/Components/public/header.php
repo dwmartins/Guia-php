@@ -7,7 +7,7 @@ $logoHeader = empty($siteInfo->getLogoImage()) ? PATH_DEFAULT_LOGO : PATH_UPLOAD
 
 <nav id="publicNavComponent" class="navbar navbar-expand-lg bg-body-tertiary mx-0 py-2 py-md-0">
     <div class="container">
-        <a href="/">
+        <a href="/" class="py-2">
             <img src="<?= $logoHeader ?>" alt="<?= showText('ALT_LOGO_IMAGE') ?>" class="logo_image">
         </a>
 
