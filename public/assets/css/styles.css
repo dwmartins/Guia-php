@@ -549,7 +549,10 @@ input[type="checkbox"]:focus {
 }
 
 .header-nav .nav-profile img {
-    max-height: 36px;
+    height: 36px;
+    width: 36px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .header-nav .dropdown-profile .dropdown-item:hover {

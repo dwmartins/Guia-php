@@ -7,4 +7,15 @@ require_once __DIR__."/../src/Routes/main.php";
 use App\Core\Core;
 use App\Http\Route;
 
-Core::dispatch(Route::routes());
+try {
+    ob_start();
+
+    Core::dispatch(Route::routes());
+
+    ob_end_flush();
+} catch (\Throwable $e) {
+    ob_end_clean();
+
+    logError($e);
+    showErrorPage();
+}

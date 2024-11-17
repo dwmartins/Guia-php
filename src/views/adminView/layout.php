@@ -170,7 +170,7 @@ $logo = empty($siteInfo->getLogoImage()) ? PATH_DEFAULT_LOGO : PATH_UPLOADS_SYST
             <li class="nav-item dropdown pe-3">
 
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <img src="<?= empty($userLogged->getPhoto()) ? PATH_DEFAULT_USER_IMAGE : PATH_UPLOADS_USERS . $userLogged->getPhoto() . "?v=" . time(); ?>" alt="Profile" class="rounded-circle">
+                    <img src="<?= empty($userLogged->getPhoto()) ? PATH_DEFAULT_USER_IMAGE : PATH_UPLOADS_USERS . $userLogged->getPhoto() . "?v=" . time(); ?>" alt="Profile">
                     <span class="d-none d-md-block dropdown-toggle ps-2 text-black fs-6"><?= $userLogged->getName() ?></span>
                 </a><!-- End Profile Iamge Icon -->
 

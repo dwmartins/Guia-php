@@ -162,7 +162,7 @@ class User {
         $this->photo = $photo;
     }
 
-    public function getDateOfBirth(): string {
+    public function getDateOfBirth(): ?string {
         return $this->dateOfBirth;
     }
 
