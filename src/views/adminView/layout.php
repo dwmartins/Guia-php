@@ -2,7 +2,7 @@
 
 $userLogged = getLoggedUser();
 $siteInfo = SITE_INFO;
-$logo = empty($siteInfo->getLogoImage()) ? PATH_DEFAULT_LOGO : ROOT_UPLOADS_SYSTEMIMAGES . $siteInfo->getLogoImage() . "?v=" . time();
+$logo = empty($siteInfo->getLogoImage()) ? PATH_DEFAULT_LOGO : PATH_UPLOADS_SYSTEMIMAGES . $siteInfo->getLogoImage() . "?v=" . time();
 
 ?>
 
@@ -21,9 +21,14 @@ $logo = empty($siteInfo->getLogoImage()) ? PATH_DEFAULT_LOGO : ROOT_UPLOADS_SYST
 
     <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
+            <a href="/" class="btn btn-sm btn-outline-primary visite-site" target="_blank">
+                <i class="fa-solid fa-globe"></i>
+                <span><?= VISITE_SITE ?></span>
+            </a>
+            
             <li class="nav-item dropdown">
 
-                <a class="nav-link nav-icon" href="javascript:void(0);" data-bs-toggle="dropdown">
+                <a class="nav-link nav-icon mt-2" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <i class="fa-regular fa-bell"></i>
                     <span class="badge bg-primary badge-number">4</span>
                 </a><!-- End Notification Icon -->
@@ -98,7 +103,7 @@ $logo = empty($siteInfo->getLogoImage()) ? PATH_DEFAULT_LOGO : ROOT_UPLOADS_SYST
 
             <li class="nav-item dropdown">
 
-                <a class="nav-link nav-icon" href="javascript:void(0);" data-bs-toggle="dropdown">
+                <a class="nav-link nav-icon mt-2" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <i class="fa-regular fa-message"></i>
                     <span class="badge bg-success badge-number">3</span>
                 </a><!-- End Messages Icon -->
@@ -164,8 +169,8 @@ $logo = empty($siteInfo->getLogoImage()) ? PATH_DEFAULT_LOGO : ROOT_UPLOADS_SYST
 
             <li class="nav-item dropdown pe-3">
 
-                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                    <img src="<?= empty($userLogged->getPhoto()) ? ROOT_DEFAULT_USER_IMAGE : ROOT_UPLOADS_USERS . $userLogged->getPhoto() . "?v=" . time(); ?>" alt="Profile" class="rounded-circle">
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <img src="<?= empty($userLogged->getPhoto()) ? PATH_DEFAULT_USER_IMAGE : PATH_UPLOADS_USERS . $userLogged->getPhoto() . "?v=" . time(); ?>" alt="Profile" class="rounded-circle">
                     <span class="d-none d-md-block dropdown-toggle ps-2 text-black fs-6"><?= $userLogged->getName() ?></span>
                 </a><!-- End Profile Iamge Icon -->
 
@@ -195,7 +200,7 @@ $logo = empty($siteInfo->getLogoImage()) ? PATH_DEFAULT_LOGO : ROOT_UPLOADS_SYST
         </li><!-- End Dashboard Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#contents-nav" data-bs-toggle="collapse" href="#">
+            <a class="nav-link collapsed" data-bs-target="#contents-nav" data-bs-toggle="collapse" href="javascript:void(0);">
                 <i class="fa-solid fa-list"></i><span><?= CONTENTS_PAGE ?></span><i class="fa-solid fa-chevron-down ms-auto"></i>
             </a>
             <ul id="contents-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
@@ -218,7 +223,7 @@ $logo = empty($siteInfo->getLogoImage()) ? PATH_DEFAULT_LOGO : ROOT_UPLOADS_SYST
         </li><!-- End Contents Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#settings-nav" data-bs-toggle="collapse" href="#">
+            <a class="nav-link collapsed" data-bs-target="#settings-nav" data-bs-toggle="collapse" href="javascript:void(0);">
                 <i class="fa-solid fa-gears"></i><span><?= SETTINGS_PAGE ?></span><i class="fa-solid fa-chevron-down ms-auto"></i>
             </a>
             <ul id="settings-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">

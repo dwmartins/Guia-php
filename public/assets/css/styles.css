@@ -499,6 +499,12 @@ input[type="checkbox"]:focus {
     object-fit: contain;
 }
 
+@media (max-width: 364px) {
+    .header .logo {
+        display: none;
+    }
+}
+
 /*--------------------------------------------------------------
 # Header Nav
 --------------------------------------------------------------*/
@@ -511,10 +517,35 @@ input[type="checkbox"]:focus {
     padding: 0;
 }
 
+.header-nav .visite-site {
+    margin-right: 20px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
 .header-nav .nav-icon {
-    font-size: 22px;
+    font-size: 20px;
     margin-right: 25px;
     position: relative;
+}
+
+@media (max-width: 403px) {
+    .header-nav .visite-site span {
+        display: none;
+    }
+
+    .header-nav .nav-icon {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 364px) {
+    .header-nav .visite-site span {
+        display: block;
+    }
 }
 
 .header-nav .nav-profile img {
@@ -530,7 +561,7 @@ input[type="checkbox"]:focus {
     position: absolute;
     inset: -2px -5px auto auto;
     font-weight: normal;
-    font-size: 12px;
+    font-size: 11px;
     padding: 3px 6px;
 }
 

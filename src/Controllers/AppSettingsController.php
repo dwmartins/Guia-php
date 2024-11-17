@@ -78,10 +78,10 @@ class AppSettingsController {
         $this->seo->setTitle(SEO_TITLE_BASIC_INFORMATION);
         $data["seo"] = $this->seo;
 
-        $data['logoImage'] = empty($siteInfo->getLogoImage()) ? PATH_DEFAULT_LOGO : ROOT_UPLOADS_SYSTEMIMAGES . $siteInfo->getLogoImage() . "?v=" . time();
-        $data['coverImage'] = empty($siteInfo->getCoverImage()) ? ROOT_DEFAULT_COVER : ROOT_UPLOADS_SYSTEMIMAGES . $siteInfo->getCoverImage() . "?v=" . time();
-        $data['icon'] = empty($siteInfo->getIco()) ? PATH_DEFAULT_ICON : ROOT_UPLOADS_SYSTEMIMAGES . $siteInfo->getIco() . "?v=" . time();
-        $data['defaultImage'] = empty($siteInfo->getDefaultImage()) ? ROOT_DEFAULT_IMAGE : ROOT_UPLOADS_SYSTEMIMAGES . $siteInfo->getDefaultImage() . "?v=" . time();
+        $data['logoImage'] = empty($siteInfo->getLogoImage()) ? PATH_DEFAULT_LOGO : PATH_UPLOADS_SYSTEMIMAGES . $siteInfo->getLogoImage() . "?v=" . time();
+        $data['coverImage'] = empty($siteInfo->getCoverImage()) ? PATH_DEFAULT_COVER : PATH_UPLOADS_SYSTEMIMAGES . $siteInfo->getCoverImage() . "?v=" . time();
+        $data['icon'] = empty($siteInfo->getIco()) ? PATH_DEFAULT_ICON : PATH_UPLOADS_SYSTEMIMAGES . $siteInfo->getIco() . "?v=" . time();
+        $data['defaultImage'] = empty($siteInfo->getDefaultImage()) ? PATH_DEFAULT_IMAGE : PATH_UPLOADS_SYSTEMIMAGES . $siteInfo->getDefaultImage() . "?v=" . time();
 
         return [
             "view" => "adminView/basicInformation.php",
