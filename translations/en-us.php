@@ -177,3 +177,4 @@ define("CHOOSE_YOUR_ICON", "Choose a favicon for your website");
 define("FORMAT_ICON", "Favicons are small 16 x 16 pixel images associated with a website, usually displayed in the browser's address bar and bookmarks list.");
 define("CHOSE_YOUR_DEFAULT_IMAGE", "Choose a default image");
 define("DEFAULT_IMAGE_MESSAGE", "This image will be used for content that does not have images.");
+define("UPDATED_IMAGES", "Images updated successfully");

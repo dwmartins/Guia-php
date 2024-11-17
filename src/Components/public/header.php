@@ -1,7 +1,7 @@
 <?php
 
 $siteInfo = SITE_INFO;
-$logoHeader = empty($siteInfo->getLogoImage()) ? ROOT_DEFAULT_LOGO : ROOT_UPLOADS_SYSTEMIMAGES . $siteInfo->getLogoImage();
+$logoHeader = empty($siteInfo->getLogoImage()) ? PATH_DEFAULT_LOGO : ROOT_UPLOADS_SYSTEMIMAGES . $siteInfo->getLogoImage();
 
 ?>
 

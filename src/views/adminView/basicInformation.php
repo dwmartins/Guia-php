@@ -4,11 +4,11 @@
             <h6 class="custom_dark"><?= VISUAL_IDENTITY ?></h6>
         </div>
         
-        <form action="/app/settings/updateimages" method="post" class="container-fluid my-3">
+        <form action="/app/settings/updateimages" method="post" enctype="multipart/form-data" class="formImages container-fluid my-3">
             <!-- Logo Image -->
             <div class="row">
                 <div class="col-sm-12 col-lg-4 mb-4 item_center">
-                    <img src="/assets/img/default/defaultLogo.png" id="current_logo" alt="Logo" class="previewImg">
+                    <img src="<?= $logoImage ?>" id="current_logo" alt="Logo" class="previewImg">
                     <div class="loadingLogo d-none">
                         <?php include ROOT_COMPONENTS . "shared/loader.php" ?>
                     </div>
@@ -25,7 +25,7 @@
                     <div id="uploadBtnLogo" class="d-flex justify-content-center justify-content-lg-start mt-4">
                         <label for="logo" class="btn btn-sm btn-primary">
                             <?= CHOOSE_FILE ?><i class="fa-regular fa-file-image ms-1"></i>
-                            <input type="file" id="logo" name="logo" class="d-none" type="file" accept="<?= ACCEPTED_IMAGE ?>">
+                            <input type="file" id="logo" name="logo" class="d-none" accept="<?= ACCEPTED_IMAGE ?>">
                         </label>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
             <!-- Cover Image -->
             <div class="row">
                 <div class="col-sm-12 col-lg-4 mb-4 item_center">
-                    <img src="/assets/img/default/defaultCoverImage.jpg" id="current_cover" alt="Cover image" class="previewImg">
+                    <img src="<?= $coverImage ?>" id="current_cover" alt="Cover image" class="previewImg">
                     <div class="loadingCover d-none">
                         <?php include ROOT_COMPONENTS . "shared/loader.php" ?>
                     </div>
@@ -53,7 +53,7 @@
                     <div id="uploadBtnCover" class="d-flex justify-content-center justify-content-lg-start mt-4">
                         <label for="cover" class="btn btn-sm btn-primary">
                             <?= CHOOSE_FILE ?><i class="fa-regular fa-file-image ms-1"></i>
-                            <input type="file" id="cover" name="cover" class="d-none" type="file" accept="<?= ACCEPTED_IMAGE ?>">
+                            <input type="file" id="cover" name="cover" class="d-none" accept="<?= ACCEPTED_IMAGE ?>">
                         </label>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
             <!-- icon -->
             <div class="row">
                 <div class="col-sm-12 col-lg-4 mb-4 item_center">
-                    <img src="/assets/img/default/defaultIco.ico" id="current_icon" alt="Icon" class="previewIcon">
+                    <img src="<?= $icon ?>" id="current_icon" alt="Icon" class="previewIcon">
                     <div class="loadingIcon d-none">
                         <?php include ROOT_COMPONENTS . "shared/loader.php" ?>
                     </div>
@@ -81,7 +81,7 @@
                     <div id="uploadBtnIcon" class="d-flex justify-content-center justify-content-lg-start mt-4">
                         <label for="icon" class="btn btn-sm btn-primary">
                             <?= CHOOSE_FILE ?><i class="fa-regular fa-file-image ms-1"></i>
-                            <input type="file" id="icon" name="icon" class="d-none" type="file" accept="<?= ACCEPTED_ICON ?>">
+                            <input type="file" id="icon" name="icon" class="d-none" accept="<?= ACCEPTED_ICON ?>">
                         </label>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
             <!-- icon -->
             <div class="row">
                 <div class="col-sm-12 col-lg-4 mb-4 item_center">
-                    <img src="/assets/img/default/defaultImg.png" id="current_defaultImg" alt="Icon" class="previewImg">
+                    <img src="<?= $defaultImage ?>" id="current_defaultImg" alt="Icon" class="previewImg">
                     <div class="loadingDefaultImg d-none">
                         <?php include ROOT_COMPONENTS . "shared/loader.php" ?>
                     </div>
@@ -110,7 +110,7 @@
                     <div id="uploadBtnDefaultImg" class="d-flex justify-content-center justify-content-lg-start mt-4">
                         <label for="default" class="btn btn-sm btn-primary">
                             <?= CHOOSE_FILE ?><i class="fa-regular fa-file-image ms-1"></i>
-                            <input type="file" id="default" name="default" class="d-none" type="file" accept="<?= ACCEPTED_ICON ?>">
+                            <input type="file" id="default" name="default" class="d-none" accept="<?= ACCEPTED_ICON ?>">
                         </label>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
             <hr class="text-secondary my-5">
 
             <div class="d-flex justify-content-end">
-                <button type="submit" class="btn btn-sm btn-primary"><?= SAVE_CHANGES ?></button>
+                <button type="submit" id="btnSaveImages" class="btn btn-sm btn-primary"><?= SAVE_CHANGES ?></button>
             </div>
         </form>
     </div>

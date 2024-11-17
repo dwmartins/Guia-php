@@ -1,6 +1,8 @@
 <?php
 
 $userLogged = getLoggedUser();
+$siteInfo = SITE_INFO;
+$logo = empty($siteInfo->getLogoImage()) ? PATH_DEFAULT_LOGO : ROOT_UPLOADS_SYSTEMIMAGES . $siteInfo->getLogoImage() . "?v=" . time();
 
 ?>
 
@@ -8,10 +10,11 @@ $userLogged = getLoggedUser();
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-center">
-        <a href="/" class="logo d-flex align-items-center" target="_blank">
-            <img src="/assets/img/default/defaultLogo.png" class="img-fluid" alt="Logo">
-        </a>
-        <a href="javascript:void(0);" class="text-black ms-2 ms-sm-4">
+        <div class="logo">
+            <img src="<?= $logo ?>" alt="Logo">
+        </div>
+
+        <a href="javascript:void(0);" class="text-black">
             <i class="fa-solid fa-bars toggle-sidebar-btn mt-1"></i>
         </a>
     </div><!-- End Logo -->

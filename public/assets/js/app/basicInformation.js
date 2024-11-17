@@ -9,9 +9,17 @@ $(document).ready(function() {
 
             if (!file) return;
 
-            if (!fileValidator.img(file)) {
-                $(this).val(''); 
-                return;
+            if(fieldId === "icon") {
+                // max 2mb
+                if(!fileValidator.icon(file, 2)) {
+                    $(this).val(''); 
+                    return;
+                }
+            } else {
+                if (!fileValidator.img(file)) {
+                    $(this).val(''); 
+                    return;
+                }
             }
 
             $(`.${loadingClass}`).removeClass('d-none');
@@ -29,8 +37,8 @@ $(document).ready(function() {
         });
 
         $(`#${selectedContainerId} .btn-danger`).on('click', function() {
-            $(`#${fieldId}`).val(''); // Resetar o campo
-            $(`#${previewId}`).attr('src', originalSrc); // Voltar à imagem original
+            $(`#${fieldId}`).val('');
+            $(`#${previewId}`).attr('src', originalSrc);
 
             $(`#${selectedContainerId}`).addClass('d-none');
             $(`#${uploadContainerId}`).removeClass('d-none');
@@ -42,4 +50,31 @@ $(document).ready(function() {
     setupImageUploader('cover', 'current_cover', 'loadingCover', 'coverSelected', 'uploadBtnCover');
     setupImageUploader('icon', 'current_icon', 'loadingIcon', 'iconSelected', 'uploadBtnIcon');
     setupImageUploader('default', 'current_defaultImg', 'loadingDefaultImg', 'defaultImgSelected', 'uploadBtnDefaultImg');
+
+    $('.formImages').on('submit', function(e) {
+        let hasFile = false;
+
+        $(this).find('input').each(function() {
+            if($(this).val()) {
+                hasFile = true;
+            }
+        });
+
+        if(!hasFile) {
+            e.preventDefault();
+            showAlert('info', MESSAGE_SELECT_IMAGE);
+            return;
+        }
+
+        disableEmptyImageFields();
+        showLoadingState('#btnSaveImages', true);
+    });
+
+    function disableEmptyImageFields() {
+        $('.formImages').find('input').each(function() {
+            if(!$(this).val()) {
+                $(this).attr('disabled', true);
+            }
+        });
+    }
 });

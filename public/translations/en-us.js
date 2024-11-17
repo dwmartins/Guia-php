@@ -28,3 +28,4 @@ const ICON_MAX_SIZE = "The icon must be a maximum of {size}MB.";
 const ICON_FORMAT = "The ico format must be an ICO icon or JPG, JPEG or PNG.";
 const STATUS_EMAIL_ACTIVE = "Active";
 const STATUS_EMAIL_INACTIVE = "Inactive";
+const MESSAGE_SELECT_IMAGE = "Please select at least one image";

@@ -23,7 +23,7 @@ class FileValidator {
         return true;
     }
 
-    icon(icon, size = 5) {
+    icon(icon, size) {
         if(size){
             this.iconFileSize = size * 1024 * 1024;
         }
