@@ -77,4 +77,26 @@ $(document).ready(function() {
             }
         });
     }
+
+    // Basic infos
+    function updateTextareaCount(textareaSelector, countSelector) {
+        const textarea = $(textareaSelector);
+        const count_msg = $(countSelector);
+
+        count_msg.text(textarea.val().length);
+
+        textarea.on('input', function() {
+            if (textarea.val().length > 600) {
+                textarea.val(textarea.val().substring(0, 600));
+            }
+            count_msg.text(textarea.val().length);
+        });
+    }
+
+    updateTextareaCount('.formBasicInfo #description', '.formBasicInfo .count_description');
+    updateTextareaCount('.formBasicInfo #keywords', '.formBasicInfo .count_keywords');
+
+    $('.formBasicInfo').on('submit', function(e) {
+        showLoadingState('#btnSaveBasicInfo', true);
+    });
 });

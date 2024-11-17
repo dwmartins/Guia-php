@@ -35,6 +35,11 @@ define("PORT_LABEL", "Porta");
 define("AUTHENTICATION_LABEL", "Autenticação");
 define("EMAIL_ADDRESS_LABEL", "Endereço de e-mail");
 define("USERNAME_EMAIL_LABEL", "Usuário/E-mail");
+define("SITE_NAME_LABEL", "Nome do site");
+define("INSTAGRAM_LABEL", "Instagram");
+define("FACEBOOK_LABEL", "Facebook");
+define("TWITTER_LABEL", "Twitter");
+define("KEYWORDS_LABEL", "Palavras chaves");
 
 // Page Path
 define("PATH_LOGOUT", "/logout");
@@ -178,3 +183,4 @@ define("FORMAT_ICON", "Favicon são pequenas imagens de 16 x 16 pixels associada
 define("CHOSE_YOUR_DEFAULT_IMAGE", "Escolha uma imagem padrão");
 define("DEFAULT_IMAGE_MESSAGE", "Esta imagem será usada para conteúdo que não tenha imagens.");
 define("UPDATED_IMAGES", "Imagens atualizadas com sucesso");
+define("SAVED_WEBSITE_INFORMATION", "Informações do site salvas com sucesso.");

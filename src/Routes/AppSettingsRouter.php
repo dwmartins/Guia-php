@@ -29,3 +29,7 @@ Route::post(PATH_EMAIL_SETTINGS, "AppSettingsController@saveEmailConfig", [
 Route::post("/app/settings/updateimages", "AppSettingsController@setImages", [
     [AdminMiddleware::class, 'isAdmin']
 ]);
+
+Route::post("/app/settings/basic-infos", "AppSettingsController@saveBasicInfos", [
+    [AdminMiddleware::class, 'isAdmin']
+]);

@@ -10,6 +10,7 @@ use App\Utils\SEOManager;
 use App\Utils\UploadFile;
 use App\Validators\EmailSettingsValidator;
 use App\Validators\FileValidators;
+use App\Validators\SiteInfoValidator;
 
 class AppSettingsController {
 
@@ -82,6 +83,7 @@ class AppSettingsController {
         $data['coverImage'] = empty($siteInfo->getCoverImage()) ? PATH_DEFAULT_COVER : PATH_UPLOADS_SYSTEMIMAGES . $siteInfo->getCoverImage() . "?v=" . time();
         $data['icon'] = empty($siteInfo->getIco()) ? PATH_DEFAULT_ICON : PATH_UPLOADS_SYSTEMIMAGES . $siteInfo->getIco() . "?v=" . time();
         $data['defaultImage'] = empty($siteInfo->getDefaultImage()) ? PATH_DEFAULT_IMAGE : PATH_UPLOADS_SYSTEMIMAGES . $siteInfo->getDefaultImage() . "?v=" . time();
+        $data['siteInfo'] = $siteInfo;
 
         return [
             "view" => "adminView/basicInformation.php",
@@ -161,6 +163,35 @@ class AppSettingsController {
             $cache->set('site_info', $siteInfo->toArray());
 
             redirectWithMessage(PATH_ADM_BASIC_INFORMATION, "success", UPDATED_IMAGES);
+        } catch (\Exception $e) {
+            logError($e->getMessage());
+            redirectWithMessage(PATH_ADM_BASIC_INFORMATION, "error", FATAL_ERROR);
+        }
+    }
+
+    public function saveBasicInfos(Request $request, $params) {
+        try {
+            $requestData = $request->body();
+
+            $fieldsValid = SiteInfoValidator::create($requestData);
+
+            if(!$fieldsValid['isValid']) {
+                redirectWithMessage(PATH_ADM_BASIC_INFORMATION, 'error', $fieldsValid['message']);
+            }
+
+            $siteInfo = SITE_INFO;
+
+            if(!empty($siteInfo->getId())) {
+                $siteInfo->update($requestData);
+            }
+
+            $siteInfo->save();
+
+            $cache = new FileCache();
+            $cache->set('site_info', $siteInfo->toArray());
+
+            redirectWithMessage(PATH_ADM_BASIC_INFORMATION, "success", SAVED_WEBSITE_INFORMATION);
+
         } catch (\Exception $e) {
             logError($e->getMessage());
             redirectWithMessage(PATH_ADM_BASIC_INFORMATION, "error", FATAL_ERROR);
