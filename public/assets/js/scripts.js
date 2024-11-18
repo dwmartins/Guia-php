@@ -122,6 +122,34 @@ $(document).ready(function () {
         $('#submenuConfigs').slideToggle(200);
         $('#chevronConfigs').toggleClass('rotate');
     });
+
+    $('.forgotPasswordView form').on('submit', function(e) {
+        e.preventDefault();
+        const currentTextButton = $('.forgotPasswordView button').text();
+
+        if(!$('.forgotPasswordView #email').val()) {
+            showAlert('info', MESSAGE_ADD_YOUR_EMAIL);
+            return;
+        }
+
+        showLoadingState('.forgotPasswordView button', true);
+
+        $.ajax({
+            url: '/reset-password-link',
+            method: 'POST',
+            data: $('.forgotPasswordView form').serialize(),
+            success: function(response) {
+                showAlert('success', response.message);
+                $('.forgotPasswordView #email').val();
+                showLoadingState('.forgotPasswordView button', false, currentTextButton); 
+            },
+            error: function(error) {
+                showError(error);
+                showLoadingState('.forgotPasswordView button', false, currentTextButton); 
+            }
+        })
+
+    });
 });
 
 // Function to show or hide the button loading state

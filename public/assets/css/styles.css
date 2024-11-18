@@ -1328,3 +1328,22 @@ input[type="checkbox"]:focus {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/*--------------------------------------------------------------
+# forgot password view
+--------------------------------------------------------------*/
+.forgotPasswordView {
+    height: 80vh;
+}
+
+.forgotPasswordView form {
+    width: 90%;
+    max-width: 400px;
+}
+
+.forgotPasswordView .image_forgot_password {
+    max-width: 400px;
+}
+/*--------------------------------------------------------------
+# End forgot password view
+--------------------------------------------------------------*/

@@ -29,3 +29,4 @@ const ICON_FORMAT = "O formato do ico deve ser um ícone ICO ou JPG, JPEG ou PNG
 const STATUS_EMAIL_ACTIVE = "Ativa";
 const STATUS_EMAIL_INACTIVE = "Inativa";
 const MESSAGE_SELECT_IMAGE = "Por favor, selecione ao menos uma imagem";
+const MESSAGE_ADD_YOUR_EMAIL = "Por favor, digite seu e-mail.";

@@ -7,6 +7,7 @@ define("TITLE_MAINTENANCE", "Manutenção");
 define("TITLE_PAGE_NOT_FOUNT", "Página não encontrada");
 define("SEO_TITLE_EMAIL_SETTINGS", "Configurações de e-mail");
 define("SEO_TITLE_BASIC_INFORMATION", "Informações básicas");
+define("SEO_TITLE_FORGOT_PASSWORD", "Esqueci minha senha");
 
 // Form labels
 define("LABEL_EMAIL", "E-mail");
@@ -41,6 +42,9 @@ define("FACEBOOK_LABEL", "Facebook");
 define("TWITTER_LABEL", "Twitter");
 define("KEYWORDS_LABEL", "Palavras chaves");
 
+// Placeholders
+define("PLACEHOLDER_EMAIL_ADDRESS", "Endereço de e-mail");
+
 // Page Path
 define("PATH_LOGOUT", "/logout");
 define("PATH_USER_PANEL", "/usuario/painel");
@@ -51,7 +55,7 @@ define("PATH_BLOG", "/blog");
 define("PATH_LOGIN", "/entrar");
 define("PATH_CREATE_ACCOUNT", "/criar-conta");
 define("PATH_PROFILE", "/usuario/perfil");
-define("PATH_FORGOT_PASSWORD", "/usuario/recuperar-senha");
+define("PATH_FORGOT_PASSWORD", "/recuperar-senha");
 define("PATH_LISTAGENS", "/anuncios");
 define("PATH_EVENTS", "/eventos");
 define("PATH_PRIVACY", "/privacidade");
@@ -184,3 +188,7 @@ define("CHOSE_YOUR_DEFAULT_IMAGE", "Escolha uma imagem padrão");
 define("DEFAULT_IMAGE_MESSAGE", "Esta imagem será usada para conteúdo que não tenha imagens.");
 define("UPDATED_IMAGES", "Imagens atualizadas com sucesso");
 define("SAVED_WEBSITE_INFORMATION", "Informações do site salvas com sucesso.");
+define("FORGOT_YOUR_PASSWORD", "Esqueceu sua senha?");
+define("ENTER_YOUR_EMAIL", "Insira seu e-mail e nós lhe enviaremos um link de redefinição.");
+define("SEND_RESET_LINK", "Enviar link de redefinição");
+define("RECOVERY_CODE_SEND", "O código de recuperação foi enviado para seu e-mail.");

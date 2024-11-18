@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Class\User;
 use App\Class\UserAccess;
 use App\Http\Request;
+use App\Http\Response;
 use App\Models\UserDAO;
 use App\Utils\SEOManager;
 use App\Validators\UserValidator;
@@ -48,6 +49,17 @@ class AuthController {
 
         return [
             "view" => "publicView/user/register.php",
+            "data" => [
+                "seo" => $this->seo
+            ]
+        ];
+    }
+
+    public function forgotPasswordView(Request $request, $params) {
+        $this->seo->setTitle(SEO_TITLE_FORGOT_PASSWORD . ' | ' . getSiteInfo()->getWebSiteName());
+
+        return [
+            "view" => "publicView/user/forgotPassword.php",
             "data" => [
                 "seo" => $this->seo
             ]
@@ -148,6 +160,21 @@ class AuthController {
         }
 
         redirectWithMessage('/', 'success', LOGOUT_MESSAGE);
+    }
+
+    public function sendPasswordRecoveryLink(Request $request, $params) {
+        try {
+            $body = $request->body();
+            
+            return Response::json([
+                "message" => RECOVERY_CODE_SEND
+            ]);
+        } catch (\Exception $e) {
+            logError($e->getMessage());
+            return Response::json([
+                "message" => FATAL_ERROR
+            ], 500);
+        }
     }
 
     private function checkRememberMe() {

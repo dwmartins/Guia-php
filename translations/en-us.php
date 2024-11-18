@@ -7,6 +7,7 @@ define("TITLE MAINTENANCE", "Maintenance");
 define("TITLE_PAGE_NOT_FOUNT", "Page not found");
 define("SEO_TITLE_EMAIL_SETTINGS", "Email Settings");
 define("SEO_TITLE_BASIC_INFORMATION", "Basic information");
+define("SEO_TITLE_FORGOT_PASSWORD", "Recover password");
 
 // Form labels 
 define("LABEL_EMAIL", "Email");
@@ -41,6 +42,9 @@ define("FACEBOOK_LABEL", "Facebook");
 define("TWITTER_LABEL", "Twitter");
 define("KEYWORDS_LABEL", "Keywords");
 
+// Placeholders
+define("PLACEHOLDER_EMAIL_ADDRESS", "Email address");
+
 // Page Path
 define("PATH_LOGOUT", "/logout");
 define("PATH_USER_PANEL", "/user/panel");
@@ -51,7 +55,7 @@ define("PATH_BLOG", "/blog");
 define("PATH_LOGIN", "/login");
 define("PATH_CREATE_ACCOUNT", "/create-account");
 define("PATH_PROFILE", "/user/profile");
-define("PATH_FORGOT_PASSWORD", "/user/recover-password");
+define("PATH_FORGOT_PASSWORD", "/recover-password");
 define("PATH_LISTAGENS", "/listings");
 define("PATH_EVENTS", "/events");
 define("PATH_PRIVACY", "/privacy");
@@ -184,3 +188,7 @@ define("CHOSE_YOUR_DEFAULT_IMAGE", "Choose a default image");
 define("DEFAULT_IMAGE_MESSAGE", "This image will be used for content that does not have images.");
 define("UPDATED_IMAGES", "Images updated successfully");
 define("SAVED_WEBSITE_INFORMATION", "Website information saved successfully.");
+define("FORGOT_YOUR_PASSWORD", "Forgot your password?");
+define("ENTER_YOUR_EMAIL", "Enter your email and we'll send you a reset link.");
+define("SEND_RESET_LINK", "Send reset link");
+define("RECOVERY_CODE_SEND", "The recovery code has been sent to your email.");
