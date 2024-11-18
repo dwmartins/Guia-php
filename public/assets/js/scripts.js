@@ -140,7 +140,7 @@ $(document).ready(function () {
             data: $('.forgotPasswordView form').serialize(),
             success: function(response) {
                 showAlert('success', response.message);
-                $('.forgotPasswordView #email').val();
+                $('.forgotPasswordView #email').val('');
                 showLoadingState('.forgotPasswordView button', false, currentTextButton); 
             },
             error: function(error) {
