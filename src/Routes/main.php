@@ -1,12 +1,21 @@
 <?php
 
-$routesDirectory = scandir(__DIR__);
-$routes = array_diff($routesDirectory, ['.', '..', '.gitignore']);
+function includeRoutesFromDirectory($directory) {
+    $files = scandir($directory);
 
-foreach ($routes as $route) {
-    if($route === "main.php") {
-        continue;
+    foreach ($files as $file) {
+        if ($file === '.' || $file === '..' || $file === '.gitignore') {
+            continue;
+        }
+
+        $filePath = $directory . '/' . $file;
+
+        if (is_dir($filePath)) {
+            includeRoutesFromDirectory($filePath);
+        } else {
+            require_once $filePath;
+        }
     }
-
-    include __DIR__."/$route";
 }
+
+includeRoutesFromDirectory(__DIR__);
