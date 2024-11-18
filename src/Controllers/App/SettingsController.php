@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\App;
 
 use App\Class\EmailConfig;
 use App\Class\SiteInfo;
@@ -13,7 +13,7 @@ use App\Validators\EmailSettingsValidator;
 use App\Validators\FileValidators;
 use App\Validators\SiteInfoValidator;
 
-class AppSettingsController {
+class SettingsController {
 
     private $seo;
     private string $siteInfoImagesFolder = "systemImages";

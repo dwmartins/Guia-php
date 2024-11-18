@@ -3,6 +3,9 @@
 namespace App\Core;
 
 use App\Http\Request;
+use App\Http\Response;
+use App\Utils\SEOManager;
+use App\Utils\View;
 
 class Core {
     public static function dispatch(array $routes) {
@@ -11,10 +14,10 @@ class Core {
 
         $routesFound = false;
 
-        foreach($routes as $route) {
+        foreach ($routes as $route) {
             $pattern = '#^' . preg_replace('/{id}/', '([\w-]+)', $route['path']) . '/?$#';
 
-            if(preg_match($pattern, $url, $matches)) {
+            if (preg_match($pattern, $url, $matches)) {
                 array_shift($matches);
 
                 $routesFound = true;
@@ -33,36 +36,38 @@ class Core {
 
                 [$controller, $action] = explode('@', $route['action']); 
 
-                $controller = $prefixController . $controller;
+                // Constructs the full path of the controller
+                $controller = $prefixController . str_replace('/', '\\', $controller);
 
                 if (!class_exists($controller) || !method_exists($controller, $action)) {
                     self::handleRouteNotFound($controller, $action);
                     return;
                 }
 
-                if(self::checkMaintenanceMode($url)) {
-                    return;
-                }
+                // check if the site is under maintenance
+                self::checkMaintenanceMode($url);
 
                 $extendController = new $controller();
-                $result = $extendController->$action(new Request, $matches);
-
-                if (is_array($result) && isset($result['view']) && isset($result['data'])) {
-                    extract($result['data']);
-                    $view = $result['view'];
-
-                    require __DIR__ . "/../views/master.php";
-                }
+                $extendController->$action(new Request, $matches);
 
                 return;
             }
         }
 
         if (!$routesFound) {
-            $view = "publicView/pageNotFound.php";
-            $title = TITLE_PAGE_NOT_FOUNT;
+            if(self::isApiRoute($url)) {
+                Response::json([
+                    "message" => "API endpoint not found.",
+                ], 404);
+            } else {
+                $seo = new SEOManager();
+                $seo->setTitle(TITLE_PAGE_NOT_FOUNT);
+    
+                View::render("publicView/pageNotFound.php", [
+                    "seo" => $seo
+                ]);
+            }
 
-            require __DIR__ . "/../views/master.php";
         } else {
             self::methodNotAllowedResponse($url);
         }
@@ -114,14 +119,19 @@ class Core {
                 return false;
             }
 
-            $view = "publicView/maintenance.php";
-            $title = TITLE_MAINTENANCE;
+            $seo = new SEOManager();
+            $seo->setTitle(TITLE_MAINTENANCE);
 
-            require __DIR__ . "/../views/master.php";
-            return true;
+            View::render("publicView/maintenance.php", [
+                "seo" => $seo
+            ]);
         }
 
         define("MAINTENANCE", false);
         return false;
+    }
+
+    private static function isApiRoute(string $url) {
+        return strpos($url, '/api') === 0;
     }
 }

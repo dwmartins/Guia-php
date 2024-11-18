@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\App;
 
 use App\Class\User;
 use App\Class\UserAccess;
