@@ -83,10 +83,7 @@ class SettingsController {
         $data['defaultImage'] = empty($siteInfo->getDefaultImage()) ? PATH_DEFAULT_IMAGE : PATH_UPLOADS_SYSTEMIMAGES . $siteInfo->getDefaultImage() . "?v=" . time();
         $data['siteInfo'] = $siteInfo;
 
-        return [
-            "view" => "adminView/basicInformation.php",
-            "data" => $data
-        ];
+        View::render("adminView/basicInformation.php", $data);
     }
 
     public function setImages(Request $request, $params) {
