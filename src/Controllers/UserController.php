@@ -7,6 +7,7 @@ use App\Http\Response;
 use App\Models\UserDAO;
 use App\Utils\SEOManager;
 use App\Utils\UploadFile;
+use App\Utils\View;
 use App\Validators\FileValidators;
 use App\Validators\UserValidator;
 
@@ -27,14 +28,11 @@ class UserController {
         $user = getLoggedUser();
         $userImg = empty($user->getPhoto()) ? PATH_DEFAULT_USER_IMAGE : PATH_UPLOADS_USERS . $user->getPhoto() . "?v=" . time();
 
-        return [
-            "view" => "publicView/user/userPanel.php",
-            "data" => [
-                "user" => $user,
-                "userImg" => $userImg,
-                "seo" => $this->seo
-            ]
-        ];
+        View::render("publicView/user/userPanel.php", [
+            "user" => $user,
+            "userImg" => $userImg,
+            "seo" => $this->seo
+        ]);
     }
 
     /**
@@ -46,14 +44,11 @@ class UserController {
         $user = getLoggedUser();
         $userImg = empty($user->getPhoto()) ? PATH_DEFAULT_USER_IMAGE : PATH_UPLOADS_USERS . $user->getPhoto() . "?v=" . time();
 
-        return [
-            "view" => "publicView/user/profile.php",
-            "data" => [
-                "user" => $user,
-                "userImg" => $userImg,
-                "seo" => $this->seo
-            ]
-        ];
+        View::render("publicView/user/profile.php", [
+            "user" => $user,
+            "userImg" => $userImg,
+            "seo" => $this->seo
+        ]);
     }
 
     public function update(Request $request, $params) {
@@ -138,7 +133,7 @@ class UserController {
      * Change user image
      *
      * @param File photo
-     * @return Json
+     * @return Response
      */
     public function updateImage(Request $request, $params) {
         try {

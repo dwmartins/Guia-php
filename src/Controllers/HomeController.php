@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Http\Request;
 use App\Utils\SEOManager;
+use App\Utils\View;
 
 class HomeController {
     private $seo;
@@ -12,16 +13,16 @@ class HomeController {
         $this->seo = new SEOManager;
     }
 
+    /**
+     * @return View "publicView/home.php"
+     */
     public function index(Request $request, $params) {
         $data = [];
         $siteInfo = SITE_INFO;
         $data['seo'] = $this->seo;
 
-        $data['coverImage'] = empty($siteInfo->getCoverImage()) ? "/assets/img/default/defaultCoverImage.jpg" : "/uploads/systemImages/" . $siteInfo->getCoverImage();
+        $data['coverImage'] = empty($siteInfo->getCoverImage()) ? PATH_DEFAULT_COVER : PATH_UPLOADS_SYSTEMIMAGES . $siteInfo->getCoverImage();
 
-        return [
-            'view' => 'publicView/home.php',
-            'data' =>  $data
-        ];
+        View::render("publicView/home.php", $data);
     }
 }

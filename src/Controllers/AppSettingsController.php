@@ -8,6 +8,7 @@ use App\Http\Request;
 use App\Utils\FileCache;
 use App\Utils\SEOManager;
 use App\Utils\UploadFile;
+use App\Utils\View;
 use App\Validators\EmailSettingsValidator;
 use App\Validators\FileValidators;
 use App\Validators\SiteInfoValidator;
@@ -35,10 +36,7 @@ class AppSettingsController {
 
         $data['emailActive'] = getSetting("emailSending") === "on" ? true : false;
 
-        return [
-            "view" => "adminView/emailSettings.php",
-            "data" => $data
-        ];
+        View::render("adminView/emailSettings.php", $data);
     }
 
     public function saveEmailConfig(Request $request, $params) {

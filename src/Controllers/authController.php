@@ -8,6 +8,7 @@ use App\Http\Request;
 use App\Http\Response;
 use App\Models\UserDAO;
 use App\Utils\SEOManager;
+use App\Utils\View;
 use App\Validators\UserValidator;
 
 class AuthController {
@@ -18,10 +19,16 @@ class AuthController {
         $this->seo = new SEOManager;
     }
 
+    /**
+     * @return View "publicView/user/login.php"
+     */
     public function index(Request $request, $params) {
+        $siteInfo = SITE_INFO;
+        $seoTitle = !empty($siteInfo->getWebSiteName()) ? TITLE_ENTER . ' | ' . $siteInfo->getWebSiteName() : TITLE_ENTER;
+        $this->seo->setTitle($seoTitle);
+
         $body = $request->body();
         $userEmail = "";
-        $this->seo->setTitle(TITLE_ENTER . ' | ' . getSiteInfo()->getWebSiteName());
 
         if($this->checkRememberMe() || isLoggedIn()) {
             return redirect("/");
@@ -35,35 +42,38 @@ class AuthController {
             $userEmail = $_COOKIE['lastLogin'];
         }
 
-        return [
-            'view' => 'publicView/user/login.php',
-            'data' => [
-                'userEmail' => $userEmail,
-                'seo' => $this->seo
-            ]
-        ];
+        View::render("publicView/user/login.php", [
+            "userEmail" => $userEmail,
+            "seo" => $this->seo
+        ]);
     }
 
+    /**
+     * @return View "publicView/user/register.php"
+     */
     public function registerView(Request $request, $params) {
-        $this->seo->setTitle(TITLE_REGISTER . ' | ' . getSiteInfo()->getWebSiteName());
+        $siteInfo = SITE_INFO;
+        
+        $seoTitle = !empty($siteInfo->getWebSiteName()) ? TITLE_REGISTER . ' | ' . $siteInfo->getWebSiteName() : TITLE_REGISTER;
+        $this->seo->setTitle($seoTitle);
 
-        return [
-            "view" => "publicView/user/register.php",
-            "data" => [
-                "seo" => $this->seo
-            ]
-        ];
+        View::render("publicView/user/register.php", [
+            "seo" => $this->seo
+        ]);
     }
 
+    /**
+     * @return View "publicView/user/forgotPassword.php"
+     */
     public function forgotPasswordView(Request $request, $params) {
-        $this->seo->setTitle(SEO_TITLE_FORGOT_PASSWORD . ' | ' . getSiteInfo()->getWebSiteName());
+        $siteInfo = SITE_INFO;
+        $seoTitle = !empty($siteInfo->getWebSiteName()) ? SEO_TITLE_FORGOT_PASSWORD . ' | ' . $siteInfo->getWebSiteName() : SEO_TITLE_FORGOT_PASSWORD;
 
-        return [
-            "view" => "publicView/user/forgotPassword.php",
-            "data" => [
-                "seo" => $this->seo
-            ]
-        ];
+        $this->seo->setTitle($seoTitle);
+
+        View::render("publicView/user/forgotPassword.php", [
+            "seo" => $this->seo
+        ]);
     }
 
     public function register(Request $request, $params) {

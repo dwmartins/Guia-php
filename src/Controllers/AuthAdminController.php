@@ -6,6 +6,7 @@ use App\Class\User;
 use App\Class\UserAccess;
 use App\Http\Request;
 use App\Utils\SEOManager;
+use App\Utils\View;
 
 class AuthAdminController {
     private array $allowedRoles = ["support", "admin", "mod", "test"];
@@ -20,7 +21,6 @@ class AuthAdminController {
      */
     public function index(Request $request, $params) {
         $this->seo->setTitle(PANEL .' | '. TITLE_ENTER);
-        $body = $request->body();
         $userEmail = "";
 
         if($this->checkRememberMe() || isAdmin()) {
@@ -31,13 +31,10 @@ class AuthAdminController {
             $userEmail = $_COOKIE['lastLogin'];
         }
 
-        return [
-            'view' => 'adminView/login.php',
-            'data' => [
-                'seo' => $this->seo,
-                'userEmail' => $userEmail
-            ]
-        ];
+        View::render("adminView/login.php", [
+            'seo' => $this->seo,
+            'userEmail' => $userEmail
+        ]);
     }
 
     public function login(Request $request, $params) {
