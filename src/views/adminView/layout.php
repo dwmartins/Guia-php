@@ -242,6 +242,11 @@ $logo = empty($siteInfo->getLogoImage()) ? PATH_DEFAULT_LOGO : PATH_UPLOADS_SYST
                         <i class="fa-regular fa-circle"></i><span><?= EMAIL_PAGE ?></span>
                     </a>
                 </li>
+                <li>
+                    <a href="<?= PATH_ADM_CSS_EDITOR ?>" class="outline_none">
+                        <i class="fa-regular fa-circle"></i><span><?= CSS_EDITOR ?></span>
+                    </a>
+                </li>
             </ul>
         </li><!-- End Settings Nav -->
 

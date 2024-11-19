@@ -26,6 +26,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/custom.css">
 
     <!-- Language -->
     <script src="<?= "/translations/" . LANGUAGE . ".js" ?>"></script>

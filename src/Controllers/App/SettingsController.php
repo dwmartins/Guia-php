@@ -192,4 +192,38 @@ class SettingsController {
             redirectWithMessage(PATH_ADM_BASIC_INFORMATION, "error", FATAL_ERROR);
         }
     }
+
+    /**
+     * @return View "adminView/basicInformation.php"
+     */
+    public function cssEditorView(Request $request, $params) {
+        $data = [];
+
+        $this->seo->setTitle(SEO_TITLE_CSS_EDITOR);
+        $data["seo"] = $this->seo;
+
+        $data['css_editor'] = getSetting("css_editor");
+
+        View::render("adminView/settings/cssEditor.php", $data);
+    }
+
+    public function cssEditorSubmit(Request $request, $params) {
+        try {
+            $body = $request->body();
+
+            if(isset($body['codeEditor'])) {
+                updateSetting("css_editor", $body['codeEditor']);
+
+                $cssFilePath = ROOT_PATH . "/public/assets/css/custom.css";
+                $content = getSetting("css_editor");
+
+                file_put_contents($cssFilePath, $content);
+            }
+
+            redirectWithMessage(PATH_ADM_CSS_EDITOR, "success", CSS_EDITOR_SAVED);
+        } catch (\Exception $e) {
+            logError($e->getMessage());
+            redirectWithMessage(PATH_ADM_CSS_EDITOR, "error", FATAL_ERROR);
+        }
+    }
 }

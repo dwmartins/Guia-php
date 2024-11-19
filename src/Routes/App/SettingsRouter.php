@@ -16,6 +16,10 @@ Route::get(PATH_ADM_BASIC_INFORMATION, "App/SettingsController@basicInfoView", [
     [AdminMiddleware::class, 'isAdmin']
 ]);
 
+Route::get(PATH_ADM_CSS_EDITOR, "App/SettingsController@cssEditorView", [
+    [AdminMiddleware::class, 'isAdmin']
+]);
+
 /**
  * ########################################
  * # ------------- END VIEWS -------------#
@@ -31,5 +35,9 @@ Route::post("/app/settings/updateimages", "App/SettingsController@setImages", [
 ]);
 
 Route::post("/app/settings/basic-infos", "App/SettingsController@saveBasicInfos", [
+    [AdminMiddleware::class, 'isAdmin']
+]);
+
+Route::post(PATH_ADM_CSS_EDITOR, "App/SettingsController@cssEditorSubmit",[
     [AdminMiddleware::class, 'isAdmin']
 ]);

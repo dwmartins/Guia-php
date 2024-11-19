@@ -53,6 +53,10 @@ class Migration_20240824012649_table_settings extends Database{
             [
                 "name" => "maintenance",
                 "value" => "off"
+            ],
+            [
+                "name" => "css_editor",
+                "value" => ""
             ]
         ];
 

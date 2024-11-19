@@ -8,6 +8,7 @@ define("TITLE_PAGE_NOT_FOUNT", "Página não encontrada");
 define("SEO_TITLE_EMAIL_SETTINGS", "Configurações de e-mail");
 define("SEO_TITLE_BASIC_INFORMATION", "Informações básicas");
 define("SEO_TITLE_FORGOT_PASSWORD", "Esqueci minha senha");
+define("SEO_TITLE_CSS_EDITOR", "Editor de CSS");
 
 // Form labels
 define("LABEL_EMAIL", "E-mail");
@@ -65,6 +66,7 @@ define("PATH_ADM_LOGIN", "/app/entrar");
 define("PATH_EMAIL_SETTINGS", "/app/configuracoes/configuracoes-email");
 define("PATH_ADM_SETTINGS", "/app/configuracoes/configurações-gerais");
 define("PATH_ADM_BASIC_INFORMATION", "/app/configuracoes/informacoes-basicas");
+define("PATH_ADM_CSS_EDITOR", "/app/configuracoes/css_editor");
 
 // Page label
 define("HOME_PAGE", "Incio");
@@ -86,6 +88,7 @@ define("GENERAL_SETTINGS_PAGE", "Configurações gerais");
 define("LANGUAGE_PAGE", "Linguagem");
 define("EMAIL_PAGE", "E-mail");
 define("USERS_PAGE", "Usuários");
+define("CSS_EDITOR", "Editor de CSS");
 
 define("VISITE_SITE", "Site");
 
@@ -192,3 +195,6 @@ define("FORGOT_YOUR_PASSWORD", "Esqueceu sua senha?");
 define("ENTER_YOUR_EMAIL", "Insira seu e-mail e nós lhe enviaremos um link de redefinição.");
 define("SEND_RESET_LINK", "Enviar link de redefinição");
 define("RECOVERY_CODE_SEND", "O código de recuperação foi enviado para seu e-mail.");
+define("ENTER_YOUR_CSS_CODE_HERE", "Digite seu código CSS aqui");
+define("CSS_EDITOR_SAVED", "Estilos CSS salvos com sucesso.");
+define("RECOMMENDED_CLEAR_CACHE_MESSAGE", "Após realizar as alterações, recomendamos que limpe o cache do navegador para garantir que as modificações sejam refletidas corretamente.");
