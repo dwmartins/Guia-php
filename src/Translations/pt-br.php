@@ -9,6 +9,7 @@ define("SEO_TITLE_EMAIL_SETTINGS", "Configurações de e-mail");
 define("SEO_TITLE_BASIC_INFORMATION", "Informações básicas");
 define("SEO_TITLE_FORGOT_PASSWORD", "Esqueci minha senha");
 define("SEO_TITLE_CSS_EDITOR", "Editor de CSS");
+define("SEO_TITLE_GENERAL_SETTINGS", "Configurações gerais");
 
 // Form labels
 define("LABEL_EMAIL", "E-mail");
@@ -67,6 +68,7 @@ define("PATH_EMAIL_SETTINGS", "/app/configuracoes/configuracoes-email");
 define("PATH_ADM_SETTINGS", "/app/configuracoes/configurações-gerais");
 define("PATH_ADM_BASIC_INFORMATION", "/app/configuracoes/informacoes-basicas");
 define("PATH_ADM_CSS_EDITOR", "/app/configuracoes/css_editor");
+define("PATH_ADM_GENERAL_SETTINGS", "/app/configuracoes/configuracoes-gerais");
 
 // Page label
 define("HOME_PAGE", "Incio");
@@ -198,3 +200,8 @@ define("RECOVERY_CODE_SEND", "O código de recuperação foi enviado para seu e-
 define("ENTER_YOUR_CSS_CODE_HERE", "Digite seu código CSS aqui");
 define("CSS_EDITOR_SAVED", "Estilos CSS salvos com sucesso.");
 define("RECOMMENDED_CLEAR_CACHE_MESSAGE", "Após realizar as alterações, recomendamos que limpe o cache do navegador para garantir que as modificações sejam refletidas corretamente.");
+define("DATE_AND_TIME_SETTINGS", "Configurações de data e hora");
+define("DATE_FORMAT", "Formato de data");
+define("CLOCK_TYPE", "Tipo de relógio");
+define("HOURS", "Horas");
+define("TIMEZONE", "Fuso horário");

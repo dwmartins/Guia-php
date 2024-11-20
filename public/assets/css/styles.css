@@ -184,6 +184,10 @@ input[type="number"] {
     box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.5);
 }
 
+.form-check-input:focus, .form-select:focus  {
+    box-shadow: none;
+}
+
 .btn-primary:active,
 .btn-primary.active,
 .show>.btn-primary.dropdown-toggle {
@@ -344,6 +348,9 @@ input[type="checkbox"]:focus {
     cursor: pointer;
 }
   
+.cardDashboard {
+    box-shadow: var(--box-shadow-cards);
+}
 /*--------------------------------------------------------------
 # Main
 --------------------------------------------------------------*/
@@ -1359,6 +1366,11 @@ input[type="checkbox"]:focus {
 .cssEditorView .CodeMirror  {
     height: 70vh !important;
 }
+
 /*--------------------------------------------------------------
-# End cssEditorView
+# General settings view
 --------------------------------------------------------------*/
+.generalSettingsView .dateTime .form-select {
+    min-width: 300px;
+    cursor: pointer;
+}

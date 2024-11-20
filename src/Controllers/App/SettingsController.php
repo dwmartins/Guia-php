@@ -86,6 +86,20 @@ class SettingsController {
         View::render("adminView/basicInformation.php", $data);
     }
 
+    /**
+     * @return View "adminView/settings/generalSettings.php"
+     */
+    public function generalSettingsView(Request $request, $params) {
+        $siteInfo = SITE_INFO;
+        $data = [];
+
+        $this->seo->setTitle(SEO_TITLE_GENERAL_SETTINGS);
+        $data["seo"] = $this->seo;
+
+
+        View::render("adminView/settings/generalSettings.php", $data);
+    }
+
     public function setImages(Request $request, $params) {
         try {
             $requestFiles = $request->files();

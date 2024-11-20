@@ -233,7 +233,7 @@ $logo = empty($siteInfo->getLogoImage()) ? PATH_DEFAULT_LOGO : PATH_UPLOADS_SYST
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="outline_none">
+                    <a href="<?= PATH_ADM_GENERAL_SETTINGS ?>" class="outline_none">
                         <i class="fa-regular fa-circle"></i><span><?= GENERAL_SETTINGS_PAGE ?></span>
                     </a>
                 </li>

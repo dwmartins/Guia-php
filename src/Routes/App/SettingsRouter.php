@@ -15,6 +15,10 @@ Route::get(PATH_ADM_CSS_EDITOR, "App/SettingsController@cssEditorView", [
     [AdminMiddleware::class, 'isAdmin']
 ]);
 
+Route::get(PATH_ADM_GENERAL_SETTINGS, "App/SettingsController@generalSettingsView", [
+    [AdminMiddleware::class, 'isAdmin']
+]);
+
 // ***********END VIEWS *************//
 
 Route::post("/app/settings/email-settings", "App/SettingsController@saveEmailConfig", [
