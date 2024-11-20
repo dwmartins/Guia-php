@@ -24,7 +24,7 @@ function showSocialMedia() {
                         <div class="logo_image d-flex align-items-center justify-content-center">
                             <a href="/" class="navbar-brand">
                                 <div class="d-flex align-items-center">
-                                    <img src="<?= $logoFooter ?>" alt="<?= showText('ALT_LOGO_IMAGE') ?>" class="logoFooter">
+                                    <img src="<?= $logoFooter ?>" alt="<?= ALT_LOGO_IMAGE ?>" class="logoFooter">
                                 </div>
                             </a>
                         </div>
@@ -33,29 +33,29 @@ function showSocialMedia() {
             </div>
             <div class="col-12 <?= showSocialMedia() ? 'col-sm-4' : 'col-sm-8' ?>">
                 <div class="p-2">
-                    <h4 class="custom_dark fs-5"><?= showText('NAVIGATION') ?></h4>
+                    <h4 class="custom_dark fs-5"><?= NAVIGATION ?></h4>
 
                     <div class="row align">
                         <ul class="navbar-nav col px-3">
                             <li class="nav-item">
                                 <a href="/" class="nav-link">
-                                    <?= showText('HOME_PAGE') ?>
+                                    <?= HOME_PAGE ?>
                                 </a>
-                                <a href="<?= showText('PATH_LISTAGENS') ?>" class="nav-link">
-                                    <?= showText('LISTAGENS_PAGE') ?>
+                                <a href="<?= PATH_LISTAGENS ?>" class="nav-link">
+                                    <?= LISTAGENS_PAGE ?>
                                 </a>
-                                <a href="<?= showText('PATH_EVENTS') ?>" class="nav-link">
-                                    <?= showText('EVENTS_PAGE') ?>
+                                <a href="<?= PATH_EVENTS ?>" class="nav-link">
+                                    <?= EVENTS_PAGE ?>
                                 </a>
                             </li>
                         </ul>
                         <ul class="navbar-nav col px-3">
                             <li class="nav-item">
-                                <a href="<?= showText('PATH_BLOG') ?>" class="nav-link">
-                                    <?= showText('BLOG_PAGE') ?>
+                                <a href="<?= PATH_BLOG ?>" class="nav-link">
+                                    <?= BLOG_PAGE ?>
                                 </a>
-                                <a href="<?= showText('PATH_CONTACT') ?>" class="nav-link">
-                                    <?= showText('CONTACT_PAGE') ?>
+                                <a href="<?= PATH_CONTACT ?>" class="nav-link">
+                                    <?= CONTACT_PAGE ?>
                                 </a>
                             </li>
                         </ul>
@@ -66,7 +66,7 @@ function showSocialMedia() {
             <?php if (showSocialMedia()): ?>
                 <div class="col-12 col-sm-4">
                     <div class="p-2">
-                        <h4 class="custom_dark text-center fs-5"><?= showText('SOCIAL_MEDIA') ?></h4>
+                        <h4 class="custom_dark text-center fs-5"><?= SOCIAL_MEDIA ?></h4>
                         <div class="d-flex gap-3 justify-content-center p-2">
                             <?php if (!empty($siteInfo->getTwitter())): ?>
                                 <a href="<?= $siteInfo->getTwitter() ?>" target="_blank" rel="noopener noreferrer">
@@ -93,11 +93,11 @@ function showSocialMedia() {
         <div class="container">
             <div class="row">
                 <p class="col-12 col-sm-6 text-light m-0 fs-7 text-center mb-2 mb-sm-0">
-                    <?= showText('DEVELOPER_BY') ?>
+                    <?= DEVELOPER_BY ?>
                     <a href="https://br.linkedin.com/in/douglas-martins-a36a45185" target="_blank" rel="noopener noreferrer" class="text-white link-offset-2 link-underline link-underline-opacity-0 opacity-75">Douglas Wellington Martins</a>
                 </p>
                 <p class="col-12 col-sm-6 text-light m-0 fs-7 text-center">
-                    <?= showText('ILLUSTRATIONS_BY') ?>
+                    <?= ILLUSTRATIONS_BY ?>
                     <a href="https://storyset.com" target="_blank" rel="noopener noreferrer" class="text-white link-offset-2 link-underline link-underline-opacity-0 opacity-75">Storyset</a>
                 </p>
             </div>
