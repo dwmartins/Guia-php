@@ -2,5 +2,5 @@
 
 use App\Http\Route;
 
-Route::get(PATH_ADM_LOGIN, 'App/AuthAdminController@index');
-Route::post(PATH_ADM_LOGIN, 'App/AuthAdminController@login');
+Route::get(PATH_ADM_LOGIN, 'App/AuthAdminController@loginView');
+Route::post("/app/login", 'App/AuthAdminController@login');

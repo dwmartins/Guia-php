@@ -22,7 +22,7 @@ class AuthController {
     /**
      * @return View "publicView/user/login.php"
      */
-    public function index(Request $request, $params) {
+    public function loginView(Request $request, $params) {
         $siteInfo = SITE_INFO;
         $seoTitle = !empty($siteInfo->getWebSiteName()) ? TITLE_ENTER . ' | ' . $siteInfo->getWebSiteName() : TITLE_ENTER;
         $this->seo->setTitle($seoTitle);

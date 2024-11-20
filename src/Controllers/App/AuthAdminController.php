@@ -19,7 +19,7 @@ class AuthAdminController {
     /**
      * @return View "adminView/login.php"
      */
-    public function index(Request $request, $params) {
+    public function loginView(Request $request, $params) {
         $this->seo->setTitle(PANEL .' | '. TITLE_ENTER);
         $userEmail = "";
 

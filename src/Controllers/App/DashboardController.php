@@ -16,16 +16,11 @@ class DashboardController {
     /**
      * @return View "adminView/dashboard.php"
      */
-    public function index(Request $request, $params) {
+    public function dashboardView(Request $request, $params) {
         $this->seo->setTitle("Dashboard");
 
         View::render("adminView/dashboard.php", [
             "seo" => $this->seo
         ]);
-
-        return [
-            'view' => 'adminView/dashboard.php',
-            'data' => ['seo' => $this->seo]
-        ];
     }
 }

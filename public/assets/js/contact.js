@@ -63,7 +63,7 @@ $(document).ready(function() {
                 `);
     
                 $.ajax({
-                    url: '/contact',
+                    url: "/contact/send",
                     method: 'POST',
                     data: formContact.serialize(),
                     success: function(response) {

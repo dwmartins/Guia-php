@@ -3,11 +3,6 @@
 use App\Http\Route;
 use App\Middleware\AdminMiddleware;
 
-/**
- * ########################################
- * # ------------- VIEWS -----------------#
- * ########################################
- */
 Route::get(PATH_EMAIL_SETTINGS, "App/SettingsController@emailConfigView", [
     [AdminMiddleware::class, 'isAdmin']
 ]);
@@ -20,13 +15,9 @@ Route::get(PATH_ADM_CSS_EDITOR, "App/SettingsController@cssEditorView", [
     [AdminMiddleware::class, 'isAdmin']
 ]);
 
-/**
- * ########################################
- * # ------------- END VIEWS -------------#
- * ########################################
- */
+// ***********END VIEWS *************//
 
-Route::post(PATH_EMAIL_SETTINGS, "App/SettingsController@saveEmailConfig", [
+Route::post("/app/settings/email-settings", "App/SettingsController@saveEmailConfig", [
     [AdminMiddleware::class, 'isAdmin']
 ]);
 
@@ -38,6 +29,6 @@ Route::post("/app/settings/basic-infos", "App/SettingsController@saveBasicInfos"
     [AdminMiddleware::class, 'isAdmin']
 ]);
 
-Route::post(PATH_ADM_CSS_EDITOR, "App/SettingsController@cssEditorSubmit",[
+Route::post("/app/settings/css_editor", "App/SettingsController@cssEditorSubmit",[
     [AdminMiddleware::class, 'isAdmin']
 ]);
