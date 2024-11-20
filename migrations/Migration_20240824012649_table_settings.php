@@ -47,6 +47,10 @@ class Migration_20240824012649_table_settings extends Database{
                 "value" => "DD-MM-YYYY"
             ],
             [
+                "name" => "clock_type",
+                "value" => 24
+            ],
+            [
                 "name" => "compressImage",
                 "value" => "on"
             ],

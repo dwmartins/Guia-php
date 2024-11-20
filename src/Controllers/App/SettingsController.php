@@ -96,6 +96,9 @@ class SettingsController {
         $this->seo->setTitle(SEO_TITLE_GENERAL_SETTINGS);
         $data["seo"] = $this->seo;
 
+        foreach (getAllSettings() as $value) {
+            $data[$value['name']] = $value['value'];
+        }
 
         View::render("adminView/settings/generalSettings.php", $data);
     }

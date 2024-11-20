@@ -1372,5 +1372,6 @@ input[type="checkbox"]:focus {
 --------------------------------------------------------------*/
 .generalSettingsView .dateTime .form-select {
     min-width: 300px;
+    max-height: 100px !important;
     cursor: pointer;
 }

@@ -8,3 +8,5 @@
         </div>
     </div>
 </section>
+
+<script src="/assets/js/app/generalSettings.js" defer></script>

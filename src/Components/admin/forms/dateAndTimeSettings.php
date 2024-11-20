@@ -5,11 +5,11 @@
         </div>
         <div class="d-flex">
             <div class="form-check form-check-inline">
-                <input class="form-check-input cursor_pointer" type="radio" name="dateFormat" id="dateFormat1" value="MM-DD-YYYY">
+                <input class="form-check-input cursor_pointer" type="radio" name="dateFormat" id="dateFormat1" value="MM-DD-YYYY" <?= $dateFormat == "MM-DD-YYYY" ? 'checked' : '' ?>>
                 <label class="form-check-label cursor_pointer fs-7" for="dateFormat1">mm-dd-yyyy</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input cursor_pointer" type="radio" name="dateFormat" id="dateFormat2" value="DD-MM-YYYY">
+                <input class="form-check-input cursor_pointer" type="radio" name="dateFormat" id="dateFormat2" value="DD-MM-YYYY" <?= $dateFormat == "DD-MM-YYYY" ? 'checked' : '' ?>>
                 <label class="form-check-label cursor_pointer fs-7" for="dateFormat2">dd-mm-yyyy</label>
             </div>
         </div>
@@ -21,11 +21,11 @@
         </div>
         <div class="d-flex">
             <div class="form-check form-check-inline">
-                <input class="form-check-input cursor_pointer" type="radio" name="clockType" id="clockType1" value="12">
+                <input class="form-check-input cursor_pointer" type="radio" name="clockType" id="clockType1" value="12" <?= $clock_type == "12" ? 'checked' : '' ?>>
                 <label class="form-check-label cursor_pointer fs-7" for="clockType1">12 <?= HOURS ?></label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input cursor_pointer" type="radio" name="clockType" id="clockType2" value="24">
+                <input class="form-check-input cursor_pointer" type="radio" name="clockType" id="clockType2" value="24" <?= $clock_type == "24" ? 'checked' : '' ?>>
                 <label class="form-check-label cursor_pointer fs-7" for="clockType2">24 <?= HOURS ?></label>
             </div>
         </div>
@@ -36,7 +36,7 @@
             <?= TIMEZONE ?>
         </div>
         <div>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" id="timezone-select">
                 <?php
                 $timezones = DateTimeZone::listIdentifiers();
 
