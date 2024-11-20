@@ -28,6 +28,7 @@ if(!isCli()) {
 
         session_start();
     } catch (\Exception $e) {
+        logError($e->getMessage());
         showErrorPage();
     }
 }
@@ -57,10 +58,10 @@ function loadTranslations() {
     $language = getSetting('language') ?? "pt-br";
     define("LANGUAGE", $language);
 
-    $translationFile = $rootPath . "/translations/$language.php";
+    $translationFile = $rootPath . "/src/translations/$language.php";
 
     if (!file_exists($translationFile)) {
-        throw new Exception("The translation file for language $language was not found.");
+        throw new Exception("The translation file for language ($language) was not found.");
     }
 
     include_once  $translationFile;
